@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+	<script>
+		window.applicationStartTime = Date.now();
+	</script>
+
+	
+			<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="Course Materials _ Laurier Bookstore_files\yurr\shopping_2.css">
+	
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="shortcut icon" href="https://www.wlubookstore.com/sca-dev-2022-1-0/Favicon/img/favicon.ico" />
+	
+	<title></title>
+
+</head>
+
+<body>
+
+<noscript>
+	<div class="shopping-layout-no-javascript-msg">
+		<strong>Javascript is disabled on your browser.</strong><br>
+		To view this site, you must enable JavaScript or upgrade to a JavaScript-capable browser.
+	</div>
+</noscript>
+
+<div id="main" class="main">...</div>
+
+
+
+<script>
+function Deferred(){this.status="started",this.data=void 0,this.doneCb=[]}function loadJSON(e,o){window.loadedResourcesPromises=window.loadedResourcesPromises||{};var n=new Deferred;window.loadedResourcesPromises[o]=n;var t=new XMLHttpRequest;return t.open("GET",e),t.onreadystatechange=function(){4===t.readyState&&200===t.status&&n.resolve(JSON.parse(t.responseText))},t.send(null),n}function loadScript(e){window.loadedResourcesPromises=window.loadedResourcesPromises||{};var o=window.loadedResourcesPromises[e]=new Deferred,n=document.createElement("script");function t(){o.resolve()}return n.src=e,n.onerror=t,n.onload=t,document.head.appendChild(n),o}function isObject(e){return e&&"object"==typeof e&&!Array.isArray(e)}function merge(e,o){if(isObject(e)&&isObject(o))for(var n,t=Object.keys(o),r=0;r<t.length;r++)!isObject(o[n=t[r]])||void 0===e[n]?e[n]=o[n]:merge(e[n],o[n]);return e}function _each(e,o){for(var n=0;n<e.length;n++)o(e[n],n)}Deferred.prototype.done=function(e){"resolved"===this.status?e(this.data):this.doneCb.push(e)},Deferred.prototype.resolve=function(e){this.data=e,this.status="resolved";for(var o=0;o<this.doneCb.length;o++)this.doneCb[o](this.data);return this},Deferred.all=function(e){for(var o=Object.keys(e),n=0,t=new Deferred,r=0;r<o.length;r++)e[o[r]].done(function(){++n===o.length&&t.resolve()});return t};var hash,googletagmanager_cookie,value,parts,SC=window.SC={ENVIRONMENT:{jsEnvironment:"undefined"==typeof nsglobal?"browser":"server"},isCrossOrigin:function(){return"www.wlubookstore.com"!==document.location.hostname},isPageGenerator:function(){return"undefined"!=typeof nsglobal},getSessionInfo:function(e){var o=SC.SESSION||SC.DEFAULT_SESSION||{};return e?o[e]:o},getPublishedObject:function(e){return SC.ENVIRONMENT&&SC.ENVIRONMENT.published&&SC.ENVIRONMENT.published[e]?SC.ENVIRONMENT.published[e]:null}};history.pushState||"browser"!==SC.ENVIRONMENT.jsEnvironment||"/"===location.pathname&&""===location.search||""!==location.hash||("/"===location.pathname?(hash=(RegExp("fragment=(.+?)(&|$)").exec(location.search)||[,""])[1],location.replace(location.pathname+location.search+"/#"+unescape(hash))):location.replace("/#"+location.pathname+location.search),document.write("")),SC.isCrossOrigin()||(navigator.userAgent.match(/googlebot/i)||(window.setTimeout(()=>document.getElementById("main").style.display="none")),SC.isPageGenerator()&&(document.body.className=document.body.className+" seo-support"),SC.ENVIRONMENT.seoSupport=!!~document.body.className.indexOf("seo-support"),SC.isPageGenerator()&&(SC.ENVIRONMENT.PROFILE={}),"browser"!==SC.ENVIRONMENT.jsEnvironment||SC.isCrossOrigin()||((googletagmanager_cookie="")||2===(parts=(value="; "+document.cookie).split("; _gid=")).length&&(googletagmanager_cookie="&_ga="+parts.pop().split(";").shift()),window.loadedResourcesPromises=window.loadedResourcesPromises||{},loadJSON('https://www.wlubookstore.com/sca-dev-2022-1-0/services/ShoppingUserEnvironment.Service.ss?lang=en_CA&cur=null&X-SC-Touchpoint=shopping'+googletagmanager_cookie,"shoppingUserEnvironment").done(function(e){merge(SC,e),SC.PROFILE_PROMISE&&SC.PROFILE_PROMISE.resolve(SC.ENVIRONMENT.PROFILE)})));
+</script>
+
+<script src="/sca-dev-2022-1-0/public/shopping.environment.ssp?lang=en_CA&cur=null&X-SC-Touchpoint=shopping&t=1661184071870" ></script>
+
+<script src="/sca-dev-2022-1-0/public/shopping.environment.shortcache.ssp?X-SC-Touchpoint=shopping&t=1661184071870" ></script>
+
+
+
+
+<script src="/sca-dev-2022-1-0/languages/shopping_en_CA.js?t=1661184071870"></script>
+
+
+
+	<script src="/cms/3/cms.js"></script>
+
+
+<script>
+    if(!SC.isPageGenerator()){
+        var NLRUM = NLRUM || {};
+        NLRUM.bSendBeacon = 0;
+        NLRUM.bResourceTimingDataCollection = 1;
+        NLRUM.autorun = false;
+        loadScript('/nlrum/nlRUM.js');
+	}
+</script>
+
+		<script src="/sca-dev-2022-1-0/extensions/shopping-templates_2.js?t=1661184071870"></script>
+
+		<script src="/sca-dev-2022-1-0/javascript/shopping.js?t=1661184071870"></script>
+
+		<script src="/sca-dev-2022-1-0/extensions/shopping_2.js?t=1661184071870"></script>
+
+
+<script>
+try{var startApplication=function(){require(["Loggers","Loggers.Configuration.SCA"],function(e,t){e.Loggers.setConfiguration(t.configuration)}),require(["SC.Shopping.Starter"])};window.loadedResourcesPromises?Deferred.all(window.loadedResourcesPromises).done(function(){try{startApplication()}catch(e){document.getElementById("main").style.display="block"}}):startApplication()}catch(e){document.getElementById("main")&&(document.getElementById("main").style.display="block")}
+</script>
+</body>
+
+</html>
+
+<!-- SuiteCommerce Advanced [ prodbundle_id "422673" ] [ baselabel "SCA_2022.1.4" ] [ version "2022.1.4" ] [ datelabel "2021.03.23" ] [ buildno "0" ] -->
+<!-- 115 s: 16% #23 cache: 9% #39 -->
+<!-- Host [ sh207.prod.yyz.na17.core.ns.internal ] App Version [ 2024.2.13.30150 ] -->
+<!-- COMPID [ 7763301 ] URL [ /s.nl ] Time [ Tue Nov 05 07:38:45 PST 2024 ] -->
+<!-- All SQL was faster than 100 ms -->
