@@ -1,6 +1,6 @@
 **Course_materials.css & course-materials_landing.html** are course material pages. 
 **student_info_landing.html uses course_materials.css as well.**
-**textbooks 101 _laurier.html uses textbookcss.css**
+**textbooks 101 _laurier.html uses textbookcss.css**,
 fonts is a font download css file in case. (for lato)
 jquery file is a file i added for functionaity of the navigation menu because i do not have access to the jquery provided that i assume would be in the netsuite already. (only added for local host testing purposes)
 all other js files should already be on the netsuite. Added to this just in case.
