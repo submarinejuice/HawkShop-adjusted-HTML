@@ -1,0 +1,8 @@
+Course_materials.css & course-materials_landing.html are course material pages. All html pages use their own stylesheet relative to that page, in addition to the shopping_2.css template given
+
+Here are some notes:
+- would not reccomend deployment yet, as we need to go manually into netsuite and update all the page, image, and maybe even video links as I tested everything on a local host
+meaning I was not using proper netsuite documentations, IDK what would happen if you were to upload as of right now.
+- customizability of images and text, unsure of how the deployment would work because I don't have access, we can try staging it first and linking everything in netsuite.
+- there are courses to take on netsuite for this specifically that are like 1-2 hours long but you need permission from company
+- on the students tab on the laurier website the email is wrong for the hawkshop
