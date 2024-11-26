@@ -162,7 +162,7 @@ html, body {
     left: 0;
     width: 0; 
     height: 1px;
-    background-color: #F2A900; 
+    background-color: #FDD757; 
     transition: width 0.3s ease; 
 }
 
@@ -171,7 +171,7 @@ html, body {
 }
 
 .contact-box a:hover {
-    color: #F2A900; 
+    color: #FDD757; 
 }
 
 
@@ -199,7 +199,7 @@ html, body {
     color: #F2A900; 
 }
 
-/* List Styling */
+
 .additional-info-box ul.a {
     color: #FDD757; 
     list-style-type: circle; 
