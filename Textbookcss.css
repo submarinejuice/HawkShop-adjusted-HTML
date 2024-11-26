@@ -77,7 +77,7 @@ html, body {
     color: #330072
  
  }
- .textbook-container p, span{   
+ .textbook-container p{   
     font-size: 18px;
  
  }
@@ -127,8 +127,7 @@ html, body {
 
 }
 .additional-info-box{
-      background-color:  #0077a2; 
-      border: 1px solid #00677F; 
+      background-color:  #0077a2;  
       justify-content: flex-start; 
       align-items: center; 
       padding: 10px;
