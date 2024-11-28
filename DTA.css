@@ -18,6 +18,17 @@ html, body {
     width:100%;
     height:auto;
     padding-bottom: 100px;
+    
+}
+.side-boxes{
+    
+    display: flex;
+    gap:20x;
+    flex-direction: column;
+    width:400px;
+}
+.publisher-specific-info-box{
+    
 }
 .dta-container h1{
     font-weight: bold;
@@ -110,6 +121,12 @@ html, body {
 
 }
 .the-process-box h2{
+    font-weight: bold;
+    font-size: 30px;
+    background-color:  #F2A900;
+    padding: 10px;
+}
+.why-box h2{
     font-weight: bold;
     font-size: 30px;
     background-color:  #F2A900;
