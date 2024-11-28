@@ -12,7 +12,7 @@ html, body {
   }
 .textbooks-101-container{
     display:flex;
-    gap:30px;
+    gap:50px;
     flex-wrap: nowrap;
     margin:0 auto;
     width:100%;
@@ -24,11 +24,13 @@ html, body {
 
 .link-box-container {
     flex: 1; 
-    max-width: 250px;
-    padding: 20px;
+    max-width: 400px;
+    padding-bottom: 20px;
     background-color: #f9f9f9; 
+    margin-right: 15px;
     align-self: flex-start;
     box-sizing: border-box;
+    
 }
 .link-box-container h2{
     font-weight: bold;
@@ -36,12 +38,9 @@ html, body {
 }
 .link-box-container hr{
     height: 3px;
-    width: 200px;
+    width: 150px;
     background-color: #330072;
 }
-
-
-
 
 .link-box-container h2 {
     font-weight: bold;
@@ -56,21 +55,25 @@ html, body {
 
 .link-box-container a {
     position: relative; 
-    display: flex;
+    display: inline-block;
     flex-direction: column;
-    margin: 0px 0;
-    padding: 6px 3px;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 15px;
+    padding-bottom: 6px;
     font-size: 20px;
     text-decoration: none;
     color: #000; 
     display: block; 
-    width: 100%;
+   
+     
 }
 
-.link-box-container a::after {
+/*.link-box-container a::after {
     content: ''; 
     position: absolute;
     bottom: 0; 
+    margin-left: 15px;
     left: 0;
     width: 0; 
     height: 2px;
@@ -81,16 +84,28 @@ html, body {
 
 .link-box-container a:hover::after {
     width: 100%; 
+   
+    
 }
 
 .link-box-container a:hover {
     color: #330072;
+} */
+.link-mobile-menu .arrow {
+    display: inline-block;
+    border: solid #330072;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
 }
+
 .BOXES-CONTAINER{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    align-items: flex-start;
+    gap: 15px;
+    align-items: stretch;
+    margin: 20px 0;
     
 }
 
@@ -98,7 +113,7 @@ html, body {
 .textbook-container{
     flex: 2;
     box-sizing: border-box;
-    max-width: 750px;
+    max-width: 900px;
 
 }
 .textbook-container h1{
@@ -124,10 +139,15 @@ html, body {
     justify-content: flex-start; 
     align-items: center;
     padding: 5px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
     height: auto;
     width: 300px;
     
+}
+.link-mobile-menu{
+    background-color: transparent;
+    border-color: none;
+    color: none;
 }
 
 .contact-box p, b{
@@ -260,7 +280,7 @@ html, body {
       justify-content: flex-start; 
       align-items: center; 
       padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
       height: auto;
       width: 300px;
 
@@ -280,7 +300,9 @@ html, body {
     
     
 }
-
+.opt-out-box, .opt-out-box-2{
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
 .opt-out-container h1{
     color: #F2A900;
     font-weight: bold;
@@ -304,6 +326,9 @@ html, body {
     margin-top: 20px;
     padding-bottom: 90px;   
 }
+.link-box-container .dropdown-menu {
+    display: block; 
+}
 
 
 @media (max-width: 600px){
@@ -322,11 +347,24 @@ html, body {
         flex-direction: column;
         gap: 20px; 
     }
+    .BOXES-CONTAINER {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        margin: 0;
+        padding: 0;
+        gap: 10px; 
+    }
 
     .link-box-container,
     .textbook-container {
         flex: 1 1 100%; 
         max-width: 100%; 
+    }
+    .contact-box, .additional-info-box {
+        flex: 1 1 45%; 
+        max-width: 48%; 
+        box-sizing: border-box; 
     }
 }
  
@@ -342,10 +380,50 @@ body {
 
 @media (max-width: 768px) {
     .link-box-container {
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .link-box-container a{
+        font-size: 18px;
+    }
+    
+    .link-box-container .link-mobile-menu-dropdown{
+        display: none;
         flex-direction: column;
-        align-items: left;
-        margin-bottom: 20px;
-        padding-right: 200px;
+        margin-top: 10px;
+    }
+    .link-mobile-menu .link-box-container hr{ 
+        display: block; 
+        padding: 10px 0;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        
+    }
+    .arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    }
+    .down{
+     transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    .dropdown-menu a {
+        text-align: left;
+        padding: 10px 0;
+        border-bottom: 1px solid #EBA900;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #F9F9F9;
+        color: #330072;
+    }
+
+    .dropdown-menu.open {
+        display: flex; /
     }
 
     .textbook-container {
@@ -353,10 +431,7 @@ body {
         text-align: left;
     }
 
-    .BOXES-CONTAINER {
-        flex-direction: column;
-        align-items: center;
-    }
+  
 
     .contact-box, .additional-info-box {
         width: 90%; 
@@ -366,6 +441,7 @@ body {
     .vid-container {
         flex-direction: column;
         align-items: center;
+        flex: 1;
     }
 
     .opt-out-box, .opt-out-box-2 {
@@ -378,5 +454,90 @@ body {
 
     .link-box-container {
         text-align: left; 
+        
+    }
+}
+.link-box-container {
+    margin: 20px 0;
+    max-width: 400px;
+    text-align: left;
+}
+
+
+.link-mobile-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 10px 0px;
+    width: 100%;
+    cursor: pointer;
+    color: #330072;
+    font-size: 20px;
+}
+
+.link-mobile-menu h2 {
+    margin: 0;
+    font-weight: bold;
+    color: #330072;
+    font-size: 20px;
+}
+
+.link-mobile-menu .arrow {
+    display: inline-block;
+    border: solid #330072;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.link-mobile-menu[aria-expanded="true"] .arrow {
+    transform: rotate(-135deg); 
+}
+
+
+.link-mobile-menu-dropdown {
+    display: block; 
+}
+
+.link-mobile-menu-dropdown a {
+    display: block;
+    padding: 8px 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    transition: ease-in-out 0.2s;
+    
+   
+}
+
+.link-mobile-menu-dropdown a:hover {
+    color: #330072;
+    background-color: #EBA900;
+    transition: ease-in-out 0.2s;
+}
+
+
+@media (max-width: 768px) {
+    .link-mobile-menu {
+        display: flex;
+    }
+    
+
+    .link-mobile-menu-dropdown {
+        display: none; 
+    }
+
+    .link-mobile-menu-dropdown.open {
+        display: block;
+        
+    }
+}
+
+@media (min-width: 769px) {
+    .link-mobile-menu .arrow {
+        display: none; 
     }
 }

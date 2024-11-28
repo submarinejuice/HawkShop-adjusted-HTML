@@ -16,6 +16,7 @@
 	<script>
 		window.applicationStartTime = Date.now();
 	</script>
+	<script src="jquery-3.7.1.min.js"></script>
 
 <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
 	href="fonts">
@@ -1359,24 +1360,68 @@
 									data-cms-area="cms-landing-page-placeholder-path" data-cms-area-filters="path">
 									<div class="textbooks-101-container">
 										<!-- TEMPLATE STARTS: custom_content_type_container// michelle lore-->
+									<div class="left-container">
 										<div class="link-box-container">
-											<h2>Important Links</h2>
+											
+											
+											<button class="link-mobile-menu"aria-expanded="false">
+												<h2>Important Links  <i class="arrow down"></i></h2>
+											  	
+											</button>
 											<hr>
-											<br>
+											<div class="link-mobile-menu-dropdown">
+												<br>
 											<a href="course-materials_landing.html" class="link-box-container">Course Materials</a>
-											<a href="https://www.wlubookstore.com/adoption-search" class="link-box-container">Textbook Search</a>
+												<a href="https://www.wlubookstore.com/adoption-search" class="link-box-container">Textbook Search</a>
 										
-											<a href="Student_info_landing.html" class="link-box-container">Student Information</a>
-											<a href="" class="link-box-container">Faculty Information</a>
-											<a href="https://www.wlubookstore.com/digital-textbook-access-for-students" class="link-box-container">Digital Textbook Access</a>
-											<a href="" class="link-box-container">Deadlines</a>
-											<a href:="" class="link-box-container">General Books</a>
+												<a href="Student_info_landing.html" class="link-box-container">Student Information</a>
+												<a href="https://laurier.verbacollect.com/session/selfassign?_ga=2.84103513.1511748593.1732818365-506810768.1706208141" class="link-box-container">Faculty Information</a>
+												<a href="https://www.wlubookstore.com/digital-textbook-access-for-students" class="link-box-container">Digital Textbook Access</a>
+												
+												<a href="https://www.wlubookstore.com/classroom/classroom-general-books" class="link-box-container">General Books</a>
+											</div>
 										</div>
-									
+										<div class="BOXES-CONTAINER">
+											
+											<div class="contact-box">
+												<h1>CONTACT US:</h1>
+												<br>
+												<p><b>Waterloo Campus</b></p>
+												<p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
+												<p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a> </p>
+												<p><b>Address:</b>
+												75 University Ave. West
+												Waterloo, ON N2L</p>
+												<br>
+												<p><b>Brantford Campus</b></p>
+												<p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
+												<p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a></u> </p>
+												<p><b>Address:</b>
+												150 Dalhousie St, Brantford, ON N3T 2J4</p>
+											</div>
+											<div class="additional-info-box">
+												<h1 id="#deadlines">DEADLINES:</h1>
+												<br>
+												<p><b>The return deadlines for <u>all</u>  course materials are:</b></p>
+												<ul class="a">
+													<li><b>May start (6 & 12 week courses):</b><p>May 17</p> </li>
+													<li><b>July start (6 week courses):</b> <p>July 19</p> </li>
+												</ul>
+												
+												<p>All course materials purchased after this deadline are considered final sale.</p>
+
+											</div>
+											
+										</div>
+									</div>
+										
 										<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-14"
 											class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-14">
 											<div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
+												
+												
 												<div class="textbook-container">
+													
 													
 													<h1>Textbooks 101</h1>
 													<!--<img src="images\infoblocktext.avif"> TODO -->
@@ -1448,38 +1493,7 @@
 												
 											</div><!-- TEMPLATE ENDS: sc_cct_html -->
 										</div>
-										<div class="BOXES-CONTAINER">
-											
-											<div class="contact-box">
-												<h1>CONTACT US:</h1>
-												<br>
-												<p><b>Waterloo Campus</b></p>
-												<p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
-												<p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a> </p>
-												<p><b>Address:</b>
-												75 University Ave. West
-												Waterloo, ON N2L</p>
-												<br>
-												<p><b>Brantford Campus</b></p>
-												<p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
-												<p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a></u> </p>
-												<p><b>Address:</b>
-												150 Dalhousie St, Brantford, ON N3T 2J4</p>
-											</div>
-											<div class="additional-info-box">
-												<h1>DEADLINES:</h1>
-												<br>
-												<p><b>The return deadlines for <u>all</u>  course materials are:</b></p>
-												<ul class="a">
-													<li><b>May start (6 & 12 week courses):</b><p>May 17</p> </li>
-													<li><b>July start (6 week courses):</b> <p>July 19</p> </li>
-												</ul>
-												
-												<p>All course materials purchased after this deadline are considered final sale.</p>
-
-											</div>
-											
-										</div>
+										
 										
 									</div><!-- TEMPLATE ENDS: custom_content_type_container -->
 										
@@ -1492,13 +1506,16 @@
 											<div class="vid-container">
 												<div class="opt-out-box">
 													
-												
+													<p><b>How To Opt Out of Your Digital Textbook Access Resources</b></p>
+													<br>
 													<iframe width="560" height="315" src="https://www.youtube.com/embed/rcaVi-T3wRU?si=XTy-FlVcHQxzoC_N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-													<p>How To Opt Out of Your Digital Textbook Access Resources</p>
+													
 												</div>
 												<div class="opt-out-box-2">
+													<p><b>Accessing Your Digital Textbook Access Resources</b></p>
+													<br>
 													<iframe width="560" height="315" src="https://www.youtube.com/embed/w-7_SZhh67M?si=p0hgQaY58A1jeXJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-													<p>Accessing Your Digital Textbook Access Resources</p>
+													
 												</div>
 											</div><!-- TEMPLATE ENDS: cms_landing_page -->
 						</div>
@@ -1696,7 +1713,21 @@
 	<script>
 		try { var startApplication = function () { require(["Loggers", "Loggers.Configuration.SCA"], function (e, t) { e.Loggers.setConfiguration(t.configuration) }), require(["SC.Shopping.Starter"]) }; window.loadedResourcesPromises ? Deferred.all(window.loadedResourcesPromises).done(function () { try { startApplication() } catch (e) { document.getElementById("main").style.display = "block" } }) : startApplication() } catch (e) { document.getElementById("main") && (document.getElementById("main").style.display = "block") }
 	</script>
-
+	<!--JavaScript addition-->
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const mobileMenuButton = document.querySelector('.link-mobile-menu');
+		const dropdown = document.querySelector('.link-mobile-menu-dropdown');
+	
+		mobileMenuButton.addEventListener('click', () => {
+			dropdown.classList.toggle('open');
+	
+			// Update the button's aria-expanded attribute for accessibility
+			const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+			mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+		});
+	});</script>
+	
 
 
 
