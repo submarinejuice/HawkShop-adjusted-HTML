@@ -12,7 +12,7 @@ html, body {
 .dta-container{
     justify-items: center;
     display: flex;
-    gap:40px;
+    gap:20px;
     flex-wrap:nowrap;
     margin:0 auto;
     width:100%;
@@ -23,23 +23,29 @@ html, body {
     font-weight: bold;
     color: #330072;
 }
-.dta-container h2, h5{
+.dta-container h2{
     font-weight: bold;
     color: #330072;
 }
-.dta-container h5{
+.dta-container h3{
     font-weight: bold;
     color: #330072;
 }
 .quick-link-container{
     
     flex: 1; 
-    max-width: 250px;
+    max-width: 400px;
     padding: 20px;
-    background-color: #f9f9f9; 
+    
     align-self: flex-start;
     box-sizing: border-box;
 
+}
+.dta-container a:hover {
+    color: #330072;
+    background-color: #EBA900;
+    transition: ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
 }
 .quick-link-container hr{
     height: 3px;
@@ -51,4 +57,61 @@ html, body {
     flex: 2;
     box-sizing: border-box;
     max-width: 750px;
+}
+.quick-link-container {
+    flex: 1; 
+    max-width: 300px;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: #f9f9f9; 
+    margin-right: 15px;
+    align-self: flex-start;
+    box-sizing: border-box;
+    
+}
+.quick-link-container h2{
+    font-weight: bold;
+    color: #330072; 
+}
+.quick-link-container hr{
+    height: 3px;
+    width: 150px;
+    background-color: #330072;
+}
+
+.quick-link-container h2 {
+    font-weight: bold;
+    color: #330072;
+}
+
+.quick-link-container hr {
+    height: 3px;
+    width: 200px;
+    background-color: #330072;
+}
+
+.quick-link-container a {
+    position: relative; 
+    display: inline-block;
+    flex-direction: column;
+    margin: 0px;
+    padding: 4px;
+    padding-left: 15px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000; 
+    display: block; 
+   
+     
+}
+.the-process-box{
+   
+
+}
+.the-process-box h2{
+    font-weight: bold;
+    font-size: 30px;
+    background-color:  #F2A900;
+    padding: 10px;
 }
