@@ -3,7 +3,9 @@
 <head>
     <style>
         
-* {
+
+
+ * {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
@@ -16,55 +18,50 @@ html, body {
   }
 .textbooks-101-container{
     display:flex;
-    gap:50px;
+    gap:40px;
     flex-wrap: nowrap;
     margin:0 auto;
     width:100%;
     height:auto;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
    
   
 }
 
+
 .link-box-container {
     flex: 1; 
     max-width: 400px;
-    padding-bottom: 20px;
+    padding: 10px 0px;
     background-color: #f9f9f9; 
     margin-right: 15px;
     align-self: flex-start;
     box-sizing: border-box;
-    
-}
-.link-box-container h2{
-    font-weight: bold;
-    color: #330072; 
-}
-.link-box-container hr{
-    height: 3px;
-    width: 150px;
-    background-color: #330072;
+    transition: 0.2s ease-in-out;
+   
+   
 }
 
 .link-box-container h2 {
     font-weight: bold;
-    color: #330072;
+    color: #330072; 
+    font-size: 24px;
 }
 
 .link-box-container hr {
     height: 3px;
-    width: 200px;
-    background-color: #330072;
+    width: auto;
+    background-color: #330072; 
 }
+
+
 
 .link-box-container a {
     position: relative; 
     display: inline-block;
     flex-direction: column;
     margin: 0px;
-    padding: 4px;
     padding-left: 15px;
-    padding-bottom: 6px;
     font-size: 20px;
     text-decoration: none;
     color: #000; 
@@ -72,29 +69,13 @@ html, body {
    
      
 }
-
-/*.link-box-container a::after {
-    content: ''; 
-    position: absolute;
-    bottom: 0; 
-    margin-left: 15px;
-    left: 0;
-    width: 0; 
-    height: 2px;
-    background-color:#EBA900 ;
-    transition: all 0.3s ease;
+.link-box-container a:hover{
+    background-color: #F2A900;
+    transition: 0.3s ease-in-out;
     
 }
 
-.link-box-container a:hover::after {
-    width: 100%; 
-   
-    
-}
 
-.link-box-container a:hover {
-    color: #330072;
-} */
 .link-mobile-menu .arrow {
     display: inline-block;
     border: solid #330072;
@@ -110,7 +91,7 @@ html, body {
     gap: 15px;
     align-items: stretch;
     margin: 20px 0;
-    
+      
 }
 
 
@@ -118,6 +99,7 @@ html, body {
     flex: 2;
     box-sizing: border-box;
     max-width: 900px;
+   
 
 }
 .textbook-container h1{
@@ -349,7 +331,7 @@ html, body {
 @media (max-width: 768px) {
     .textbooks-101-container {
         flex-direction: column;
-        gap: 20px; 
+        
     }
     .BOXES-CONTAINER {
         display: flex;
@@ -385,7 +367,7 @@ body {
 @media (max-width: 768px) {
     .link-box-container {
         margin: 0 auto;
-        padding: 20px;
+       
         text-align: center;
     }
     .link-box-container a{
@@ -395,11 +377,11 @@ body {
     .link-box-container .link-mobile-menu-dropdown{
         display: none;
         flex-direction: column;
-        margin-top: 10px;
+        
     }
-    .link-mobile-menu .link-box-container hr{ 
+    .link-mobile-menu{ 
         display: block; 
-        padding: 10px 0;
+        padding: 10px 0px;
         border: none;
         cursor: pointer;
         font-size: 16px;
@@ -431,9 +413,10 @@ body {
     }
 
     .textbook-container {
-        order: 2;
+        
         text-align: left;
     }
+    
 
   
 
@@ -446,10 +429,16 @@ body {
         flex-direction: column;
         align-items: center;
         flex: 1;
+        gap:10px;
     }
 
     .opt-out-box, .opt-out-box-2 {
-        width: 90%; 
+        width: 50%; 
+        justify-items: center;
+    }
+    .opt-out-box b, .opt-out-box-2 p{
+        font-size: 20px;
+
     }
 }
 
@@ -458,12 +447,15 @@ body {
 
     .link-box-container {
         text-align: left; 
+       
+
         
     }
+    
 }
 .link-box-container {
-    margin: 20px 0;
-    max-width: 400px;
+    
+    
     text-align: left;
 }
 
@@ -478,12 +470,11 @@ body {
     cursor: pointer;
     color: #330072;
     font-size: 20px;
-    
 }
 
 .link-mobile-menu h2 {
     margin: 0;
-    font-weight: bold;
+
     color: #330072;
     font-size: 20px;
 }
@@ -493,7 +484,6 @@ body {
     border: solid #330072;
     border-width: 0 3px 3px 0;
     padding: 5px;
-    
     transform: rotate(45deg);
     transition: transform 0.3s ease;
 }
@@ -503,27 +493,6 @@ body {
 }
 
 
-.link-mobile-menu-dropdown {
-    display: block; 
-}
-
-.link-mobile-menu-dropdown a {
-    display: block;
-    padding: 8px 15px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease;
-    transition: ease-in-out 0.2s;
-    
-   
-}
-
-.link-mobile-menu-dropdown a:hover {
-    color: #330072;
-    background-color: #EBA900;
-    transition: ease-in-out 0.2s;
-}
 
 
 @media (max-width: 768px) {
@@ -538,155 +507,280 @@ body {
 
     .link-mobile-menu-dropdown.open {
         display: block;
-        
+        transition: max-height 0.3s ease;
     }
+        
+ 
+   
+
 }
+
+
 
 @media (min-width: 769px) {
     .link-mobile-menu .arrow {
         display: none; 
     }
 }
+@media (max-width: 768px) {
+    .link-box-container {
+        position: relative;
+        margin: 0;
+        padding: 0px;
+        width: 100vw;
+        text-align: left;
+        transition: all 0.3s ease;
+
+    }
+
+    .link-box-container:hover{
+        background-color: #330072; 
+    }
+    .link-box-container,
+    .link-mobile-menu{
+        margin-bottom: 10px;
+    }
+    
+    
+  
+
+    .link-box-container:hover h2
+    {
+        color: #FDD757; 
+
+        
+    }
+    
+
+    .link-box-container h2 {
+        color: #330072; 
+        margin: 0;
+    }
+   .arrow:hover{
+       color: white;
+    }
+
+    .link-box-container hr {
+      color:none;
+      padding:none;
+      height: 0;
+      width:0;
+    }
+
+  
+    .link-box-container:hover .arrow{
+        border-color: #F2A900;
+        
+    }
+    .link-box-container .arrow{
+       
+        margin-left: 295px;
+    }
+    
+    .link-mobile-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .link-mobile-menu-dropdown {
+        display: none; 
+        background-color: #f9f9f9; 
+        position: relative;
+        transition: max-height 0.3s ease-in-out;
+        width: 100%; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+    .link-mobile-menu-dropdown.open {
+        display: block;
+        transition: max-height 0.3s ease-in-out;
+        
+    }
+    
+
+    .link-mobile-menu-dropdown a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        
+      
+    }
+    .link-box-container h2{
+        font-size: 21px;
+    }
+   
+    
+    
+    
+
+
+
+
+}
+@media (max-width: 768px) {
+    .textbooks-101-container {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    .link-box-container,
+    .textbook-container,
+    .BOXES-CONTAINER {
+        max-width: 100%; /
+    }
+}
+
+
+
+
+
+
+
     </style>
 </head>
 
 <body>
     <div class="textbooks-101-container">
         <!-- TEMPLATE STARTS: custom_content_type_container// michelle lore-->
-    <div class="left-container">
-        <div class="link-box-container">
-            
-            
-            <button class="link-mobile-menu"aria-expanded="false">
-                <h2>Important Links  <i class="arrow down"></i></h2>
-                  
-            </button>
-            <hr>
-            <div class="link-mobile-menu-dropdown">
-                <br>
-            <a href="course-materials_landing.html" class="link-box-container">Course Materials</a>
-                <a href="https://www.wlubookstore.com/adoption-search" class="link-box-container">Textbook Search</a>
-        
-                <a href="Student_info_landing.html" class="link-box-container">Student Information</a>
-                <a href="https://laurier.verbacollect.com/session/selfassign?_ga=2.84103513.1511748593.1732818365-506810768.1706208141" class="link-box-container">Faculty Information</a>
-                <a href="https://www.wlubookstore.com/digital-textbook-access-for-students" class="link-box-container">Digital Textbook Access</a>
+        <div class="left-container">
+            <div class="link-box-container">
                 
-                <a href="https://www.wlubookstore.com/classroom/classroom-general-books" class="link-box-container">General Books</a>
-            </div>
-        </div>
-        <div class="BOXES-CONTAINER">
-            
-            <div class="contact-box">
-                <h1>CONTACT US:</h1>
-                <br>
-                <p><b>Waterloo Campus</b></p>
-                <p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
-                <p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a> </p>
-                <p><b>Address:</b>
-                75 University Ave. West
-                Waterloo, ON N2L</p>
-                <br>
-                <p><b>Brantford Campus</b></p>
-                <p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
-                <p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a></u> </p>
-                <p><b>Address:</b>
-                150 Dalhousie St, Brantford, ON N3T 2J4</p>
-            </div>
-            <div class="additional-info-box">
-                <h1 id="#deadlines">DEADLINES:</h1>
-                <br>
-                <p><b>The return deadlines for <u>all</u>  course materials are:</b></p>
-                <ul class="a">
-                    <li><b>May start (6 & 12 week courses):</b><p>May 17</p> </li>
-                    <li><b>July start (6 week courses):</b> <p>July 19</p> </li>
-                </ul>
                 
-                <p>All course materials purchased after this deadline are considered final sale.</p>
+                <button class="link-mobile-menu"aria-expanded="false">
+                    
+                    <h2>Important Links  <i class="arrow down"></i></h2>
+                    
+                </button>
+                <hr>
+                <div class="link-mobile-menu-dropdown">
+                    <br>
+                <a href="course-materials_landing.html" class="link-box-container">Course Materials</a>
+                    <a href="https://www.wlubookstore.com/adoption-search" class="link-box-container">Textbook Search</a>
+            
+                    <a href="Student_info_landing.html" class="link-box-container">Student Information</a>
+                    <a href="https://laurier.verbacollect.com/session/selfassign?_ga=2.84103513.1511748593.1732818365-506810768.1706208141" class="link-box-container">Faculty Information</a>
+                    <a href="https://www.wlubookstore.com/digital-textbook-access-for-students" class="link-box-container">Digital Textbook Access</a>
+                    
+                    <a href="https://www.wlubookstore.com/classroom/classroom-general-books" class="link-box-container">General Books</a>
+                </div>
+            </div>
+            <div class="BOXES-CONTAINER">
+                
+                <div class="contact-box">
+                    <h1>CONTACT US:</h1>
+                    <br>
+                    <p><b>Waterloo Campus</b></p>
+                    <p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
+                    <p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a> </p>
+                    <p><b>Address:</b>
+                    75 University Ave. West
+                    Waterloo, ON N2L</p>
+                    <br>
+                    <p><b>Brantford Campus</b></p>
+                    <p><b>E: </b><u><a strong aria-label="Left Contact Spiff - mailto:hawkshop@wlu.ca" href="mailto:hawkshop@wlu.ca">Hawkshop@wlu.ca</a></u></p>
+                    <p><b>Phone: </b><a href="tel:548-889-5580">548-889-5580</a></u> </p>
+                    <p><b>Address:</b>
+                    150 Dalhousie St, Brantford, ON N3T 2J4</p>
+                </div>
+                <div class="additional-info-box">
+                    <h1 id="#deadlines">DEADLINES:</h1>
+                    <br>
+                    <p><b>The return deadlines for <u>all</u>  course materials are:</b></p>
+                    <ul class="a">
+                        <li><b>May start (6 & 12 week courses):</b><p>May 17</p> </li>
+                        <li><b>July start (6 week courses):</b> <p>July 19</p> </li>
+                    </ul>
+                    
+                    <p>All course materials purchased after this deadline are considered final sale.</p>
 
-            </div>
-            
-        </div>
-    </div>
-        
-        <div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-14"
-            class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-14">
-            <div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
-                
-                
-                <div class="textbook-container">
-                    
-                    
-                    <h1>Textbooks 101</h1>
-                    <!--<img src="images\infoblocktext.avif"> TODO -->
-                    <br>
-                    <p> The Hawk Shop
-                            provides course materials at competitive and affordable
-                            prices to support student academic goals. Courses that use
-                            resources not participating in the Digital Textbook Access
-                            (DTA) Program can be purchased online through the booklist.
-                            We offer New and several digital options to help keep
-                            resources affordable and to provide you with the options
-                            that will best suit you and your study requirements. Please
-                            check the book list for all of your course material
-                            requirements.</p>
-                            <br>
-                    <h2>What is the
-                            Digital Textbook Access Program? </h2>
-                            <br>
-                    <p> The Digital
-                            Textbook Access (DTA) program provides you with digital
-                            resources for your course through your My Learning Space
-                            course page. All access components, instructions and links
-                            will be provided in the content section of your course. The
-                            resources are free for the defined period outlined in the
-                            emails you will be sent if you are enrolled in a DTA course.
-                            During this time if you wish to source elsewhere you will
-                            need to opt out via the link to the student portal which is
-                            included in the emails. After the opt out deadline for each
-                            term the resources you remain opted into will be billed to
-                            your Loris account (same account you were charged for
-                            tuition). These resources are provided at the most
-                            affordable rate. This is just one of the ways we strive to
-                            improve affordability for students. Check out our dedicated
-                            Digital Textbook Access page for more information. 
-                    </p><br>
-                    <h2>Do You Have Digital Options for my Textbooks? </h2>
-                    <br>
-                    <p> In most cases
-                            if a print book is required for your course, we will have a
-                            digital alternative available for you to purchase. E-books
-                            are a great way to save money, but there are some things to
-                            keep in mind when purchasing a digital copy. These are
-                            licensed to you, typically for a set period of time. Once
-                            that time runs out, you will lose access and will need to
-                            repurchase access should the duration you select expire. Be
-                            mindful of open book exams, as instructors typically do not
-                            allow digital versions to be brought to the exam. Finally,
-                            cater your purchase selection to how you learn best, saving
-                            money is great, but learning effectively with the right
-                            materials is also important. </p><br>
-                    <h2>If I Drop a Course, Can I Return My Resource?</h2>
-                    <br>
-                    <p> This depends
-                            on a couple factors; when you withdrew from the course, the
-                            format you purchased, and the condition of the item. When
-                            you drop a course you will need to show proof of withdrawal
-                            at the time you request a refund. Typically refunds will be
-                            provided up to two weeks following the term return deadline
-                            with proof of withdrawal. If you purchased a new resource it
-                            must come back in the same condition it was purchased in. If
-                            you purchased a digital resource and have accessed this
-                            already, we will need permission from the publisher to
-                            provide a refund. All refund requests are handled on an
-                            individual case basis and there is no guarantee of refund
-                            following the term return window. </p><br><br>
-                            
-                    
                 </div>
                 
-                
-            </div><!-- TEMPLATE ENDS: sc_cct_html -->
+            </div>
         </div>
+            
+            <div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-14"
+                class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-14">
+                <div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
+                    
+                    
+                    <div class="textbook-container">
+                        
+                        
+                        <h1>Textbooks 101</h1>
+                        <!--<img src="images\infoblocktext.avif"> TODO -->
+                        <br>
+                        <p> The Hawk Shop
+                                provides course materials at competitive and affordable
+                                prices to support student academic goals. Courses that use
+                                resources not participating in the Digital Textbook Access
+                                (DTA) Program can be purchased online through the booklist.
+                                We offer New and several digital options to help keep
+                                resources affordable and to provide you with the options
+                                that will best suit you and your study requirements. Please
+                                check the book list for all of your course material
+                                requirements.</p>
+                                <br>
+                        <h2>What is the
+                                Digital Textbook Access Program? </h2>
+                                <br>
+                        <p> The Digital
+                                Textbook Access (DTA) program provides you with digital
+                                resources for your course through your My Learning Space
+                                course page. All access components, instructions and links
+                                will be provided in the content section of your course. The
+                                resources are free for the defined period outlined in the
+                                emails you will be sent if you are enrolled in a DTA course.
+                                During this time if you wish to source elsewhere you will
+                                need to opt out via the link to the student portal which is
+                                included in the emails. After the opt out deadline for each
+                                term the resources you remain opted into will be billed to
+                                your Loris account (same account you were charged for
+                                tuition). These resources are provided at the most
+                                affordable rate. This is just one of the ways we strive to
+                                improve affordability for students. Check out our dedicated
+                                Digital Textbook Access page for more information. 
+                        </p><br>
+                        <h2>Do You Have Digital Options for my Textbooks? </h2>
+                        <br>
+                        <p> In most cases
+                                if a print book is required for your course, we will have a
+                                digital alternative available for you to purchase. E-books
+                                are a great way to save money, but there are some things to
+                                keep in mind when purchasing a digital copy. These are
+                                licensed to you, typically for a set period of time. Once
+                                that time runs out, you will lose access and will need to
+                                repurchase access should the duration you select expire. Be
+                                mindful of open book exams, as instructors typically do not
+                                allow digital versions to be brought to the exam. Finally,
+                                cater your purchase selection to how you learn best, saving
+                                money is great, but learning effectively with the right
+                                materials is also important. </p><br>
+                        <h2>If I Drop a Course, Can I Return My Resource?</h2>
+                        <br>
+                        <p> This depends
+                                on a couple factors; when you withdrew from the course, the
+                                format you purchased, and the condition of the item. When
+                                you drop a course you will need to show proof of withdrawal
+                                at the time you request a refund. Typically refunds will be
+                                provided up to two weeks following the term return deadline
+                                with proof of withdrawal. If you purchased a new resource it
+                                must come back in the same condition it was purchased in. If
+                                you purchased a digital resource and have accessed this
+                                already, we will need permission from the publisher to
+                                provide a refund. All refund requests are handled on an
+                                individual case basis and there is no guarantee of refund
+                                following the term return window. </p><br><br>
+                                
+                        
+                    </div>
+                    
+                    
+                </div><!-- TEMPLATE ENDS: sc_cct_html -->
+            </div>
         
         
     </div><!-- TEMPLATE ENDS: custom_content_type_container -->
@@ -725,6 +819,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.querySelector('.link-mobile-menu-dropdown');
 
     mobileMenuButton.addEventListener('click', () => {
+
+        mobileMenuButton.classList.toggle('active');
         dropdown.classList.toggle('open');
 
         // Update the button's aria-expanded attribute for accessibility

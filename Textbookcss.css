@@ -12,55 +12,50 @@ html, body {
   }
 .textbooks-101-container{
     display:flex;
-    gap:50px;
+    gap:40px;
     flex-wrap: nowrap;
     margin:0 auto;
     width:100%;
     height:auto;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
    
   
 }
 
+
 .link-box-container {
     flex: 1; 
     max-width: 400px;
-    padding-bottom: 20px;
+    padding: 10px 0px;
     background-color: #f9f9f9; 
     margin-right: 15px;
     align-self: flex-start;
     box-sizing: border-box;
-    
-}
-.link-box-container h2{
-    font-weight: bold;
-    color: #330072; 
-}
-.link-box-container hr{
-    height: 3px;
-    width: 150px;
-    background-color: #330072;
+    transition: 0.2s ease-in-out;
+   
+   
 }
 
 .link-box-container h2 {
     font-weight: bold;
-    color: #330072;
+    color: #330072; 
+    font-size: 24px;
 }
 
 .link-box-container hr {
     height: 3px;
-    width: 200px;
-    background-color: #330072;
+    width: auto;
+    background-color: #330072; 
 }
+
+
 
 .link-box-container a {
     position: relative; 
     display: inline-block;
     flex-direction: column;
     margin: 0px;
-    padding: 4px;
     padding-left: 15px;
-    padding-bottom: 6px;
     font-size: 20px;
     text-decoration: none;
     color: #000; 
@@ -68,29 +63,13 @@ html, body {
    
      
 }
-
-/*.link-box-container a::after {
-    content: ''; 
-    position: absolute;
-    bottom: 0; 
-    margin-left: 15px;
-    left: 0;
-    width: 0; 
-    height: 2px;
-    background-color:#EBA900 ;
-    transition: all 0.3s ease;
+.link-box-container a:hover{
+    background-color: #F2A900;
+    transition: 0.3s ease-in-out;
     
 }
 
-.link-box-container a:hover::after {
-    width: 100%; 
-   
-    
-}
 
-.link-box-container a:hover {
-    color: #330072;
-} */
 .link-mobile-menu .arrow {
     display: inline-block;
     border: solid #330072;
@@ -106,7 +85,7 @@ html, body {
     gap: 15px;
     align-items: stretch;
     margin: 20px 0;
-    
+      
 }
 
 
@@ -114,6 +93,7 @@ html, body {
     flex: 2;
     box-sizing: border-box;
     max-width: 900px;
+   
 
 }
 .textbook-container h1{
@@ -331,6 +311,7 @@ html, body {
 }
 
 
+
 @media (max-width: 600px){
     .BOXES-CONTAINER{
         display: flex;
@@ -345,7 +326,7 @@ html, body {
 @media (max-width: 768px) {
     .textbooks-101-container {
         flex-direction: column;
-        gap: 20px; 
+        
     }
     .BOXES-CONTAINER {
         display: flex;
@@ -381,7 +362,7 @@ body {
 @media (max-width: 768px) {
     .link-box-container {
         margin: 0 auto;
-        padding: 20px;
+       
         text-align: center;
     }
     .link-box-container a{
@@ -391,11 +372,11 @@ body {
     .link-box-container .link-mobile-menu-dropdown{
         display: none;
         flex-direction: column;
-        margin-top: 10px;
+        
     }
-    .link-mobile-menu .link-box-container hr{ 
+    .link-mobile-menu{ 
         display: block; 
-        padding: 10px 0;
+        padding: 10px 0px;
         border: none;
         cursor: pointer;
         font-size: 16px;
@@ -427,9 +408,10 @@ body {
     }
 
     .textbook-container {
-        order: 2;
+        
         text-align: left;
     }
+    
 
   
 
@@ -442,10 +424,16 @@ body {
         flex-direction: column;
         align-items: center;
         flex: 1;
+        gap:10px;
     }
 
     .opt-out-box, .opt-out-box-2 {
-        width: 90%; 
+        width: 50%; 
+        justify-items: center;
+    }
+    .opt-out-box b, .opt-out-box-2 p{
+        font-size: 20px;
+
     }
 }
 
@@ -454,12 +442,15 @@ body {
 
     .link-box-container {
         text-align: left; 
+       
+
         
     }
+    
 }
 .link-box-container {
-    margin: 20px 0;
-    max-width: 400px;
+    
+    
     text-align: left;
 }
 
@@ -478,7 +469,7 @@ body {
 
 .link-mobile-menu h2 {
     margin: 0;
-    font-weight: bold;
+
     color: #330072;
     font-size: 20px;
 }
@@ -497,27 +488,6 @@ body {
 }
 
 
-.link-mobile-menu-dropdown {
-    display: block; 
-}
-
-.link-mobile-menu-dropdown a {
-    display: block;
-    padding: 8px 15px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s ease;
-    transition: ease-in-out 0.2s;
-    
-   
-}
-
-.link-mobile-menu-dropdown a:hover {
-    color: #330072;
-    background-color: #EBA900;
-    transition: ease-in-out 0.2s;
-}
 
 
 @media (max-width: 768px) {
@@ -532,12 +502,132 @@ body {
 
     .link-mobile-menu-dropdown.open {
         display: block;
-        
+        transition: max-height 0.3s ease;
     }
+        
+ 
+   
+
 }
+
+
 
 @media (min-width: 769px) {
     .link-mobile-menu .arrow {
         display: none; 
     }
 }
+@media (max-width: 768px) {
+    .link-box-container {
+        position: relative;
+        margin: 0;
+        padding: 0px;
+        width: 100vw;
+        text-align: left;
+        transition: all 0.3s ease;
+
+    }
+
+    .link-box-container:hover{
+        background-color: #330072; 
+    }
+    .link-box-container,
+    .link-mobile-menu{
+        margin-bottom: 10px;
+    }
+    
+    
+  
+
+    .link-box-container:hover h2
+    {
+        color: #FDD757; 
+
+        
+    }
+    
+
+    .link-box-container h2 {
+        color: #330072; 
+        margin: 0;
+    }
+   .arrow:hover{
+       color: white;
+    }
+
+    .link-box-container hr {
+      color:none;
+      padding:none;
+      height: 0;
+      width:0;
+    }
+
+  
+    .link-box-container:hover .arrow{
+        border-color: #F2A900;
+        
+    }
+    .link-box-container .arrow{
+       
+        margin-left: 295px;
+    }
+    
+    .link-mobile-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .link-mobile-menu-dropdown {
+        display: none; 
+        background-color: #f9f9f9; 
+        position: relative;
+        transition: max-height 0.3s ease-in-out;
+        width: 100%; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+    .link-mobile-menu-dropdown.open {
+        display: block;
+        transition: max-height 0.3s ease-in-out;
+        
+    }
+    
+
+    .link-mobile-menu-dropdown a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        
+      
+    }
+    .link-box-container h2{
+        font-size: 21px;
+    }
+   
+    
+    
+    
+
+
+
+
+}
+@media (max-width: 768px) {
+    .textbooks-101-container {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    .link-box-container,
+    .textbook-container,
+    .BOXES-CONTAINER {
+        max-width: 100%; /
+    }
+}
+
+
+

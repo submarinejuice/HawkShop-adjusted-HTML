@@ -1358,14 +1358,16 @@
 									data-cms-area-filters="page_type"></div>
 								<div class="cms-landing-page-row-full-col"
 									data-cms-area="cms-landing-page-placeholder-path" data-cms-area-filters="path">
-									<div class="textbooks-101-container">
+								<div class="textbooks-101-container">
 										<!-- TEMPLATE STARTS: custom_content_type_container// michelle lore-->
 									<div class="left-container">
 										<div class="link-box-container">
 											
 											
 											<button class="link-mobile-menu"aria-expanded="false">
-												<h2>Important Links  <i class="arrow down"></i></h2>
+												
+												<h2>Important Links </h2>
+												<i class="arrow down"></i>
 											  	
 											</button>
 											<hr>
@@ -1413,7 +1415,7 @@
 											</div>
 											
 										</div>
-									</div>
+									</div>	
 										
 										<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-14"
 											class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-14">
@@ -1493,9 +1495,9 @@
 												
 											</div><!-- TEMPLATE ENDS: sc_cct_html -->
 										</div>
+									
 										
-										
-									</div><!-- TEMPLATE ENDS: custom_content_type_container -->
+								</div>	</div><!-- TEMPLATE ENDS: custom_content_type_container -->
 										
 										</div>						
 									</div>
@@ -1721,6 +1723,7 @@
 	
 		mobileMenuButton.addEventListener('click', () => {
 			dropdown.classList.toggle('open');
+			dropdown.classList.toggle('active');
 	
 			// Update the button's aria-expanded attribute for accessibility
 			const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
