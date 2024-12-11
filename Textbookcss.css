@@ -21,6 +21,68 @@ html, body {
    
   
 }
+.textbooks-101-container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Left column for links and boxes, right column for textbooks */
+    gap: 40px;
+}
+
+/* Place Important Links and Contact/Deadlines in the left column */
+.link-box-container, .BOXES-CONTAINER {
+    grid-column: 1;
+}
+
+/* Place Textbooks 101 in the right column */
+.textbook-container {
+    grid-column: 2;
+}
+.textbooks-101-container {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Left column fixed width, right column flexible */
+    grid-template-rows: auto auto;   /* Two rows on the left to stack the two boxes */
+    gap: 40px;                       /* Space between columns and rows */
+}
+
+/* Place Important Links in the top-left cell */
+.link-box-container {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Place Contact Us/Deadlines below Important Links in the left column */
+.BOXES-CONTAINER {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Place Textbooks 101 on the right column, spanning both rows */
+.textbook-container {
+    grid-column: 2;
+    grid-row: 1 / span 2; /* This spans the two rows on the right side */
+}
+
+@media (max-width: 768px) {
+    .textbooks-101-container {
+        display: flex;
+        flex-direction: column; /* Stack everything vertically */
+        gap: 20px;
+    }
+
+    /* On mobile, reorder elements using flex order */
+    .link-box-container {
+        order: 1; /* Important Links on top */
+    }
+
+    .textbook-container {
+        order: 2; /* Textbooks 101 in the middle */
+    }
+
+    .BOXES-CONTAINER {
+        order: 3; /* Contact Us & Deadlines at the bottom */
+    }
+}
+
+
 
 
 .link-box-container {
@@ -46,6 +108,44 @@ html, body {
     height: 3px;
     width: auto;
     background-color: #330072; 
+}
+.link-box-container{
+    order: 1;
+}
+textbook-container{
+    order: 3;
+}
+.BOXES-CONTAINER{
+    order: 2;
+}
+@media (max-width: 768px) {
+    .textbooks-101-container {
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        gap: 20px;
+    }
+
+    .link-box-container {
+        order: 1; /* Keep Important Links at the top */
+    }
+
+    .textbook-container {
+        order: 2; /* Textbooks 101 comes second */
+    }
+
+    .BOXES-CONTAINER {
+        order: 3; /* Contact Us and Deadlines come last */
+        display: flex;
+        flex-direction: column; /* Ensure Contact and Deadlines are stacked */
+        width: 100%; /* Full width on mobile */
+        margin-top: 20px; /* Add spacing below Textbooks 101 */
+        gap: 20px;
+    }
+
+    .contact-box,
+    .additional-info-box {
+        width: 100%; /* Make individual boxes full width */
+    }
 }
 
 
@@ -75,9 +175,41 @@ html, body {
     border: solid #330072;
     border-width: 0 3px 3px 0;
     padding: 5px;
+    right: 0px;
+    float: right;
     transform: rotate(45deg);
     transition: transform 0.3s ease;
 }
+.link-mobile-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.link-mobile-menu h2 {
+    margin: 0; 
+    color: #330072;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.arrow {
+    border: solid #330072;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.link-mobile-menu[aria-expanded="true"] .arrow {
+    transform: rotate(-135deg);
+}
+
 
 .BOXES-CONTAINER{
     display: flex;
@@ -311,7 +443,6 @@ html, body {
 }
 
 
-
 @media (max-width: 600px){
     .BOXES-CONTAINER{
         display: flex;
@@ -376,7 +507,7 @@ body {
     }
     .link-mobile-menu{ 
         display: block; 
-        padding: 10px 0px;
+        padding: 10px 0;
         border: none;
         cursor: pointer;
         font-size: 16px;
@@ -618,7 +749,7 @@ body {
 }
 @media (max-width: 768px) {
     .textbooks-101-container {
-        flex-direction: column; 
+        flex-direction: column; /* Stack vertically */
         gap: 10px; 
     }
 
