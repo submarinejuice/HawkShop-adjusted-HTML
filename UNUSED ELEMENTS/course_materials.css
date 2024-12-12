@@ -1,5 +1,9 @@
-/*CSS file specific to Course Materials and Student Information pages!*/
+
+              
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Lato', sans-serif; 
 }
 
@@ -41,7 +45,7 @@
     max-width: 1885px;
     max-height: 633px;
     width: 100%;
-   
+    margin: 0 auto;
 }
 .landing-button:hover{ 
     background-color: #F2A900; 
@@ -65,15 +69,10 @@
    
 }
 
-.box h1, .box p {
-    margin: auto;
-    padding: 10px 0;
-    font-style: bold;
-    
-}
+
 .box {
     background-color: #330072;
-    border-radius: 0px;
+    border-radius: 0;
     overflow: hidden;
     text-align: center;
     flex: 1 1 20%;
@@ -82,14 +81,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 372px;
-    max-height: 481px;
+    align-items: center; 
+    min-height: 500px; 
     padding-bottom: 20px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+
 .box {
-    min-height: 500px; /* Adjust as needed */
+    align-items: stretch; 
+    min-height: 500px; 
 }
+
 
 
 
@@ -97,6 +100,7 @@
     
     border-bottom: 1px solid #330072;
     object-fit: cover;
+    display: block;
 }
 
 
@@ -107,20 +111,9 @@
 }
 
 
-.box h1 {
-    font-size: 2rem;
-    margin: 10px 0;
-    color:#F2A900;
-    font-weight: bold;
-    
-}
 
-.box p {
-    color: rgb(221, 211, 211);
-    font-size: 0.9em;
-    padding: 20px;
-    
-}
+
+
 
 .button {
     display: inline-block;
@@ -170,46 +163,49 @@
     opacity: 1; 
     
 }
-.content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center;
-}
-.content-wrapper h1, .content-wrapper p {
-    line-height: 1.4; /* or another consistent value */
-}
-.box {
-    align-items: stretch; 
-    min-height: 500px; /* Adjust as needed */
-}
-
-.content-wrapper h1, .content-wrapper p {
-    margin: 10px 0; 
-}
-
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    flex-grow: 1;
-    max-width: 1470px;
-    max-height: 631px;
+display: grid;
+grid-template-rows: 60px 100px 60px;
+align-items: center;
+justify-items: center;
+width: 100%;
+box-sizing: border-box;
+padding-top: 20px;
+}
 
-     
+
+.landing-button {
+margin-top: auto; 
+margin-bottom: 20px; 
 }
-.content-wrapper p {
-    font-size: 15px;
-}
+
+
+
+
 
 .content-wrapper h1,
 .content-wrapper p {
-
-    margin: auto 10px auto;
-    padding: 10px 0; 
+    margin: 10px 0;
+    padding: 0;
+    line-height: 1.4;
+    text-align: center; 
 }
+
+.content-wrapper h1 {
+font-size: 1.9rem; 
+font-weight: bold;
+color: #F2A900;
+padding: 0px 10px;
+}
+
+
+.content-wrapper p {
+    font-size: 15px;
+    color: #DDD; 
+    padding: 0 10px 0;
+}
+
 
 @media (max-width: 1304px) {
     .box {
@@ -231,3 +227,4 @@
         grid-template-columns: 1fr; 
     }
 } 
+   

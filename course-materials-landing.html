@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<head>
+<head> 
     <style> /* css/html specific to Course-Materials Page*/
-       
-    * {
+       /* replace css from here to*/
+       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -166,16 +166,16 @@
         
     }
   
-    
     .content-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 60px 100px 60px;
     align-items: center;
-    justify-content: flex-start;
-    flex-grow: 1;
+    justify-items: center;
+    width: 100%;
+    box-sizing: border-box;
     padding-top: 20px;
-    height: 200px; 
-    }
+}
+
 
     .landing-button {
     margin-top: auto; 
@@ -195,7 +195,7 @@
     }
     
     .content-wrapper h1 {
-    font-size: 1.9rem;
+    font-size: 1.9rem; 
     font-weight: bold;
     color: #F2A900;
 }
@@ -228,8 +228,8 @@
             grid-template-columns: 1fr; 
         }
     } 
-        
-    
+           
+    /*here*/
     </style>
 </head>
 
