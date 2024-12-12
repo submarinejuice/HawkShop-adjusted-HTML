@@ -13,7 +13,9 @@
   <script src="./Digital-textbook-access_files/webfont.js.download" type="text/javascript" async=""></script>
   <script>
     window.applicationStartTime = Date.now();
+
   </script>
+  <script src="jquery-3.7.1.min.js"></script>
 
   <link rel="stylesheet" as="style" href="DTA.css">
   <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;" href="shopping_2.css">
@@ -1231,10 +1233,10 @@
                   <div><!-- TEMPLATE STARTS: custom_content_type_container-->
                     <div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-16"
                       class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-16">
-                      <div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
-                      <div class="dta-container">
-                        <div class="side-boxes">
-                        <div class="quick-link-container">
+                <div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
+                  <div class="dta-container">
+                      <div class="side-boxes">
+                        <div class="link-box-container">
                           <h2>Quick Links</h2>
                           <br>
                           <hr>
@@ -1249,7 +1251,7 @@
                        <div class="publisher-info-box">
                         <h2>Publisher Specific Information:</h2>
                       </div>
-                      </div>
+                  </div>
                       
                         <div class="dta-text-container">
                           
@@ -1312,17 +1314,16 @@
                                  by the deadline each semester.</li><!--- Start of Accoridan FAQ Area -->
                                </div>
                           </div>
-                        </div>
-                        
                       </div>
+                      
                             <script src="./Digital-textbook-access_files/jquery-1.12.4.min.js.download"
                               integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
                               crossorigin="anonymous"></script>
                             <script>
                               $(function () {
-                                $('.faqitem').each(function (index) {
+                                $('.faq-item').each(function (index) {
                                   $(this).find('.faq').hide();
-                                  $(this).find('.faqTitle').click(function () {
+                                  $(this).find('.faq-title').click(function () {
                                     var c = $(this).parent();
                                     $(c).find('.faq').slideToggle();
                                     $(c).toggleClass('open');
@@ -1331,11 +1332,11 @@
                               });
                             </script>
                             <style>
-                              .faqitem {
+                              .faq-item {
                                 margin-bottom: 10px;
                               }
 
-                              .faqTitle {
+                              .faq-title {
                                 cursor: pointer;
                                 padding: 5px;
                               }
@@ -1345,12 +1346,12 @@
                                 padding-left: 25px;
                               }
 
-                              .faqTitle {
+                              .faq-title {
                                 font-size: 11px;
                                 font-weight: bold;
                               }
 
-                              .faqitem .marker {
+                              .faq-item .marker {
                                 border-right: 2px solid #00A3E0;
                                 border-bottom: 2px solid #00A3E0;
                                 -ms-transform: rotate(-45deg);
@@ -1366,7 +1367,7 @@
                                 position: relative;
                               }
 
-                              .faqitem.open .marker {
+                              .faq-item.open .marker {
                                 -ms-transform: rotate(45deg);
                                 /* IE 9 */
                                 -webkit-transform: rotate(45deg);
@@ -1416,196 +1417,200 @@
                                 clear: both;
                               }
                             </style>
-                            <div id="page">
-                              <h2>Frequently Asked Questions</h2><br>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
-                                    What is Digital Textbook Access? </span>
-                                </div>
-                                <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Digital Textbook Access is the
+
+
+
+
+
+                        <div id="page">
+                          <div class="faq-items-container">
+                           
+                        
+                              <h1><b>Frequently Asked DTA Questions</b></h1>
+                              <br>
+                              <p>If you have any additional questions not covered here, please contact us.</p>
+                            <div class="faq-items-box">  
+                              <div class="faq-item">
+                                  <button class="faq-question">
+                                    What is Digital Textbook Access?
+                                    <i class="arrow down"></i>
+                                  </button> 
+                                  <div class="faq-answer">
+                                    <p> Digital Textbook Access is the
                                       system used to provide the access and billing when an instructor uses digital
                                       content in their course. Access is provided through MyLearningSpace on the first
                                       day of class and the digital textbook access cost is billed to the student’s
-                                      account after the 2 week opt out period.</span></p>
-                                </div>
-                              </div><br>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
-                                    What do I do if it shows a DTA resource on my booklist? </span>
-                                </div>
-                                <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">This means the resource is
-                                      being provided to you through the links on My Learning Space. You do not need to
-                                      purchase anything at this time. Please check your e-mail as well for details on
-                                      the resource.</span></p>
-                                </div>
+                                      account after the 2 week opt out period.
+                                    </p>
+                              
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
-                                    What are Interactive or Adaptive Courseware Platforms? </span>
-                                </div>
-                                <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Interactive courseware is much
-                                      more than just an e-book. While platforms like Mastering, Mindtap and Connect
-                                      typically include a full digital text, they have an added interactive content
-                                      including videos, interactive quizzes, homework sets designed to make the reading
-                                      more engaging. Various levels of customization are allowed in the event the
-                                      instructor would like to share notes peer to peer.</span></p>
-                                </div>
-                              </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                    <button class="faq-question">
+                                      What do I do if it shows a DTA resource on my booklist?
+                                      <i class="arrow down"></i>
+                                    </button> 
+                                    <div class="faq-answer">
+                                      <p> This means the resource is
+                                        being provided to you through the links on My Learning Space. You do not need to
+                                        purchase anything at this time. Please check your e-mail as well for details on
+                                        the resource.
+                                      </p>
+                                
+                              </div> 
+                               <div class="faq-item">
+                                    <button class="faq-question">
+                                      What are Interactive or Adaptive Courseware Platforms?
+                                      <i class="arrow down"></i>
+                                    </button> 
+                                    <div class="faq-answer">
+                                      <p> Interactive courseware is much
+                                        more than just an e-book. While platforms like Mastering, Mindtap and Connect
+                                        typically include a full digital text, they have an added interactive content
+                                        including videos, interactive quizzes, homework sets designed to make the reading
+                                        more engaging. Various levels of customization are allowed in the event the
+                                        instructor would like to share notes peer to peer.
+                                      </p>
+                                
+                                </div> 
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     How much does Digital Textbook Access cost? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">The publisher provides us with
+                                  <p> The publisher provides us with
                                       the lowest possible price for the digital resources. The pricing varies depending
                                       on the platform and content used by the instructor, but Digital Textbook Access
                                       prices are on average 40 – 55% lower the cost of a new printed text and below
                                       market ratres for an equivalent digital access purchased outside of the
                                       program.</span></p>
                                 </div>
-                        </div>        </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                            
+                                </div>
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     How do I gain access? </span>
                                 </div>
                                 <div class="faq" style="list-style-type: disc; display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">The process for accessing
+                                  <p> The process for accessing
                                       resources is different for the various resources and publishers. For publisher
                                       specific information, please refer to the Vendor section further down this page.
                                       Instructions will also be provided in the content section of your course on My
                                       Learning Space.</span></p>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">For Vital Source Bookshelf
+                                  <p> For Vital Source Bookshelf
                                       resources:</span></p>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">You will find access to the
+                                  <p> You will find access to the
                                       digital resources in your course on MyLearningSpace. The access and instructions
                                       are in the Content section.</span></p>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Be sure to download your
+                                  <p> Be sure to download your
                                       Digital Textbook, which is the required resource for your course. Follow these
                                       easy steps:</span></p>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">On the first day of class go
+                                  <li>  On the first day of class go
                                       to your course in MyLearningSpace</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Go to the Content section of
+                                  <li>  Go to the Content section of
                                       your course</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Find and click on the link to
+                                  <li>  Find and click on the link to
                                       the resource</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Create your Bookshelf account
+                                  <li>  Create your Bookshelf account
                                       using your Laurier log in credentials and start using your required
                                       resources!</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Download the Bookshelf app to
+                                  <li>  Download the Bookshelf app to
                                       access the resources and printing features when you are working offline</span>
                                   </li>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     How does the Bookshelf e-reader work? </span>
                                 </div>
                                 <div class="faq" style="list-style-type: disc; display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">There are a number of
+                                  <p> There are a number of
                                       advantages to using the Bookshelf e-reader:</span></p>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Anytime, anywhere
+                                  <li>  Anytime, anywhere
                                       access</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Listen to your e-text using
+                                  <li>  Listen to your e-text using
                                       text-to-speech capabilities</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">You have the ability to load
+                                  <li>  You have the ability to load
                                       your e-text on up to four of your personal devices</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">The ability to print select
+                                  <li>  The ability to print select
                                       portions of your e-text if you prefer hard copies (you have to claim/download your
                                       e-text in order to print</span></li>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     How do I obtain technical support for the Bookshelf e-reader? </span>
                                 </div>
                                 <div class="faq" style="list-style-type: disc; display: none;">
-                                  <li><span style="font-size: 14px; font-family: Verdana;">The Vitalsource support team
+                                  <li>  The Vitalsource support team
                                       is ready to assist you. Phone and email support are available 24/7</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Email <a
+                                  <li>  Email <a
                                         href="mailto:support@vitalsource.com">support@vitalsource.com</a></span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">Call +1 (855) 200-4146</span>
+                                  <li>  Call +1 (855) 200-4146</span>
                                   </li>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">If your course is not using
+                                  <p> If your course is not using
                                       the Bookshelf e-reader, contact <a
                                         href="mailto:digitaltextaccess@wlu.ca">digitaltextaccess@wlu.ca</a></span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     What if I am a student from another institution (University of Waterloo) taking a
                                     Laurier course? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">It is the responsibility of
+                                  <p> It is the responsibility of
                                       all students (Laurier, University of Waterloo etc.) who are registered in a
                                       Laurier Digital Textbook Access course to monitor their @mylaurier.ca email
                                       account for information relating to their DTA course and opting out.</span></p>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Charges for the digital
+                                  <p> Charges for the digital
                                       resources will be applied to your Laurier LORIS account and must be paid through
                                       Laurier.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     How do I pay for accessing the digital resources? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">The charges for the digital
+                                  <p> The charges for the digital
                                       resources will be billed to your student account (LORIS) after the opt-out
                                       deadline. Students who opt out or drop the course by the opt-out deadline are not
                                       billed.</span></p>
-                                  <p><span style="font-size: 14px; font-family: Verdana;">*Please Note: These fees may
+                                  <p> *Please Note: These fees may
                                       not be covered by OSAP if your funding has already been applied to your account.
                                       You will need to submit payment by your invoice due date.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     What does it mean to opt out? </span>
                                 </div>
                                 <div class="faq" style="list-style-type: disc; display: none;">
-                                  <li><span style="font-size: 14px; font-family: Verdana;">The opt-out deadline for all
+                                  <li>  The opt-out deadline for all
                                       12-week Digital Textbook Access courses is the 10th day of instruction (for the
                                       6-week courses, the deadline is 5 instructional days).</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">When you opt out, access to
+                                  <li>  When you opt out, access to
                                       all online content (e-text and courseware platforms such as Mindtap, Mastering and
                                       Connect) is disconnected and you are removed from the billing schedule</span></li>
-                                  <li><span style="font-size: 14px; font-family: Verdana;">You must opt out if you
+                                  <li>  You must opt out if you
                                       choose to purchase your access through a different source</span></li>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     I opted out by mistake and realized that I still need access. Can I opt back in?
                                   </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">If you wish to opt back in
+                                  <p> If you wish to opt back in
                                       after the opt out deadline, email <a
                                         href="mailto:digitaltextaccess@wlu.ca">digitaltextaccess@wlu.ca</a> and you will
                                       be advised based on timing whether this is possible. If it is before the deadline,
@@ -1613,75 +1618,72 @@
                                       sent you or through the widget in My Learning Space.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     I dropped the course. Do I still need to opt out? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Students who drop the course
+                                  <p> Students who drop the course
                                       during the normal drop period for the course will be automatically “opted out” and
                                       your student account will not be charged.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     Who should I contact if I am having trouble accessing the online content? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">Please email the Digital
+                                  <p> Please email the Digital
                                       Textbook Access team at <a
                                         href="mailto:digitaltextaccess@wlu.ca">digitaltextaccess@wlu.ca</a> for
                                       assistance.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     I added the class late. Do I still have 10 days to opt out? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">The deadline to opt out is the
+                                  <p> The deadline to opt out is the
                                       10th day of instruction regardless of the add date. A welcome email is sent to
                                       your Laurier email account on the day you enrol in the course to inform you that
                                       you are in a digital textbook access course and to advise of the opt out
                                       deadline.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     I didn't get an email about my course but other students in my class did. Was I sent
                                     an email? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">All students enrolled in
+                                  <p> All students enrolled in
                                       courses associated with Digital Textbook Access receive a Welcome email and two
                                       subsequent emails with opt out information from the system, sent to their Laurier
                                       email address. If you have not received the email(s) please contact <a
                                         href="mailto:digitaltextaccess@wlu.ca">digitaltextaccess@wlu.ca</a>.</span></p>
                                 </div>
                               </div>
-                              <div class="faqitem">
-                                <div class="faqTitle">
-                                  <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                  </div><span style="font-size: 14px; font-family: Verdana;">
+                              <div class="faq-item">
+                                  <div class="marker">  &nbsp;</span>
+                                  </div>  
                                     I have further questions that were not addressed. Who do I contact? </span>
                                 </div>
                                 <div class="faq" style="display: none;">
-                                  <p><span style="font-size: 14px; font-family: Verdana;">If your question wasn't
+                                  <p> If your question wasn't
                                       answered in this FAQ, please email <a
                                         href="mailto:digitaltextaccess@wlu.ca">digitaltextaccess@wlu.ca</a> and the
                                       Digital Textbook Access team will be happy to assist you.</span></p>
                                 </div>
                               </div>
-                              <div class="clear">&nbsp;</div>
-                            </div><span style="font-size: 14px; font-family: Verdana;"><!-- END of Accordian code -->
+                            </div> 
+                          </div> <div class="clear">&nbsp;</div>
+                        </div>
+                            <!-- END of Accordian code -->
                               <h2>Textbook 101 Videos</h2><br>
                             </span>
                             <p></p>
@@ -1699,14 +1701,13 @@
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen=""></iframe>&nbsp;</p><br>
                             <h2>Publisher Guidelines for Digital Textbook Access Resources</h2><br>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Cengage</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Cengage resources are provided
+                                <p> Cengage resources are provided
                                     through Vital Source and their bookshelf application. To gain access, please
                                     navigate to the content section of your course and locate the folder containing your
                                     e-text link. By clicking this link you will be able to access your resources. Should
@@ -1722,14 +1723,13 @@
                                     codes.</span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   McGraw </span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">McGraw resources are delivered
+                                <p> McGraw resources are delivered
                                     through their Connect platform. In the content section of your course, navigate to
                                     the Connect Assignment link. Click launch and register through the McGraw Hill
                                     platform. Your ebook and any Connect based assignments will be located there. A
@@ -1740,14 +1740,13 @@
                                     interruptions later in the term.</span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Norton</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Norton resources are provided
+                                <p> Norton resources are provided
                                     through their own platform. To access these resources please navigate to the links
                                     in the content section of your My Learning Space page for your course. After you
                                     click the link in My Learning Space for the Norton e-book or assessment platform,
@@ -1757,14 +1756,13 @@
                                     access the resource through this platform and through this link.</span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Oxford</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Oxford resources are provided
+                                <p> Oxford resources are provided
                                     through Vital Source and their bookshelf application. To gain access, please
                                     navigate to the content section of your course and locate the folder containing your
                                     E-text link. By clicking this link you will be able to access your resources. Should
@@ -1774,14 +1772,13 @@
                                     assistance.</span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Pearson</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Pearson resources are provided
+                                <p> Pearson resources are provided
                                     through Vital Source and their bookshelf application. To gain access, please
                                     navigate to the content section of your course and locate the folder containing your
                                     E-text link. By clicking this link you will be able to access your resources. Should
@@ -1797,14 +1794,13 @@
                                   </span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Sage</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Sage resources are provided
+                                <p> Sage resources are provided
                                     through Vital Source and their bookshelf application. To gain access, please
                                     navigate to the content section of your course and locate the folder containing your
                                     E-text link. By clicking this link you will be able to access your resources. Should
@@ -1814,14 +1810,13 @@
                                     assistance.</span></p>
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Top Hat</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;"><strong>About Top
+                                <p> <strong>About Top
                                       Hat</strong><br>
                                     Top Hat is a cloud-based platform designed to increase student engagement and
                                     real-time feedback. Instructors engage students using interactive slides, graded
@@ -1842,24 +1837,23 @@
                                       Help</strong><br>
                                     A variety of support services are available to help you prepare for using Top Hat in
                                     your courses.</span></p>
-                                <li><span style="font-size: 14px; font-family: Verdana;"><a
+                                <li>  <a
                                       href="https://success.tophat.com/s/article/Student-Top-Hat-Overview-and-Getting-Started-Guide">Students
                                       Getting Started with Top Hat</a></span></li>
-                                <li><span style="font-size: 14px; font-family: Verdana;"><a
+                                <li>  <a
                                       href="https://success.tophat.com/s/article/Student-Using-Your-Textbook">How to use
                                       your Top Hat interactive textbook</a></span></li><br>
                                 Contact our support team directly <a
                                   href="https://success.tophat.com/s/contactsupport">here</a>.
                               </div>
                             </div>
-                            <div class="faqitem">
-                              <div class="faqTitle">
-                                <div class="marker"><span style="font-size: 14px; font-family: Verdana;">&nbsp;</span>
-                                </div><span style="font-size: 14px; font-family: Verdana;">
+                            <div class="faq-item"
+                                <div class="marker">  &nbsp;</span>
+                                </div>  
                                   Wiley</span>
                               </div>
                               <div class="faq" style="display: none;">
-                                <p><span style="font-size: 14px; font-family: Verdana;">Wiley e-books are provided
+                                <p> Wiley e-books are provided
                                     through Vital Source and their bookshelf application. To gain access, please
                                     navigate to the content section of your course and locate the folder containing your
                                     e-text link. By clicking this link, you will be able to access your resources.
@@ -2087,6 +2081,26 @@
   <script type="text/javascript" id="" charset="">fbq("track", "PageView");</script>
   <script type="text/javascript" id="" charset="">fbq("track", "PageView");</script>
   <script type="text/javascript" id="" charset="">fbq("track", "PageView");</script>
+
+
+  <!--MICHELLE JAVASCRIPT-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach((question) => {
+        question.addEventListener('click', () => {
+            // Toggle 'open' class on the corresponding answer
+            const answer = question.nextElementSibling;
+            answer.classList.toggle('open');
+
+            // Toggle aria-expanded attribute for accessibility
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            question.setAttribute('aria-expanded', !isExpanded);
+        });
+    });
+});
+</script>
 </body>
 
 </html>
