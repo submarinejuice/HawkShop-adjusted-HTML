@@ -1,0 +1,64 @@
+<div class="dta-text-container">
+                          
+                          
+                           <h1>Digital Textbook Access</h1>
+                           <img src="images\istockphoto-1347520142-1024x1024.jpg" alt="textbook-access">
+                           <p><br></p>
+                           <p></p>
+                           <h2>The two main goals of Digital Textbook Access</h2>
+                            <ul>
+                             <li>Reduce the overall cost of course materials by offering below market rates on the
+                               resources you need for your courses. </li>
+                              <li>Provide access to the digital resources on the first day of class to support academic
+                                achievement.</li>
+                            </ul>
+                            
+                            <div class="the-process-box">
+                              <h2>The Process of DTA</h2>
+                              <ul style="list-style-type: disc;">
+                                <li>The instructor of the course elects to include the use of an e-text or interactive
+                                  courseware platform in their course through this program.</li>
+                                <li>Students are notified prior to the start of classes, by email that their course is
+                                  participating in the Digital Textbook Access model.</li>
+                                <li>Access is provided automatically for every student enrolled in the course on the first
+                                  day of class.</li>
+                                <li>Students can access the digital resources for 2 weeks at no charge, during which time
+                                  they can opt out if they choose wish to source the resource elsewhere through My Learning
+                                  Space or through the links in the e-mails we send participating students.</li>
+                                <li>Students who choose to use and continue to access their digital resources will have the
+                                  digital textbook access charges billed to their student account (LORIS).</li>
+                                <li>Students who drop the course prior to the opt-out deadline are automatically opted out
+                                  and are not billed.</li>
+                              </ul>
+                            </div>
+                           
+                            <div class="why-box"><h2>Why we did it &amp; Why it works</h2>
+                           <ul>
+                             <li>The price of printed textbooks has increased astronomically over the last 10 years,
+                               surpassing almost all other economic indexes. </li>
+                             <li>An alarming percentage of students choose to forego acquiring their course materials
+                               altogether, putting their academic success at risk.</li>
+                             <li>Over the last 10 years, the Digital Textbook Access program at Laurier has saved
+                                students over $15 million.</li>
+                             <li>The Digital Textbook Access program offers students 40-55% lower pricing than the
+                               equivalent price for print.</li>
+                           </ul></div>
+                           <div class="why-box"><h2>Benefits to students</h2>
+                            <ul>
+                              <li>40 – 55% lower than the equivalent pricing for printed textbooks, and below market rates
+                              for equivalent digital access.</li>
+                             <li>Course materials are conveniently available on the first day of class through
+                               MyLearningSpace.</li>
+                              <li>You are able to work offline and online using the Bookshelf e-reader application,
+                               accessing your resources anytime, anywhere.</li>
+                             </ul></div><br>
+                             <div class="why-box"><h2>The Model</h2>
+                             <ul style="list-style-type: disc;">
+                                <li>This is a digital only initiative, there will not be print copies available for purchase
+                                through the Hawk Shop.</li>
+                               <li>This functions as an opt out model. By enrolling in the course you are enrolled in the
+                                 resource. If you wish to source access to the content elsewhere, please ensure you opt out
+                                 by the deadline each semester.</li><!--- Start of Accoridan FAQ Area -->
+                               </div>
+                          </div>
+                      </div>

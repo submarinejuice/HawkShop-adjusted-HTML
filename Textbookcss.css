@@ -14,7 +14,7 @@ html, body {
     display:flex;
     gap:40px;
     flex-wrap: nowrap;
-    margin:0 auto;
+    margin:0 aut;
     width:100%;
     height:auto;
     padding-bottom: 50px;
@@ -86,7 +86,7 @@ html, body {
 
 
 .link-box-container {
-    flex: 1; 
+    
     max-width: 400px;
     padding: 10px 0px;
     background-color: #f9f9f9; 
