@@ -1,0 +1,140 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; 
+    padding:0;
+    margin:0;
+}
+
+.information-card-container{
+   margin-left: 70px;
+   padding: 15px;
+}
+.information-card-container h1, .information-card-container h2{
+    color:#330072;
+  font-weight: bold;
+  padding:0 10px;
+
+}
+.waterloo-card{
+    display:flex;
+    flex-direction: row;
+   
+}
+.information-text{
+    padding:20px;
+}
+.information-text{
+    font-size: 50px;
+
+}
+
+.information-text h2{
+   text-align: left;
+   max-width: 684px;
+   font-size: 18px;
+   padding-left: 15px;
+   margin-bottom: 20px;
+   font-weight: normal;
+   color: rgb(37, 37, 37);
+
+   
+}
+.iframe{
+   background-color: #330072;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    box-shadow: rgba(98, 98, 98, 0.62) 2px 3px 6px;
+    
+
+}
+.iframe h2{
+    color:rgb(221, 221, 221);
+    max-width: 600px;
+    font-weight: normal;
+    font-size: 15px;
+    
+
+}
+.iframe h1{
+    color: #F2A900;
+    font-size: 40px;
+}
+
+.brantford-card{
+    display:flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-left: 20px;
+    
+}
+
+.table-div {
+    padding: 0px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  table {
+    
+    border-collapse: collapse;
+    width: 100%; 
+    margin-bottom: 20px; 
+  }
+  
+  
+  th {
+    color: #330072;
+    font-size: 18px; 
+    font-weight: bold; 
+    padding: 15px; 
+  }
+  
+  td {
+    border-bottom: solid 1px rgba(128, 128, 128, 0.507);
+    padding: 15px; 
+    font-size: 16px;
+  }
+  
+  tr {
+    height: 40px; 
+  }
+  
+  tr:first-child th {
+    border-top: none;
+  }
+  
+  tr:last-child td {
+    border-bottom: none; 
+  }
+  td:first-child{
+    font-weight: bold;
+    font-size: 18px;
+  }
+ 
+  td:last-child {
+    text-align: right;
+  }
+  
+.contact-info{
+    padding: 0 15px;
+}
+.contact-info h5{
+font-size: 18px;
+color:#F2A900;
+
+}
+.contact-info b{
+color: #F2A900
+}
+.contact-info p{
+color: aliceblue;
+}
+.map-description{
+    align-items: left;
+}
+.map-description h1{
+    color:#F2A900;
+    
+}
