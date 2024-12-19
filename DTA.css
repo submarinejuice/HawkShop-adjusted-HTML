@@ -3,31 +3,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+    height: 100%;
+    box-sizing: border-box;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-  }
 .dta-container{
+    padding: 0 30px;
     justify-items: center;
     display: flex;
-    gap:20px;
     flex-wrap:nowrap;
-    margin:0 auto;
-    width:100%;
+    width:100vw;
     height:auto;
     padding-bottom: 100px;
+    gap: 20px;
+    
     
 }
 .side-boxes{
-    
-    display: flex;
-    gap:20x;
-    flex-direction: column;
-    width:400px;
+    max-width: 400px;
 }
-.publisher-specific-info-box{
+
+
+.faq-items-container{
+    display:flex;
+    flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color:  #330072;
+    width: 100vw;
+    box-sizing:border-box;
+    padding-top: 40px;
+    width: 100vw; 
+    height: auto; 
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    
+    
+   
+    
+}
+
+.faq-items-container .faq-title{
+    border:#5a5757;
+}
+
+.faq-items-box{
+    gap: 10px;
+    
+    width: 650px;
+    align-items: center;
+}
+.faq-container{
+    justify-content: center;
+    
+    
+}
+
+.faq-items-container h1{
+    color:#F2A900;
+    
+} 
+.faq-items-container p{
+    color:rgb(41, 38, 38);
+    
+}
+.faq-items-container h2{
+    color: white;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: 16px;
     
 }
 .dta-container h1{
@@ -74,7 +127,7 @@ html, body {
     max-width: 300px;
     width: 100%;
     padding-bottom: 20px;
-    background-color: #f9f9f9; 
+    
     margin-right: 15px;
     align-self: flex-start;
     box-sizing: border-box;
@@ -107,7 +160,7 @@ html, body {
     flex-direction: column;
     margin: 0px;
     padding: 4px;
-    padding-left: 15px;
+    
     padding-bottom: 6px;
     font-size: 20px;
     text-decoration: none;
@@ -116,10 +169,8 @@ html, body {
    
      
 }
-<<<<<<< Updated upstream
-=======
 
-.dta-steps {
+.one {
     border: #2a2a2a18 solid 0.1px;
     border-top: 0.0001px;
     border-radius: 5px;
@@ -133,7 +184,71 @@ html, body {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
 }
 
-.dta-steps:hover {
+.one:hover {
+    transform: scale(1.05); /* Grow the element by 5% */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+    border-top:#330072 solid 4px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.two {
+    border: #2a2a2a18 solid 0.1px;
+    border-top: 0.0001px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    width: 720px;
+    display: flex;
+    gap: 35px;
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.two:hover {
+    transform: scale(1.05); /* Grow the element by 5% */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+    border-top:#330072 solid 4px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.three {
+    border: #2a2a2a18 solid 0.1px;
+    border-top: 0.0001px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    width: 720px;
+    display: flex;
+    gap: 35px;
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.three:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
+    border-top:#330072 solid 4px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.two:hover {
+    transform: scale(1.05); /* Grow the element by 5% */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+    border-top:#330072 solid 4px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.four {
+    border: #2a2a2a18 solid 0.1px;
+    border-top: 0.0001px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    width: px;
+    display: flex;
+    gap: 35px;
+    margin: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.four:hover {
     transform: scale(1.05); 
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
     border-top:#330072 solid 4px;
@@ -142,41 +257,34 @@ html, body {
 
 
 
-
->>>>>>> Stashed changes
 .the-process-box{
-   
-
+    margin: 20px;
 }
 .the-process-box h2{
-    font-weight: bold;
-    font-size: 30px;
-    background-color:  #F2A900;
-    padding: 10px;
+ 
+    padding: 78px 10px;
+    font-size: 20px;
+    font-weight: normal;
+    color: rgb(31, 31, 31);
+
 }
-<<<<<<< Updated upstream
-=======
 .the-process-box img{
-    max-width: 150px;
+    max-width: 200px;
     max-height: auto;
     width: 100%; 
     height: 100%;
     object-fit: cover;
     display: block;
-    padding: 30px;
    /* filter: brightness(0) saturate(100%) invert(37%) sepia(51%) saturate(572%) hue-rotate(241deg) brightness(95%) contrast(103%);*/
 }
 
 
 
->>>>>>> Stashed changes
 .why-box h2{
     font-weight: bold;
     font-size: 30px;
-    background-color:  #F2A900;
+
     padding: 10px;
-<<<<<<< Updated upstream
-=======
 }
 
 
@@ -236,7 +344,7 @@ html, body {
 .banner-img {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 300px; 
     overflow: hidden;
 }
 
@@ -379,13 +487,4 @@ html, body {
     gap: 15px;
     align-items: stretch;
     margin: 20px 0;
-}
-.contact-box{
-    width:300px;
-    height: 500px;
-}
-.publisher-info-box{
-    width: 300px;
-    height: 500px;
->>>>>>> Stashed changes
 }

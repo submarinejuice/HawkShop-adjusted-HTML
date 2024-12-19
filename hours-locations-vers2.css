@@ -5,24 +5,56 @@
     margin:0;
 }
 
-.information-card-container{
-   margin-left: 70px;
-   padding: 15px;
-}
-.information-card-container h1, .information-card-container h2{
-    color:#330072;
-  font-weight: bold;
-  padding:0 10px;
 
-}
-.waterloo-card{
-    display:flex;
-    flex-direction: row;
+.information-card-container{
+   justify-content: center;
+   
+  
    
 }
-.information-text{
-    padding:20px;
+.information-card-container h1, .information-card-container h2{
+  color:#330072;
+  font-weight: bold;
+  
+
 }
+.information-card-container, .contact-info p{
+  margin: 0 important!;
+}
+.waterloo-card{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  justify-items: center; 
+  align-items: center; 
+  max-width: 1440px;
+  padding: 20px;
+  gap: 20px;
+  margin-bottom: 40px;
+   
+}
+.waterloo-card h1{
+    max-width: 685px;
+    font-size: 51px;
+    padding-bottom: 15px;
+
+}
+.brantford-card{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  justify-items: center; 
+  align-items: center; 
+  max-width: 1440px;
+  padding: 20px;
+  gap: 20px;
+   
+}
+.brantford-card h1{
+    max-width: 685px;
+    font-size: 50px;
+    padding-bottom: 15px;
+
+}
+
 .information-text{
     font-size: 50px;
 
@@ -32,18 +64,21 @@
    text-align: left;
    max-width: 684px;
    font-size: 18px;
-   padding-left: 15px;
    margin-bottom: 20px;
    font-weight: normal;
    color: rgb(37, 37, 37);
 
    
 }
+.left-side-map{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .iframe{
    background-color: #330072;
     display: flex;
     flex-direction: column;
-    padding-bottom: 15px;
     box-shadow: rgba(98, 98, 98, 0.62) 2px 3px 6px;
     
 
@@ -61,13 +96,7 @@
     font-size: 40px;
 }
 
-.brantford-card{
-    display:flex;
-    flex-direction: row;
-    margin-top: 30px;
-    margin-left: 20px;
-    
-}
+
 
 .table-div {
     padding: 0px;
@@ -116,25 +145,216 @@
   td:last-child {
     text-align: right;
   }
-  
+.map-description{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .contact-info{
-    padding: 0 15px;
+  padding: 5px 20px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+}
+.contact-info h1{
+  padding-bottom: 20px;
 }
 .contact-info h5{
-font-size: 18px;
-color:#F2A900;
+  font-size: 25px;
+  color:white;
+  font-weight: normal;
 
 }
 .contact-info b{
 color: #F2A900
 }
-.contact-info p{
-color: aliceblue;
+.contact-info h7{
+  color: aliceblue;
+  font-size: 20px;
+  
 }
 .map-description{
-    align-items: left;
+  display: flex;
 }
+.map-description h1{
+  padding: 0;
+}
+
 .map-description h1{
     color:#F2A900;
     
+}
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  justify-items: center; 
+  align-items: center; 
+  flex: 0;
+}
+
+.social-icons a {
+  text-decoration: none;
+  padding: 20px;
+  align-items: center;
+}
+
+.social-icons i {
+  font-size: 60px; 
+  color: #330072; 
+  background: none; 
+  border-radius: 50%; 
+  transition: color 0.3s ease;
+  padding: 0 20px;
+}
+
+.social-icons i:hover {
+  color: #ffffff; 
+}
+.icons-bkg{
+  background-color: #F2A900;
+  padding: 0;
+}
+.iframe-2 {
+  background-color: #330072;
+   display: flex;
+   flex-direction: column;
+   box-shadow: rgba(98, 98, 98, 0.62) 2px 3px 6px;
+   
+
+}
+.iframe-2 h2{
+   color:rgb(221, 221, 221);
+   max-width: 600px;
+   font-weight: normal;
+   font-size: 15px;
+   
+
+}
+.iframe-2 h1{
+   color: #F2A900;
+   font-size: 40px;
+}
+
+
+.waterloo-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start; 
+  max-width: 1440px;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Mobile Layout (Stack Items Vertically) */
+@media (max-width: 800px) {
+  .waterloo-card {
+      grid-template-columns: 1fr; 
+  }
+  .brantford-card {
+    grid-template-columns: 1fr; 
+  }
+
+  .information-text, .left-side-map {
+      width: auto; 
+  }
+
+  .information-text h1, .information-text h2 {
+      text-align: center; 
+  }
+
+  .left-side-map {
+      margin-top: 20px; 
+  }
+  
+}
+@media (max-width: 1539px) {
+  .waterloo-card{
+    scale: auto;
+  }
+  .brantford-card{
+    scale: auto;
+  }
+  
+}
+@media (max-width: 800px) { 
+  .brantford-card {
+    flex-direction: column;
+  }
+
+  .information-text {
+    order: -1;
+  }
+
+  .left-side-map {
+    order: 0;
+    margin-top: 20px; 
+  }
+}
+
+.contact-info a{
+  cursor: pointer;
+  color:rgb(236, 236, 236);
+  
+}
+.contact-info a:hover{
+  color:#FDD757;
+  border-bottom: 1px solid #FDD757;
+  
+}
+.location-hours-title {
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 1600px;
+}
+.location-hours-title img {
+  width: 90%; 
+  height: 300px; 
+  object-fit: cover; 
+  display: block;
+}
+
+.location-hours-title h1 {
+  position: absolute;
+  bottom: 16px; 
+  left: 16px;
+  color:#EBA900;
+  background-color:#330072a6; 
+  padding: 8px 12px; 
+  font-size: 80px;
+  font-weight: bold; 
+  border-radius: 0px;
+  width: 100%
+  
+}
+
+
+.location-hours-title h1 {
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 90%; 
+  color:#ffb300; 
+  background-color: #330072a6; 
+  padding: 175px 16px;
+  padding-bottom: 125px;
+  font-size: 90px;
+  font-weight: bold; 
+  text-align: left; 
+  height: 50%;
+}
+
+@media (max-width: 768px){
+  .location-hours-title h1{
+    font-size: 50px;
+    padding: 12px;
+    width: 100%;
+    height: 150px;
+  }
+  .location-hours-title img{
+    width: 100%;
+    height:300px;
+  }
+  
 }
