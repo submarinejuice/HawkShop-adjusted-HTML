@@ -190,9 +190,8 @@ color: #F2A900
   
 }
 .contact-line{
-  border-left: 3px solid #FDD757;
+  border-left: 3px solid white;
   height: 90px;
-
 }
 .cinfo-text{
   display: flex;
@@ -397,10 +396,41 @@ color: #F2A900
 
 
 @media (max-width: 768px){
-  
- .location-hours-title{
-  display: none;
- }
+  .location-hours-title h1{
+    font-size: 50px;
+    padding: 12px;
+    width: 100%;
+    height: 150px;
+  }
+  .location-hours-title img{
+    width: 100%;
+    height:300px;
+  }
   
 }
 
+
+@media (max-width: 800px) {
+  .faq-question {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+      border: 1px solid #ddd;
+  }
+
+  .faq-answer {
+      background-color: #fff;
+      border-top: none;
+  }
+}
+
+@media (min-width: 801px) {
+  .faq-answer {
+      max-height: none; /* Allow full height on larger screens */
+      overflow: visible;
+      padding: 15px;
+  }
+}

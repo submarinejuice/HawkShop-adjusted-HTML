@@ -1,0 +1,52 @@
+.container-main{
+    
+}
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr); 
+    gap: 10px;
+}
+.box{
+    width: 400px;
+    height: 400px;
+    background-color: #EBA900;
+    
+}
+.box h1{
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-family: 'lato';
+    font-weight: bold;
+
+}
+.box p{
+    padding: 20px;
+    text-align: center;
+    color: black;
+}
+
+.arrow{
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    
+    
+}
+.arrow i {
+    justify-self:center;
+}
+.right{
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    
+}
+
+.box button{
+
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+
+}
