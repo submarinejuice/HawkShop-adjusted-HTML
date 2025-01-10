@@ -1,30 +1,121 @@
-.container-main{
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; 
+    padding:0;
+    margin:0;
     
+}
+.print-method{
+    display: flex;
+    flex-direction: row;
+
+}
+.container-main h1{
+    color:#330072;
+    font-weight: bold;
+    font-size: 70px;
+
+}
+.container-main p{
+    font-size: 20px;
+    padding-left: 15px;
+}
+.container-main h2{
+    color:#330072;
+    font-weight: bold;
+    font-size: 40px;
+
+}
+
+.container-information h1{
+    padding-bottom: 20PX;
+}
+.container-information p{
+    padding-bottom: 20px;
+}
+.image-container{
+    width: 100%;
+    height: 300px;
+
+
+}
+
+
+.boxes{
+    margin: 0 500px;
+}
+.container-information h1, .container-information p, .container-information h2{
+    margin-left: 150px;
+}
+.container-information p{
+    padding-bottom: 20px;
+    max-width: 1300px;
 }
 .boxes{
     display: grid;
-    grid-template-columns: repeat(3, 2fr); 
+    grid-template-columns: repeat(3, 372px ); 
     gap: 10px;
-}
-.box{
-    width: 400px;
-    height: 400px;
-    background-color: #EBA900;
+    max-width: 1200px;
+
     
 }
 .box h1{
+    color: #F2A900;
+}
+.box{
+    background-color: #330072;
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+    flex: 1 1 20%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 370px;
+    max-height: 450px;
+    padding-bottom: 20px;
+    
+    
+    
+}
+.box-container {
+    width: 100vw;
+ 
+    background-color: #924DA7; 
+    background-image: url('images/PATTERN DARK PURPLE.jpeg');
+    background-repeat: repeat;
+    background-size: auto; 
+    padding: 30px;
+}
+.box-container h1{
+    color:#F2A900;
+    text-align: center;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.box h2{
     color: black;
     padding: 20px;
     text-align: center;
     font-family: 'lato';
     font-weight: bold;
-
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
 }
 .box p{
     padding: 20px;
     text-align: center;
     color: black;
 }
+
 
 .arrow{
     border: solid black;
@@ -43,10 +134,246 @@
     
 }
 
-.box button{
 
+.box {
+    width: 400px;
+    height: 400px;
+    background-color: #330072;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+
+}
+
+.box h1, .box p {
+    margin: 0; 
+}
+
+.button {
     padding: 10px;
     border-radius: 3px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    color: #F2A900;
+    margin-top: auto; 
+}
 
+
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.print-box{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+/*
+.image-container:hover img {
+    filter: blur(3px); 
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}*/
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 0fr); 
+    gap: 20px;
+    padding: 20px; 
+    margin: 0 auto; 
+}
+
+.box {
+    background-color: #330072;
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 372px;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.box h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #F2A900;
+    font-weight: bold;
+}
+
+.box p {
+    color: rgb(221, 211, 211);
+    font-size: 0.9rem;
+    padding: 10px 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #F2A900;
+    color: #330072;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.button:hover {
+    background-color: #330072;
+    color: #F2A900;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+    border: solid #F2A900;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.box:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.boxes:hover .box:not(:hover) {
+    filter: blur(1px);
+    opacity: 0.75;
+    transition: 0.3s ease;
+}
+.arrow-button{
+    display: inline-flex;
+    flex-direction: row;
+
+}
+
+@media (max-width: 768px) {
+    .boxes {
+        grid-template-columns: 1fr; 
+    }
+}
+.print-method {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    
+    width: 100vw; 
+    
+    box-sizing: border-box;
+}
+
+.print-box {
+    background-color: #330072; 
+    height: 250px; 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+   
+  
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.print-box {
+    position: relative; 
+    background-color: #330072;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease; 
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease; 
+}
+
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #BABC16; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    z-index: 2; 
+}
+.box-container h1{
+    padding: 40px 0;
+}
+.image-container h2 {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    color:#330072; 
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    z-index: 3; 
+}
+
+.print-box:hover .image-container img {
+    filter: blur(3px); 
+    transform: scale(1.1); 
+}
+
+.print-box:hover .image-container .overlay {
+    opacity: 70%; 
+}
+
+.print-box:hover .image-container h2 {
+    opacity: 1; 
 }
