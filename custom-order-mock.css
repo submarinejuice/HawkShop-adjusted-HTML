@@ -68,7 +68,7 @@
     overflow: hidden;
     text-align: center;
     flex: 1 1 20%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -83,14 +83,11 @@
 .box-container {
     width: 100vw;
  
-    background-color: #924DA7; 
-    background-image: url('images/PATTERN DARK PURPLE.jpeg');
-    background-repeat: repeat;
-    background-size: auto; 
+   
     padding: 30px;
 }
 .box-container h1{
-    color:#F2A900;
+    color:#330072;
     text-align: center;
     text-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 

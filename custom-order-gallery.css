@@ -1,3 +1,10 @@
+*{box-sizing: border-box;
+  font-family: 'Lato', sans-serif; 
+  padding:0;
+  margin:0;
+  
+}
+
 .carousel-inner img {
   width: 100%;
   height: 400px; 
@@ -112,6 +119,7 @@
 */
 .carousel, .carousel-inner{
   height: 700px;
+  
 }
 
 
@@ -152,7 +160,8 @@
 }
 
 .main-container{
-  background-color: #1f0c00e0;
+  background-color: white;
+  
 }
 .method-gallery{
   display: flex;
@@ -164,6 +173,7 @@
   max-width: 1600px;
   overflow: hidden;
   margin: auto;
+ 
 }
 
 .carousel-track {
@@ -177,20 +187,46 @@
   flex: 0 0 400px; /* Fixed width for each product */
   margin: 15px; /* Space between products */
   text-align: center;
+  
+  border-radius: 5px; /* Optional: Rounded corners */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth effect */
+}
+.main-container h1{
+  margin-top: 80px;
+  color:#330072;
 }
 
+.contact-line{
+  width: 500px;
+  border: 1px solid #330072;
+ 
+}
+.product-carousel{
+  background-color: ;
+}
+.content-wrapper{
+  justify-items: center; 
+  margin-bottom: 90px;
+}
 .product img {
   width: 100%;
   height: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background-color: #642e0d;
+  background-color:  #330072;
   padding-bottom: 0px;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
-.product img:hover{
-  padding-bottom: 40px;
-  transition: 0.3s ease-in-out;
+
+.product{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+
 }
+.product:hover{
+   
+    transition: 0.5s ease-in-out;
+  }
+
 .prev-btn,
 .next-btn {
   position: absolute;
@@ -202,7 +238,8 @@
   font-size: 24px;
   cursor: pointer;
   padding: 10px 20px;
-  z-index: 10; /
+  z-index: 10; 
+  
   border: none;
 }
 
@@ -228,9 +265,283 @@
   outline: none; 
   
 }
-.product p{
-  display: none;
+
+.product:hover h2{
+  display:block
 }
 .product:hover p{
   display:block
+
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute; /* Position relative to the product-carousel container */
+  top: 50%; /* Center vertically within the carousel */
+  transform: translateY(-50%); /* Adjust for centering */
+  background: none;
+  color: #642e0d;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+  z-index: 10; /* Ensure buttons are above other content */
+}
+
+.prev-btn {
+  left: 10px; /* Fixed distance from the left edge */
+}
+
+.next-btn {
+  right: 10px; /* Fixed distance from the right edge */
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: #F2A900;
+}
+
+.prev-btn:focus,
+.next-btn:focus {
+  outline: none; /* Remove focus outline */
+}
+
+
+.product:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transition: 0.5s ease-in-out;
+}
+
+.product-desc button{
+  padding:10px;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+  background-color: #330072be;
+  color:#ffce2c;
+  margin-bottom: 15px;
+  font-size: 20px;
+  
+
+}
+
+.product {
+  position: relative; /* To position the description relative to the product */
+  flex: 0 0 400px; /* Fixed width for each product */
+  margin: 15px; /* Space between products */
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 5px; /* Optional: Rounded corners */
+  overflow: hidden; /* Ensure the description stays inside the product box */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth effect */
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.product:hover img {
+  transform: scale(1.1); /
+}
+
+.product {
+  flex: 0 0 400px; 
+  margin: 15px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
+  overflow: hidden; 
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+  position: relative; 
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.product:hover img {
+  transform: scale(1.1); 
+}
+
+.product-desc h2{
+  color:#F2A900;
+  font-weight: bold;
+  font-size: 40px;
+  padding: 15px;
+}
+.product:hover .product-desc {
+  max-height: 150px;
+}
+
+
+
+.product:hover ~ .product-desc, 
+.product:hover .product-desc {
+  max-height: 600px;
+  transition: max-height 0.5s ease-in-out; 
+}
+
+
+.product-desc {
+  max-height: 0; 
+  overflow: hidden; 
+  background-color:  #330072; 
+  padding: 0 15px; 
+  text-align: center;
+  transition: max-height 0.5s ease-in-out; 
+  position: relative;
+  z-index: 2;
+  position: relative;
+}
+.carousel-track{
+  position: relative;
+}
+.empty{
+  width: 100vw;
+  height: 500px;
+}
+.product-desc p{
+  color: white;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 10px;
+  padding-top: 10px;
+
+}
+
+
+.arrow i {
+  justify-self:center;
+}
+.right{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  
+}
+.arrow {
+  border:  solid #F2A900;
+  height: 20px;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 15px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.Examples{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0 15px;
+  margin-top: 10px;
+  width: 100vw;
+}
+.product-carousel {
+  position: relative; /* Parent for positioning child elements */
+  max-width: 1600px;
+  overflow: hidden;
+  margin: auto;
+  background-color: white;
+  height: 600px; /* Fixed height to prevent resizing issues */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  position: relative; /* Ensure proper positioning of track content */
+}
+
+.product {
+  flex: 0 0 500px;
+  margin: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product:hover img {
+  transform: scale(1.1);
+}
+
+.product-desc {
+  max-height: 0; /* Hidden by default */
+  overflow: hidden; /* Prevent content overflow */
+  background-color: #330072e7;
+  color: white;
+  text-align: center;
+  transition: max-height 0.5s ease-in-out;
+  position: absolute; /* Position it absolutely within the product */
+  bottom: 0; /* Start at the bottom */
+  width: 100%;
+  z-index: 2;
+  box-shadow: 1PX 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.product:hover .product-desc {
+  max-height: 700; 
+}
+
+
+
+
+.Examples button:hover{
+  width:100vw;
+  background-color: #F2A900;
+  color:#330072;
+  transition: 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);
+  background: none;
+  color: #642e0d;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: #F2A900;
+}
+
+.prev-btn:focus,
+.next-btn:focus {
+  outline: none;
+}
+
+
+.empty {
+  height: 50px;
+  width: 100%;
+}
+.Examples arrow:hover{
+  color:#330072;
 }
