@@ -585,14 +585,12 @@
   padding-bottom: 400px;
 }*/
 
-.print-methods{
-  
-  padding: 40px 0;
-  padding-bottom: 70px;
+.custom-order-links{
+  padding-bottom: 50px;
 }
 .custom-order-links{
-  background-color: #330072;
-  padding: 20px;
+ 
+
   justify-content: center;
   align-self: center;
 }
@@ -606,7 +604,6 @@
 .custom-order-links button{
   padding: 20px;
   font-size: 20px;
-  a;
   background-color: #F2A900;
 }
 .links {
@@ -616,9 +613,50 @@
   padding: 20px; 
   margin: 0 auto; 
 }
+.product-desc button:hover{
+  background-color:#F2A900 ;
+  color:#330072;
 
+}
+.container-two{
+  width:1300px;
+  height: auto;
+  margin: 0 auto;
+  display:flex ;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+
+}
+.left-form button{
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px auto;
+  color:#330072;
+
+}
+.left-form button:hover{
+  background-color: #330072;
+  color: white;
+  transition:  0.3s ease-in-out;
+
+}
+.custom-order-links h1{
+  padding: 50px 0;
+}
+.right-form, .left-form{
+  border-top: #F2A900 10px solid;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.right-form p, .left-form p{
+  padding: 0 20px;
+  color: rgb(12, 12, 12);
+  font-size: 15px;
+  text-align: center;
+}
 .form {
-
+  margin:0 auto;
   border-radius: 0px;
   overflow: hidden;
   text-align: center;
@@ -626,4 +664,323 @@
   max-width: 372px;
   padding-bottom: 20px;
   transition: transform 0.3s ease, opacity 0.3s ease;
-}s
+}
+
+.subject select{
+  border: 1px solid #330072;
+  color: #330072;
+}
+
+
+.right-form, .left-form{
+  display: flex;
+  width:1100px;
+  background-color: white;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+.right-form h1, .left-form h1{
+  color: #330072;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  color: #330072;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+  color:#330072;
+}
+
+textarea {
+  overflow: auto;
+  width: 435px;
+}
+
+#container {
+  border: solid 3px #330072;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+}
+
+form {
+padding: 20px;
+gap:20px;
+}
+.select{
+  border: #330072 1px solid;
+}
+h1 {
+  color: #330072;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  border-bottom: solid 2px #330072;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.icon {
+  display: block;
+  fill: #330072;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #330072;
+	color:#330072;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+
+.name {
+	float: left;
+	width: 45%;
+}
+
+select {
+  border: #330072;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.subject {
+  width: 100%;
+}
+
+.telephone {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 150px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: #330072;
+}
+
+:-moz-placeholder { 
+	color: #330072;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #330072;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #330072;
+}
+
+#form_button {
+  background:#F2A900;
+  border-radius: 5px;
+  color: #330072;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #330072;
+  color: #F2F3EB;
+}
+#message_input{
+  width: 400px;
+  padding: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  .underline {
+    width: 68px;
+  }
+  
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .underline {
+    width: 53px;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
+.social-icons {
+
+  display: flex; 
+  justify-content: space-evenly; 
+  align-items: center; 
+
+  
+}
+
+.social-icons a {
+  text-decoration: none;
+  padding: 2px;
+  text-align: center;
+  
+  
+}
+
+.social-icons i {
+  font-size: 50px; 
+  color: #330072; 
+  background: none; 
+  border-radius: 50%; 
+  transition: color 0.3s ease;
+  text-align: center;
+ 
+}
+
+.social-icons i:hover {
+  color: #924DA7; 
+}
+.icons-bkg{
+
+  max-width: 600px;
+  width: 600px;
+  text-align: center;
+}
+
+.wave-container {
+  position: absolute;
+  background-color: #330072; /* Background color of the div */
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Prevents wave from extending outside */
+}
+.contact-us h2{
+  text-align: center;
+  color:#330072;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 30px;
+
+}
+.custom-order-links-bkg{
+  background-color: #330072;
+
+}
+.custom-order-links{
+  margin-top: 50px
+}
+.custom-order-links svg{
+  position: absolute;
+  top: 1200px;
+  
+
+}
+.custom{
+  position: relative;
+  top: -200px;
+  color: #ffce2c;
+  font-size: 50px;
+}
+.custom h1{
+  color: #ffce2c;
+  font-size: 50px;
+  
+}
+.product-carousel{
+  padding-bottom: 900px;
+}
