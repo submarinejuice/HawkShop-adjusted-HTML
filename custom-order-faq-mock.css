@@ -6,7 +6,7 @@
 
 }
 .faq-question:hover{
-    background-color: #330072;
+    background-color: #1F1646;
     transition:0.8s;
     
 
@@ -42,7 +42,7 @@
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
     padding: 0 15px;
-    background-color: white;
+    background-color:  #FFF9E6;
     padding-left: 30px;
     color: #333;
 }
@@ -57,6 +57,7 @@
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
     border-left: 0.1px solid #acacac;
     border-right: 0.1px solid #acacac ;
+    background-color:  #FFF9E6;
 }
 
 
@@ -225,7 +226,7 @@
     font-size: 15px;
     padding-left: 30px;
     color:#2a2a2a;
-    background-color: white;
+    background-color:  #FFF9E6;
     outline: none;
     cursor: pointer;
     display: flex;
@@ -247,11 +248,13 @@
 
 .faq-question[aria-expanded="true"]{
     color: #EBA900;
-    background-color: #330072;
+    background-color: #1F1646;
     font-weight: bold;
     margin-top: 5px;
     border-top:#EBA900 solid 5px;
     border-bottom: none;
+    border-left: none;
+    border-right: none;
     
 }
 .faq-question[aria-expanded="true"]:hover{
@@ -263,7 +266,7 @@
 
 /* new */
 .header-top{
-    background-color:  #330072;
+    
     padding: 40px;
 }
 .header-top h1, .header-top h2{
@@ -416,12 +419,10 @@
         font-size: 12px;
     }
     .faq-items-box {
-        gap: 15px; t
+        gap: 15px; 
     }
 }
- .global-views-breadcrumb li, .global-views-breadcrumb-item a{
-    color: white;
-}
+
 .header-desc a:hover{
     transform: scale(1.1);
     transition: 0.2s ease-in-out;
@@ -430,3 +431,130 @@
     transform: scale(1.2);
     transition: 0.2s ease-in-out;
 }
+.header-top{
+    background-image: url('images/Untitled design.png');
+    background-repeat: no-repeat;      
+    background-size: cover;         
+
+    background-position: center;       
+    padding-bottom: 800px;
+
+    z-index: 1;
+
+
+}
+/* ========== HEADER CONTAINER WITH BACKGROUND ========== */
+.header-container {
+    position: relative;
+    width: 100%;
+    background-image: url('images/your-background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    /* Give it a minimum height to accommodate header content */
+    min-height: 500px;
+  }
+  
+ 
+  /* ========== FAQ CONTAINER (OVERLAPPING THE BACKGROUND) ========== */
+  .faq-items-container {
+    position: relative;
+   
+    margin: -50px auto 0 auto;  /* Negative top margin pulls the FAQ container upward into the background */
+    padding: 40px;
+    width: 90%;
+    max-width: 1140px;
+
+    border-radius: 5px;
+    z-index: 2;  /* Ensure it sits above the background image */
+  }
+  
+  /* ========== RESPONSIVE ADJUSTMENTS ========== */
+  @media (max-width: 768px) {
+    .header-top h1 {
+      font-size: 28px;
+    }
+    .header-desc a p {
+      font-size: 16px;
+    }
+    .social-icons h2 {
+      font-size: 20px;
+    }
+    .faq-items-container {
+      margin: -30px auto 0 auto;
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-top h1 {
+      font-size: 24px;
+    }
+    .header-desc a p {
+      font-size: 14px;
+    }
+    .social-icons h2 {
+      font-size: 18px;
+    }
+    .faq-items-container {
+      margin: -20px auto 0 auto;
+      padding: 15px;
+    }
+  }
+  /* Header background and container */
+.header-top {
+    position: relative; 
+    background-image: url('images/Untitled design.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* Set a height (or padding) that gives enough space for the background */
+    padding-bottom: 800px;  /* adjust as needed */
+    margin-bottom: 900px;
+  }
+  
+  /* Header content (text, links, icons) – should appear on top */
+  .header-content {
+    position: relative;
+    z-index: 2; 
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  /* FAQ container – this will sit between the background and the header content */
+  .faq-items-container {
+    position: absolute;
+    /* Adjust this top value so the FAQ appears where you’d like it within the header area */
+    top: 60%;  
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+    width: 90%;
+    max-width: 1140px;
+    padding: 30px;
+   
+  
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header-content h1 {
+      font-size: 28px;
+    }
+    .faq-items-container {
+      top: 75%; /* adjust as needed for tablet view */
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-content h1 {
+      font-size: 24px;
+    }
+    .faq-items-container {
+      top: 80%; /* adjust as needed for mobile view */
+      padding: 15px;
+    }
+  }
+  #price, #orders{
+    color :#F2A900 ;
+  }
