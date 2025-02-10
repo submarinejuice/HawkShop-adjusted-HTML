@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8" />
+  <title>Mockup Order Page</title>
+  <style>
+    /* Basic styling; adjust as needed */
+    #canvas-container {
+      position: relative;
+      border: 1px solid #ccc;
+      display: inline-block;
+      background-image: url('images/61ogc05nK3L._AC_UY1000_.jpg');
+      object-fit: cover;
+      
+      
+    }
+  </style>
+</head>
+<body>
+  <h1>Design Your Shirt</h1>
+  <input type="file" id="upload" accept="image/png" />
+  <div id="canvas-container">
+    <canvas id="canvas" width="500" height="600"></canvas>
+  </div>
+  <button id="submit">Download Design</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+  <script src="mockupscript.js"></script>
+  
+</body>
+</html>

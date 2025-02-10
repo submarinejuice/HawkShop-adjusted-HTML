@@ -13,7 +13,7 @@
    
 }
 .information-card-container h1, .information-card-container h2{
-  color:#330072;
+  color:#ffffff;
   font-weight: bold;
   
 
@@ -70,9 +70,15 @@
    font-size: 18px;
    margin-bottom: 20px;
    font-weight: normal;
-   color: rgb(37, 37, 37);
+   color:white;
 
    
+}
+#brantford{
+  color: #330072;
+}
+#brantford1{
+  color:black
 }
 .left-side-map{
   display: flex;
@@ -127,9 +133,10 @@
   }
   
   td {
-    border-bottom: solid 1px rgba(128, 128, 128, 0.507);
+    border-bottom: solid 1px #ffffff66;
     padding: 15px; 
     font-size: 16px;
+    color:white;
   }
   
   tr {
@@ -353,54 +360,54 @@ color: #F2A900
   border-bottom: 1px solid #FDD757;
   
 }
-.location-hours-title {
-  position: relative;
-  margin-bottom: 30px;
-  max-width: 1600px;
-}
-.location-hours-title img {
-  width: 90%; 
-  height: 300px; 
-  object-fit: cover; 
-  display: block;
-}
-
-.location-hours-title h1 {
-  position: absolute;
-  bottom: 16px; 
-  left: 16px;
-  color:#EBA900;
-  background-color:#330072a6; 
-  padding: 8px 12px; 
+.location-hours-title h1{
+  color: #F2A900;
+  padding: 30px;
   font-size: 80px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+
+
+
+
+
+.waveimg{
+  position: absolute;
+  width: 100vw;
+  padding: none;
+  margin: none;
+  z-index: 0;
+
+}
+#tablediv{
+  padding: 0px;
+  max-width: 601px;
+  display: flex;
+  flex-direction: column;
+}
+
+#tablediv table {
+  
+  border-collapse: collapse;
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+
+#tablediv th {
+  color: #330072;
+  font-size: 18px; 
   font-weight: bold; 
-  border-radius: 0px;
-  width: 100%
-  
+
 }
 
+#tablediv td {
+  border-bottom: solid 1px #21004970;
 
-.location-hours-title h1 {
-  position: absolute; 
-  bottom: 0; 
-  left: 0; 
-  width: 90%; 
-  color:#ffb300; 
-  background-color: #330072a6; 
-  padding: 175px 16px;
-  padding-bottom: 125px;
-  font-size: 90px;
-  font-weight: bold; 
-  text-align: left; 
-  height: 50%;
+  font-size: 16px;
+  color:#000000;
 }
-
-
-@media (max-width: 768px){
-  
- .location-hours-title{
-  display: none;
- }
-  
-}
-
