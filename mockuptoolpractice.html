@@ -1,101 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="mockuptool.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <title>Mockup Order Page</title>
   <style>
-    /* Basic styling for the canvas container */
+    /* Basic styling; adjust as needed */
     #canvas-container {
       position: relative;
       border: 1px solid #ccc;
       display: inline-block;
+      background-image: url('images/61ogc05nK3L._AC_UY1000_.jpg');
+      object-fit: cover;
+      
+      
     }
   </style>
+  
 </head>
 <body>
+  <div class="main">
   <h1>Design Your Shirt</h1>
-  <!-- Accept both PNG and JPEG if needed -->
-  <input type="file" id="upload" accept="image/png, image/jpeg" />
+  <div class="function-container">
+  <input type="file" id="upload" accept="image/png" />
   <div id="canvas-container">
-    <!-- Canvas dimensions will be updated when the background loads -->
-    <canvas id="canvas"></canvas>
+    <canvas id="canvas" width="500" height="600"></canvas>
+    <div id="dropzone">Drag and drop your design here!</div>
   </div>
   <button id="submit">Download Design</button>
 
-  <!-- Include Fabric.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-  <script>
-    // Initialize the Fabric canvas
-    const canvas = new fabric.Canvas('canvas');
-
-    // Load the product background image and set it as the canvas background.
-    // Replace the URL with your actual product image path.
-    fabric.Image.fromURL('images/61ogc05nK3L._AC_UY1000_.jpg', function(bgImg) {
-      // Set canvas dimensions to match the background image
-      canvas.setWidth(bgImg.width);
-      canvas.setHeight(bgImg.height);
-      canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas), {
-        originX: 'left',
-        originY: 'top',
-        // Scale to fill the canvas if needed:
-        scaleX: canvas.width / bgImg.width,
-        scaleY: canvas.height / bgImg.height
-      });
-    }, { crossOrigin: 'Anonymous' });
-
-    // Handle user image uploads (only one event listener is needed)
-    document.getElementById('upload').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if (!file) return;
-      
-      console.log("File selected:", file);
-      const reader = new FileReader();
-      reader.onload = function(event) {
-        console.log("File loaded:", event.target.result);
-        // Note the capital "I" in fabric.Image.fromURL
-        fabric.Image.fromURL(event.target.result, function(img) {
-          // Set initial position and scale for the uploaded image
-          img.set({
-            left: 100,
-            top: 100,
-            scaleX: 0.5,
-            scaleY: 0.5,
-          });
-          // Optional: restrict image movement within a defined printable area
-          img.on('moving', function() {
-            const printableArea = { x: 50, y: 150, width: canvas.width - 200, height: canvas.height - 250 };
-            if (img.left < printableArea.x) img.left = printableArea.x;
-            if (img.top < printableArea.y) img.top = printableArea.y;
-            if (img.left + img.width * img.scaleX > printableArea.x + printableArea.width)
-              img.left = printableArea.x + printableArea.width - img.width * img.scaleX;
-            if (img.top + img.height * img.scaleY > printableArea.y + printableArea.height)
-              img.top = printableArea.y + printableArea.height - img.height * img.scaleY;
-          });
-          canvas.add(img);
-          canvas.renderAll();
-          console.log("Image added to canvas");
-        });
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // Download the composite image (background + uploaded images)
-    document.getElementById('submit').addEventListener('click', function() {
-      // Render any pending changes
-      canvas.renderAll();
-      // Export the entire canvas as a PNG data URL
-      const dataURL = canvas.toDataURL({
-        format: 'png',
-        quality: 1.0
-      });
-      // Create a temporary link to trigger the download
-      const link = document.createElement('a');
-      link.href = dataURL;
-      link.download = 'custom-design.png';  // The file will be a regular PNG image.
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-  </script>
+  <script src="mockupscript.js"></script></div>
+  </div>
 </body>
 </html>

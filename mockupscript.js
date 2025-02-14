@@ -1,79 +1,75 @@
-// your-script.js
-const canvas = new fabric.Canvas('canvas');
-
-
-// handling user upload
-fabric.Image.fromURL('path-to-your-shirt-image.png', function(img) {
-    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-      scaleX: canvas.width / img.width,
-      scaleY: canvas.height / img.height,
-      originX: 'left',
-      originY: 'top'
-    });
-  });
-  
-
-document.getElementById('upload').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(event){
-        fabric.image.fromURL(event.target.result, function(img){
-            img.set({
-                left:100,
-                top:100,
-                scaleX: 0.5,
-                scaleY: 0.5,
-
-            });
-            canvas.add(img);
-            img.on('moving', function(){
-                const printableArea = { x: 50, y:150, width:400, height:300};
-                if (img.left < printableArea.x) img.left = printableArea.x;
-                if (img.top < printableArea.y) img.top = printableArea.y;
-                if (img.left + img.width * img.scaleX > printableArea.x + printableArea.width)
-                    img.left = printableArea.x + printableArea.width - img.width * img.scaleX;
-                if (img.top + img.height * img.scaleY > printableArea.y + printableArea.height)
-                    img.top = printableArea.y + printableArea.height - img.height * img.scaleY;
-
-            });
-        });
-    };
-    reader.readAsDataURL(file);
+// u have to add a prevention to having the browser by default open up the file you want to drop, essentially blocking default. 
+document.addEventListener("dragover", function(e){
+  e.preventDefault();
 });
-document.getElementById('submit').addEventListener('click', function() {
-    const dataURL = canvas.toDataURL({
-        format: 'png',
-        quality: 1.0
+document.addEventListener("drop", function(e) {
+  e.preventDefault();
+
+});
+
+document.addEventListener("DOMContentLoaded", function(){
+  const canvas = new fabric.Canvas('canvas');
+    canvas.setWidth(500);
+    canvas.setHeight(600);
+
+  fabric.Image.fromURL('', function(bgImg) {
+    canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas), {
+      originX: 'left',
+      originY: 'top',
+      scaleX: canvas.width / bgImg.width,
+      scaley: canvas.height / bgImg.height
     });
+  
+  }, {crossOrigin: 'Anonymous'});
+
+  const dropzone = document.getElementById('dropzone');
+  
+  dropzone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dropzone.style.backgroundColor = "rgba(255,255,255,0.9)";
+    
+  });
+
+  dropzone.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    dropzone.style.backgroundColor = "rgba(255,255,255,0.8)";
+
+  });
+  dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+
+    dropzone.style.display = 'none';
+
+    const file = e.dataTransfer.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        fabric.Image.fromURL(event.target.result, function(img) {
+          img.set({
+            left:100,
+            top:100,
+            scaleX: 0.5,
+            scaleY: 0.5,
+          });
+        canvas.add(img);
+        canvas.renderAll();
+       });
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  document.getElementById('submit').addEventListener('click', function() {
+    canvas.renderAll();
+    const dataURL = canvas.toDataURL({format: 'png', quality: 1.0});
     const link = document.createElement('a');
     link.href = dataURL;
-    link.download = 'custom-designing.png';
+    link.download = 'custom-design.png';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-});
-document.getElementById('upload').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    console.log("File selected:", file);
+
     
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      console.log("File loaded:", event.target.result);
-      fabric.Image.fromURL(event.target.result, function(img) {
-        img.set({
-          left: 100,
-          top: 100,
-          scaleX: 0.5,
-          scaleY: 0.5,
-        });
-        canvas.add(img);
-        canvas.renderAll();
-        console.log("Image added to canvas");
-      });
-    };
-    reader.readAsDataURL(file);
   });
-  
-  
+  //todo, FIX TTHE FACT THAT U CAN LOOSE THE DAMNNN IMAGE WTFFFFF so much to be fixed tbh, we just gotta #locktfin
+
+});
