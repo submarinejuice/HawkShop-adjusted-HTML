@@ -1,0 +1,36 @@
+.main h1{
+    color: #330678;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'lato';
+
+}
+.main{
+   
+    
+}
+.function-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: center;
+
+
+}
+#canvas-container {
+    position: relative;
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-image: url('images/61ogc05nK3L._AC_UY1000_.jpg');
+    object-fit: cover;
+    width: 700px;
+    height: 800px;
+    
+    
+  }
+
+  #upload{
+    background-color: #330678;
+    padding: 35px;
+  }
