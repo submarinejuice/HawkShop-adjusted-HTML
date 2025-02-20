@@ -411,3 +411,28 @@ color: #F2A900
   font-size: 16px;
   color:#000000;
 }
+@media (max-width: 600px) {
+  .waveimg {
+    /* On small screens, force the wave image to be larger than its container */
+    width: 120vw;  /* makes it overflow a bit to cover the edges */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1600px) {
+  .waveimg {
+    /* On extra-wide screens, ensure it doesn't cause horizontal scroll */
+    width: 100vw;
+  }
+}
+.waveimg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; /* always span the viewport width */
+  max-width: none; /* prevent any max-width restrictions */
+  /* Optionally, set a min-height to keep it tall on small screens */
+  min-height: 300px; 
+  object-fit: cover; /* if this is an <img> element */
+}
