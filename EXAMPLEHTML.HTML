@@ -1,172 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>WLU Custom Orders Access</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            color: #5e3a8a; /* WLU purple */
-            border-bottom: 3px solid #f0c44e; /* WLU gold */
-            padding-bottom: 10px;
-        }
-        
-        .auth-box {
-            margin: 30px 0;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-left: 5px solid #5e3a8a;
-        }
-        
-        .instructions {
-            margin-bottom: 20px;
-        }
-        
-        .button-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #5e3a8a;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .button:hover {
-            background-color: #4a2e6e;
-        }
-        
-        .button.secondary {
-            background-color: #666;
-        }
-        
-        .button.secondary:hover {
-            background-color: #555;
-        }
-        
-        #customOrdersButton {
-            display: none;
-        }
-        
-        #authStatus {
-            padding: 10px;
-            margin-top: 20px;
-            border-radius: 4px;
-            display: none;
-        }
-        
-        .auth-success {
-            background-color: #dff0d8;
-            color: #3c763d;
-            border-left: 4px solid #3c763d;
-        }
-        
-        .instructions li {
-            margin-bottom: 10px;
-        }
-    </style>
-    <script>
-        // On page load
-        document.addEventListener("DOMContentLoaded", function() {
-            const customOrdersBtn = document.getElementById("customOrdersButton");
-            const verifyButton = document.getElementById("verifyButton");
-            const authStatus = document.getElementById("authStatus");
-            
-            // Check if user has verified
-            if (localStorage.getItem("wluVerified") === "true") {
-                customOrdersBtn.style.display = "inline-block";
-                verifyButton.style.display = "none";
-                authStatus.style.display = "block";
-                authStatus.textContent = "✓ Verification complete. You can now access custom orders.";
-                authStatus.className = "auth-success";
-            }
-            
-            // Verify button click handler
-            verifyButton.addEventListener("click", function() {
-                // Open MyLearningSpace in a new tab/window
-                window.open("https://mylearningspace.wlu.ca/", "_blank");
-                
-                // Show the verification confirmation button
-                document.getElementById("confirmSection").style.display = "block";
-            });
-            
-            // Confirmation button click handler
-            document.getElementById("confirmButton").addEventListener("click", function() {
-                localStorage.setItem("wluVerified", "true");
-                customOrdersBtn.style.display = "inline-block";
-                verifyButton.style.display = "none";
-                authStatus.style.display = "block";
-                authStatus.textContent = "✓ Verification complete. You can now access custom orders.";
-                authStatus.className = "auth-success";
-                document.getElementById("confirmSection").style.display = "none";
-            });
-            
-            // Clear verification button
-            document.getElementById("clearVerification").addEventListener("click", function() {
-                localStorage.removeItem("wluVerified");
-                location.reload();
-            });
-        });
-    </script>
+  <meta charset="UTF-8">
+  <title>Faculty Access</title>
+  <style>
+    /* Basic styles for the modal */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>WLU Bookstore Custom Orders Access</h1>
-        
-        <div class="auth-box">
-            <h2>WLU Verification Required</h2>
-            <p>Access to the Custom Orders portal requires verification of your WLU credentials.</p>
-            
-            <div class="instructions">
-                <h3>Instructions:</h3>
-                <ol>
-                    <li>Click the "Verify with MyLearningSpace" button below</li>
-                    <li>Log in to your MyLearningSpace account in the new tab</li>
-                    <li>Once logged in, return to this tab</li>
-                    <li>Click "I've Logged In Successfully" to confirm</li>
-                </ol>
-            </div>
-            
-            <div class="button-row">
-                <a href="#" id="verifyButton" class="button">Verify with MyLearningSpace</a>
-                <a href="https://www.wlubookstore.com/community/custom-orders" id="customOrdersButton" class="button">Go to Custom Orders</a>
-            </div>
-            
-            <div id="authStatus"></div>
-            
-            <div id="confirmSection" style="display: none; margin-top: 20px; padding: 15px; background-color: #eaf7ff; border-left: 4px solid #0078d4;">
-                <h3>Confirm Your Login</h3>
-                <p>After successfully logging into MyLearningSpace, click the button below:</p>
-                <button id="confirmButton" class="button">I've Logged In Successfully</button>
-            </div>
-        </div>
-        
-        <div style="margin-top: 30px; text-align: right;">
-            <button id="clearVerification" class="button secondary" style="font-size: 0.9em;">Clear Verification Status</button>
-        </div>
+
+  <!-- The protected link -->
+  <a href="protectedPage.html" class="protected-link">Access Protected Page</a>
+
+  <!-- Modal Popup -->
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Faculty Verification</h2>
+      <p>Please enter your @mylaurier.ca email address:</p>
+      <form id="emailForm">
+        <input type="email" id="facultyEmail" placeholder="yourname@mylaurier.ca" required>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="message"></p>
     </div>
+  </div>
+
+  <!-- Include EmailJS SDK -->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "YGL2JUWHjbP6NDos3",
+      });
+   })();
+</script>
+  <script>
+    
+
+    // Select modal elements and the protected link
+    const modal = document.getElementById("emailModal");
+    const protectedLinks = document.querySelectorAll(".protected-link");
+    const closeModal = document.querySelector(".close");
+    let targetUrl = "";
+
+    // Intercept the click on the protected link
+    protectedLinks.forEach(link => {
+      link.addEventListener("click", function(e) {
+        e.preventDefault();                    // Prevent navigation
+        targetUrl = link.getAttribute("href"); // Store the target URL
+        modal.style.display = "block";         // Show the modal popup
+      });
+    });
+
+    // Close the modal when the "x" is clicked
+    closeModal.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    // Handle form submission
+    document.getElementById("emailForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const email = document.getElementById("facultyEmail").value.trim();
+      const messageElem = document.getElementById("message");
+
+      // Validate that the email ends with @mylaurier.ca
+      if (!email.endsWith("@mylaurier.ca")) {
+        messageElem.textContent = "Please enter a valid @mylaurier.ca email address.";
+        return;
+      }
+
+      // Prepare the email parameters (customize these as needed)
+      const templateParams = {
+        to_email: email,
+        link: window.location.origin + "/" + targetUrl  // Construct the full URL
+        // You can add additional parameters if your EmailJS template requires them
+      };
+
+      // Send the email using EmailJS
+      emailjs.send("default_service", "template_iy0neeo", templateParams)
+        .then(function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+          messageElem.textContent = "Email sent successfully. Please check your inbox.";
+          // Optionally close the modal after a short delay
+          setTimeout(() => { modal.style.display = "none"; }, 3000);
+        }, function(error) {
+          console.log("FAILED...", error);
+          messageElem.textContent = "Failed to send email. Please try again.";
+        });
+    });
+
+    // Optionally, close the modal if the user clicks outside the modal content
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>

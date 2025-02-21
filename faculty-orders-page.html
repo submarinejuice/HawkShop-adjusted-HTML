@@ -28,7 +28,7 @@
 	<!--ADDED-->
 	<link rel="stylesheet" href="fonts">
     <link rel="stylesheet" href="faculty-orders-page.css">
-	<link rel="stylesheet" href="course_materials.css">
+	<link rel="stylesheet" href="coursmaterials.css">
     <link rel="stylesheet" href="shopping_2.css">
 
 	
@@ -1324,57 +1324,99 @@
 							<div id="banner-breadcrumb-bottom" class="content-banner banner-breadcrumb-bottom"
 								data-cms-area="breadcrumb_bottom" data-cms-area-filters="global">
 							</div>
-							
-								<div class="faculty-container">
-                                    <div class="top">
-                                        <h1>Faculty & Staff Orders</h1>
-                                    </div>
-                                    <div class="box-container">
-                                        <div class="box">
+								<!-- MC loe starts -->
 
-                                        </div>
+								<div class="faculty">
+									<div class="top">
+										<h1> Faculty & Staff Custom Order Page</h1>
+									</div>
+									<div class="sign-in-container">
+										<a href="protectedPage.html" class="protected-link">Access Protected Page</a>
+									  
+										<!-- Modal Popup -->
+										<div id="emailModal" class="modal">
+										  <div class="modal-content">
+											<span class="close">&times;</span>
+											
+											<!-- Form Section -->
+											<div id="formContainer">
+											  <h2>Oopsie!</h2>
+											  <h5>
+												Seems this content is Laurier faculty & staff accessible only...
+												If you're a Laurier staff member or part of the faculty, please enter your @mylaurier.ca email address below to get an access link to the page you are trying to access.
+											  </h5>
+											  
+											  
+											  <form id="emailForm">
+												<p>Please enter your @mylaurier.ca email address:</p>
+												<input type="email" id="facultyEmail" placeholder="yourname@mylaurier.ca" required>
+												<button type="submit">Submit<span class="arrow">→</span></button>
+											  </form>
+											  <p id="message"></p>
+											</div>
+											<div id="loading" style="display: none;">
+												<span class="loader"></span>
 
+											</div>
+											
+											<!-- Success Section (initially hidden) -->
+											<div id="successContainer" style="display: none;">
+											  <h2>Email Sent Successfully!</h2>
+											  <p>
+												Don't see the email with the link? Sometimes it takes a couple seconds, check your 'junk' or 'spam' folder! Sometimes these emails get thrown out.
+												Otherwise, re-enter your email and try again.
+											  </p>
+											  <button type="resendButton" id="resendButton">Resend<span class="arrow">→</span></button>
+											</div>
+											
+										  </div>
+										</div>
+									  </div>
+									  
+								</div>
+								<div class="boxes">
+									<div class="box">
+										<img src="images\lazaridis.jfif">
+										<h1>Varsity Athletics Custom Orders</h1>
+												<p>Faculty adoption, guide, publishers, deadlines & return schedules.</p>
+											
+												<a href="https://www.wlubookstore.com/"  class="find-us-button">
+													Learn more <span class="arrow">→</span>
+												</a>
 
+									</div>
+									<div class="box">
+										<img src="images\infoblocktext.jpg">
+										<h1>Faculty of Education Custom Orders</h1>
+										<p>Faculty adoption, guide, publishers, deadlines & return schedules.</p>
+											
+										<a href="https://www.wlubookstore.com/"  class="find-us-button">
+													Learn more <span class="arrow">→</span>
+										</a>
 
-                                    </div>
-                                    <div class="popup">
-                                        <span class="close" onclick="closeModal()">&times;</span>
-                                        <div class="header">
-                                            <h2>Restricted Access!</h2>
-                                            <p>Hold on! You need to be a faculty or staff member to continue on this page.
-                                            Please enter your @mylaurier.ca address or @wlu.ca address to continue.
-                                             </p>
-                                        </div>
-                                        <div class="buttonss">
-                                            <div class="modals-content">
-                        
-                                                <h2>Enter Your Email</h2>
-                                                <input type="email" id="emailInput" placeholder="yourname@mylaurier.ca or yourname@wlu.ca">
-                                                <button onclick="submitEmail()">Submit</button>
-                                              </div>
-                                        </div>
-                                        
-                                        
-                                    </div>
+									</div>
+									<div class="box">
+										<img src="images\IMG_0872.JPG">
+										<h1>Faculty of Arts Custom orders</h1>
+										<p>Faculty adoption, guide, publishers, deadlines & return schedules.</p>
+											
+										<a href="https://www.wlubookstore.com/"  class="find-us-button">
+											Learn more <span class="arrow">→</span>
+										</a>
+										
+									</div>
+									<div class="box">
+										<img src="images\lazaridis.jfif">
+										<h1>Lazaridis Custom Orders</h1>
+										<p>Faculty adoption, guide, publishers, deadlines & return schedules.</p>
+											
+										<a href="https://www.wlubookstore.com/"  class="find-us-button">
+													Learn more <span class="arrow">→</span>
+										</a>
 
-												<!-- Example HTML for the popup modal -->
-<div id="customOrderModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-background: rgba(0,0,0,0.6); justify-content: center; align-items: center;">
-<div style="background:#fff; padding:20px; border-radius:8px; text-align:center;">
-<h2>Custom Orders Available!</h2>
-<p>You have a WLU account. Check out our custom orders page for exclusive offers.</p>
-<button onclick="location.href='https://www.wlubookstore.com/community/custom-orders'">Go to Custom Orders</button>
-<button onclick="document.getElementById('customOrderModal').style.display='none'">Close</button>
-</div>
-</div>
-
-													
-														
-													
-                                </div>
-                                
-                                    
-                                            </div>
+									</div>
+								</div>
+									
                                             <div class="facets-facet-browse-content">
                                                 <div class="facets-facet-browse-results">
                                                     <header class="facets-facet-browse-header"></header>
@@ -1647,6 +1689,114 @@ background: rgba(0,0,0,0.6); justify-content: center; align-items: center;">
 			</div><!-- TEMPLATE ENDS: shopping_layout -->
 		</div>
 	</div>
+
+	<!-- Include EmailJS SDK -->
+	<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init({
+	publicKey: "YGL2JUWHjbP6NDos3",
+  });
+})();
+</script>
+<script>
+	// 1. Get references to the required DOM elements
+	const modal = document.getElementById("emailModal");
+	const modalTriggers = document.querySelectorAll(".protected-link, .find-us-button");
+	const closeModal = document.querySelector(".close");
+	const formContainer = document.getElementById("formContainer");
+	const successContainer = document.getElementById("successContainer");
+	const emailForm = document.getElementById("emailForm");
+	const facultyEmailInput = document.getElementById("facultyEmail");
+	const messageElem = document.getElementById("message");
+	const resendButton = document.getElementById("resendButton");
+	let targetUrl = ""; // This will store the URL from the clicked link
+  
+	// 2. When a trigger is clicked, open the modal and reset its content
+	modalTriggers.forEach(link => {
+	  link.addEventListener("click", function(e) {
+		e.preventDefault(); // Prevent the default navigation
+		targetUrl = link.getAttribute("href"); // Save the target URL (if needed for the email)
+		modal.style.display = "block"; // Show the modal popup
+		
+		// Reset the modal to its original state
+		formContainer.style.display = "block";   // Show the email form
+		successContainer.style.display = "none";   // Hide the success message
+		messageElem.textContent = "";              // Clear any messages
+		facultyEmailInput.value = "";              // Clear the email input field
+	  });
+	});
+  
+	// 3. Close the modal when the user clicks on the close (×) button
+	closeModal.onclick = function() {
+	  modal.style.display = "none";
+	};
+  
+	// 4. Handle the email form submission
+	emailForm.addEventListener("submit", function(e) {
+	  e.preventDefault(); // Prevent the default form submission
+	  
+	  // Get and trim the email input
+	  const email = facultyEmailInput.value.trim();
+  
+	  // Validate that the email ends with @mylaurier.ca
+	  if (!email.endsWith("@mylaurier.ca")) {
+		messageElem.textContent = "Please enter a valid @mylaurier.ca email address.";
+		return;
+	  }
+	   // Select the arrow span within the button
+  const arrowSpan = document.querySelector('#emailForm .arrow');
+  
+  // Turn the arrow into a loader:
+  arrowSpan.classList.add("loader");  // Add loader styling
+  arrowSpan.textContent = "";           // Remove the arrow text
+
+  
+	  // Construct the parameters for EmailJS
+	  const templateParams = {
+		to_email: email,
+		link: window.location.origin + "/" + targetUrl // Full URL for the protected page
+	  };
+  
+	  // Send the email via EmailJS. Make sure the service and template IDs are correct.
+	  emailjs.send("default_service", "template_iy0neeo", templateParams)
+		.then(function(response) {
+		  console.log("SUCCESS!", response.status, response.text);
+		 // Remove loader and restore arrow text
+		 arrowSpan.classList.remove("loader");
+      	arrowSpan.textContent = "→";
+		  formContainer.style.display = "none";
+		  successContainer.style.display = "block";
+		}, function(error) {
+		  console.error("FAILED...", error);
+		  // Remove loader and restore arrow text on failure as well
+      arrowSpan.classList.remove("loader");
+      arrowSpan.textContent = "→";
+		  messageElem.textContent = "Failed to send email. Please try again.";
+		});
+	});
+  
+	// 5. Handle the "Resend" button click: Reset the modal to show the original form
+	resendButton.addEventListener("click", function() {
+	  // Clear any previous messages and reset the email field
+	  messageElem.textContent = "";
+	  facultyEmailInput.value = "";
+	  
+	  // Hide the success message and show the form again
+	  successContainer.style.display = "none";
+	  formContainer.style.display = "block";
+	});
+  
+	// 6. Optionally close the modal if the user clicks outside the modal content
+	window.onclick = function(event) {
+	  if (event.target === modal) {
+		modal.style.display = "none";
+	  }
+	};
+  </script>
+  
 
 
 

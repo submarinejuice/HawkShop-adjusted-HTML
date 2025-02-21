@@ -1,0 +1,480 @@
+/*CSS file specific to Course Materials and Student Information pages!*/
+* {
+    font-family: 'Lato', sans-serif; 
+}
+
+.header-menu-level-container {
+    display: block;
+    position: absolute; 
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px; 
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity 0.8s ease, height 0.8s ease, visibility 0.4s ease;
+    top: 100%;
+}
+
+.header-menu-level1 li:hover > .header-menu-level-container {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+   
+}
+
+.header-menu-level-container.show {
+    display: block; 
+}
+
+.landing-button:hover{ 
+    background-color: #F2A900; 
+    color:  #330072; 
+    box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.2);
+    border-color:  #330072;
+   
+  
+}
+.landing-button{
+    padding: 10px 10px;
+    margin-top: auto;
+    transition: all 300ms ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    border-color: #1F1646;
+    border-width: 2px;
+    
+   
+}
+
+.box h1, .box p {
+    margin: auto;
+    padding: 10px 0;
+    font-style: bold;
+    
+}
+
+
+.box img {
+    
+   
+    object-fit: cover;
+}
+
+
+.box-img{
+    width: 100%; 
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.box h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color:#F2A900;
+    font-weight: bold;
+    
+}
+
+.box p {
+    color: rgb(221, 211, 211);
+    font-size: 0.9em;
+    padding: 20px;
+    
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+
+.box:hover {
+    transform: scale(1.05); 
+    z-index: 1;
+    
+    
+}
+
+
+.box-container:hover .box:not(:hover) {
+    filter: blur(1px);
+    background-color: #35076d;
+    
+    transition: 0.3s ease;
+}
+
+
+
+
+.box-container:not(:hover){
+    transition: 0.3s ease;
+}
+.box-container:hover .box:not(:hover)::before {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    
+    transition: 0.3s ease;
+}
+
+.box-container:hover .box:hover {
+    opacity: 1; 
+    
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    flex-grow: 1;
+    max-width: 1470px;
+    max-height: 631px;
+
+     
+}
+.content-wrapper p {
+    font-size: 15px;
+    color: white;
+}
+
+.content-wrapper h1,
+.content-wrapper p {
+
+    margin: auto 10px auto;
+    padding: 10px 0; 
+}
+
+@media (max-width: 1304px) {
+    .box {
+        flex: 1 1 45%; 
+        max-width: 45%; 
+    }
+}
+
+
+@media (max-width: 600px) {
+    .box, .content-wrapper,.box-container {
+        flex: 1 1 100%;
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .box-container {
+        grid-template-columns: 1fr; 
+    }
+} 
+
+
+.container-information p{
+
+    max-width: 1300px;
+}
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(4, 0fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    
+}
+.box h1{
+    color: #F2A900;
+}
+.box{
+   
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+    flex: 1 1 20%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 370px;
+    max-height: 600px;
+    padding-bottom: 20px;
+    
+    
+    
+}
+.box-container {
+    width: 100vw;
+    padding: 30px;
+    margin: 50px 0;
+}
+.box-container h1{
+    color:#330072;
+    text-align: center;
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+
+
+
+
+.box {
+    width: 400px;
+    height: auto;
+    background-color: #1F1646;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-top: none;
+ 
+
+}
+
+.box h1, .box p {
+    margin: 0; 
+    padding: 15px 20px;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    color: #F2A900;
+    margin-top: auto; 
+}
+
+
+.button {
+    padding: 30px 20px;
+    background-color: #F2A900;
+    color: black;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.button:hover {
+    background-color: #330072;
+    color: #F2A900;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.box:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    border-top: 7px solid #F2A900;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    background-color: #330072;
+ 
+}
+
+.boxes:hover .box:not(:hover) {
+    filter: blur(1px);
+    background-color: #330072;
+    transition: 0.3s ease-in-out;
+    
+   
+}
+.arrow-button{
+    display: inline-flex;
+    flex-direction: row;
+
+}
+
+@media (max-width: 768px) {
+    .boxes {
+        grid-template-columns: 1fr; 
+    }
+}
+.box {
+    background-color:#330072 ;
+    border-radius: 0px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+   
+    max-width: 372px;
+  
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.box img {
+        width: 100%; /* Ensures all images take the full width of the box */
+        height: 250px; /* Set a fixed height for consistency */
+        object-fit: cover; /* Ensures the image fills the space without distortion */
+        display: block; /* Removes extra spacing caused by inline elements */
+    
+    
+   
+}
+
+.box h1 {
+
+    color: #F2A900;
+    font-weight: bold;
+    padding:  20px;
+    text-align: center;
+    font-family: 'lato';
+    font-weight: bold;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+
+}
+
+.box p {
+    color: #ffffffb1;
+    font-size: 18px;
+
+    flex-grow: 1; /* Ensures text section expands evenly */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center;
+}
+
+.button {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #F2A900;
+    color: #330072;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin-top: auto; /* Pushes button to the bottom */
+    display: inline-block;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #330072;
+    color: #F2A900;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container-information{
+    background-color: #330072;
+}
+.container-information h1, .container-information p{
+    margin-left: 20px;
+    max-width: 1200px;
+    padding: 30px 0px;
+
+}
+.container-information p{
+    color: white;
+}
+.container-information h1{
+    color: #F2A900;
+    
+}
+.find-us {
+    display: flex;
+    justify-content: center; /* Centers the button */
+    align-items: center;
+    margin-top: 20px; /* Space from other content */
+}
+
+.find-us-button:hover {
+    background-color: #330072;
+    color: #F2A900;
+}
+
+.find-us-button .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.find-us-button:hover .arrow {
+    transform: translateX(8px); 
+}
+.find-us-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto; 
+    padding-top: 20px; 
+}
+.find-us-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #F2A900;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #330072;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.find-us-button:hover {
+    background-color: #F2A900;
+    color: #330072;
+}
+
+.find-us-button .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.find-us-button:hover .arrow {
+    transform: translateX(8px); 
+}
+.find-us-container {
+    position: relative;  
+    bottom: 40px; 
+    left: 29%; 
+    transform: translateX(-50%); 
+    width: fit-content; 
+}
+.waveimg{
+    position: absolute;
+    width: 100vw;
+    padding: none;
+    
+    z-index: 0;
+    margin:0 !important;
+    padding: 0 !important;
+  
+}
+
+.header-h1 h1{
+    color: #F2A900;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+  }
