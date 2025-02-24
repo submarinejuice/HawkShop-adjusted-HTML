@@ -478,3 +478,21 @@
     text-align: center;
     padding: 30px;
   }
+@media (max-width: 1304px) {
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(2, 372px ); 
+        gap: 10px;
+         max-width: 1200px;
+}
+}
+
+@media(max-width: 700px){
+    .boxes {
+        display: grid;
+        grid-template-columns: repeat(1, 372px ); 
+        gap: 10px;
+        
+}
+
+}
