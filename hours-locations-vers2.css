@@ -245,6 +245,7 @@ color: #F2A900
   
 }
 
+
 .social-icons a {
   text-decoration: none;
   padding: 5px;
@@ -436,3 +437,43 @@ color: #F2A900
   min-height: 300px; 
   object-fit: cover; /* if this is an <img> element */
 }
+.table-header {
+  background-color: #e0e0e0; /* light grey background */
+}
+.table-div th {
+  color: #dfdfdfe5;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+}
+.table-div table thead th:first-child {
+  text-align: left;
+}
+
+.table-div table thead th:last-child {
+  text-align: right;
+}
+.table-div2 th {
+  color: #3a0055e5;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+}
+.table-div2 td{
+  color: #3a0055e5;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+
+}
+.table-div2  td {
+  border-bottom: solid 1px #0000007e;
+  padding: 15px; 
+  font-size: 16px;
+  color:rgb(0, 0, 0)
+
+}
+.waterloo-card{}

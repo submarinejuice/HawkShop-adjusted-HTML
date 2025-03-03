@@ -1380,6 +1380,7 @@
 										<div data-view="CCT-View" data-cms-cct-instanceid="cct_netsuite_columns-7"
 											class="cms-content cms-content-cct_netsuite_columns cms-content-selector-cct_netsuite_columns-7">
 											<div>
+											  
 												
 									
 												<div class="information-card-container">
@@ -1393,68 +1394,11 @@
                                                         <div class="information-text">
                                                             <h1>Waterloo Campus</h1>
                                                             <h2>Located in the Concourse. Access the Concourse via entrances at the Dr. Alvin Woods Building, Fred Nichols Campus Centre, or University Ave.</h2>
-                                                           
-                                                            <div class="table-div">
-																<table>
-																	<tr>
-																		 <th>HOURS</th>
-																	</tr>
-																	<tr>
-																		<td>Monday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Tuesday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Wednesday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Thursday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Friday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Saturday</td>
-																		<td>CLOSED</td>
-																	</tr>
-																	<tr>
-																		<td>Sunday</td>
-																		<td>CLOSED</td>
-																	</tr>
-                                                                    
-                                                                    
-                                                                    
-                                                            	</table>
-                                                                <table class="table-2">
-                                                                    <tr>
-                                                                        <th>HOLIDAY HOURS</th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>All stat holidays</td>
-                                                                        <td>CLOSED</td>
-                                                                        
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>December 21st - January 1st</td>
-                                                                        <td>CLOSED</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Thursday January 3rd</td>
-                                                                        <td>10 a.m - 4 p.m</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Regular hours resume January 6th</td>
-                                                                        <td>9 a.m - 5 p.m</td>
-                                                                    </tr>
-                                                                    
-                                                                </table>
-															</div>
+													
+															<div id="waterloo-hours" class="table-div">Loading Waterloo business hours...</div>
+												
+                                                            
+                                                                
 															
 															
                                                            
@@ -1542,69 +1486,8 @@
                                                         <div class="information-text">
                                                             <h1 id="brantford">Brantford Campus</h1>
                                                             <h2 id="brantford1">Located in the West Wing of the Research and Academic Centre (RAC). Access at entrances from the RAC and facing Dalhousie Street.</h2>
-                                                           
-                                                            <div id="tablediv" class="table-div">
-																<table>
-																	<tr>
-																		 <th>HOURS</th>
-																	</tr>
-																	<tr>
-																		<td>Monday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Tuesday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Wednesday</td>
-																		<td>9 a.m - 5.pm</td>
-																	</tr>
-																	<tr>
-																		<td>Thursday</td>
-																		<td>9 a.m - 5 p.m</td>
-																	</tr>
-																	<tr>
-																		<td>Friday</td>
-																		<td>9 a.m - 5 p.m</td>
-																	</tr>
-																	<tr>
-																		<td>Saturday</td>
-																		<td>CLOSED</td>
-																	</tr>
-																	<tr>
-																		<td>Sunday</td>
-																		<td>CLOSED</td>
-																	</tr>
-                                                                    
-                                                                    
-                                                                    
-                                                            	</table>
-                                                                <table class="table-2">
-                                                                    
-                                                                    <tr>
-                                                                        <th>HOLIDAY HOURS</th>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>All stat holidays</td>
-                                                                        <td>CLOSED</td>
-                                                                        
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>December Hours</td>
-                                                                        <td>Monday - Friday 10 a.m - 4 p.m</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>December 21st - January 3rd</td>
-                                                                        <td>CLOSED</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>Regular hours resume</td>
-                                                                        <td>Monday January 6th 9 a.m - 5.pm</td>
-                                                                    </tr>
-                                                                    
-                                                                </table>
-															</div>
+                                                            <div id="brantford-hours" class="table-div2">Loading Waterloo business hours...</div>
+															
 															
 															
                                                            
@@ -1827,6 +1710,74 @@
 	<script>
 		try { var startApplication = function () { require(["Loggers", "Loggers.Configuration.SCA"], function (e, t) { e.Loggers.setConfiguration(t.configuration) }), require(["SC.Shopping.Starter"]) }; window.loadedResourcesPromises ? Deferred.all(window.loadedResourcesPromises).done(function () { try { startApplication() } catch (e) { document.getElementById("main").style.display = "block" } }) : startApplication() } catch (e) { document.getElementById("main") && (document.getElementById("main").style.display = "block") }
 	</script>
+	<script>
+		// URL for CSV export of your published Google Sheet
+		const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQzhMEpD-zFKiOwD4KosYnLZk6RvgPO0IpEM3ORDypE7kLtUc6enInkkPgZIdf6Sfkt3pXi0g1_OKYm/pub?output=csv';
+	  
+		// Simple CSV parser using native JavaScript
+		function parseCSV(text) {
+		  // Split text into lines and filter out any empty lines
+		  const lines = text.split('\n').filter(line => line.trim() !== "");
+		  
+		  // Assume the first line contains headers
+		  const headers = lines[0].split(',').map(header => header.trim());
+		  const data = lines.slice(1).map(line => {
+			// Split the line by commas.
+			// Note: This basic approach does not handle commas inside quoted values.
+			const values = line.split(',').map(val => val.trim());
+			const rowObj = {};
+			headers.forEach((header, index) => {
+			  rowObj[header] = values[index] || "";
+			});
+			return rowObj;
+		  });
+		  return data;
+		}
+	  
+		function processData(data) {
+		  let waterlooHtml = '<table>';
+		  waterlooHtml += '<thead><tr><th>Day</th><th>Hours</th></tr></thead><tbody>';
+		  
+		  let brantfordHtml = '<table>';
+		  brantfordHtml += '<thead><tr><th>Day</th><th>Hours</th></tr></thead><tbody>';
+	  
+		  data.forEach(function(row) {
+			// Skip rows without a Location value
+			if (!row.Location) return;
+			// Convert location to lowercase to avoid case-sensitivity issues
+			const loc = row.Location.toLowerCase();
+			if (loc === 'waterloo') {
+			  waterlooHtml += `<tr><td>${row.Day}</td><td>${row.Hours}</td></tr>`;
+			} else if (loc === 'brantford') {
+			  brantfordHtml += `<tr><td>${row.Day}</td><td>${row.Hours}</td></tr>`;
+			}
+		  });
+	  
+		  waterlooHtml += '</tbody></table>';
+		  brantfordHtml += '</tbody></table>';
+	  
+		  // Insert the generated tables into the respective containers
+		  document.getElementById('waterloo-hours').innerHTML = waterlooHtml;
+		  document.getElementById('brantford-hours').innerHTML = brantfordHtml;
+		}
+	  
+		function fetchCSVData() {
+		  fetch(csvUrl)
+			.then(response => response.text())
+			.then(text => {
+			  console.log("Raw CSV text:", text); // For debugging
+			  const data = parseCSV(text);
+			  console.log("Parsed CSV data:", data); // For debugging
+			  processData(data);
+			})
+			.catch(error => console.error("Error fetching CSV:", error));
+		}
+	  
+		// Run our function when the DOM is fully loaded
+		window.addEventListener('DOMContentLoaded', fetchCSVData);
+	  </script>
+	  
+	  
 	
 
 
