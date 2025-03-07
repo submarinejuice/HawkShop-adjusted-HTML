@@ -20,14 +20,44 @@
 </head>
 <body>
   <div class="main">
-  <h1>Design Your Shirt</h1>
-  <div class="function-container">
-  <input type="file" id="upload" accept="image/png" />
-  <div id="canvas-container">
-    <canvas id="canvas" width="500" height="600"></canvas>
-    <div id="dropzone">Drag and drop your design here!</div>
+    <div class="container">
+      <div class="right-box">
+        <h1>Design Your Shirt</h1>
+        <H2>Choose your product</H2>
+        <div class="colors">
+          <div id="black"></div>
+          <div id="white"></div>
+        </div>
+        <div class="sizes">
+          <h2>Choose a Size</h2>
+          <button>Xtra Small</button>
+          <button>Small</button>
+          <button>Medium</button>
+          <button>Large</button>
+          <button>Xtra Large</button>
+        </div>
+        <button id="submit">Download Design</button>
+        <div class="function-container">
+          <input type="file" id="upload" accept="image/png" />
+        </div>
+      </div>
+      <div class="left-box">
+        <div class="buttons">
+          <button>Front</button>
+          <button>Back</button>
+          <button>Inside Label</button>
+          <button>Outside Label</button>
+        </div>
+        <div id="canvas-container">
+          <canvas id="canvas" width="500" height="600"></canvas>
+          <div id="dropzone">Drag and drop your design here!</div>
+        </div>
+        
+      </div>
+    </div>
   </div>
-  <button id="submit">Download Design</button>
+  
+ 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
   <script src="mockupscript.js"></script></div>

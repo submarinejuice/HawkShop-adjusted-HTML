@@ -70,6 +70,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     
   });
-  //todo, FIX TTHE FACT THAT U CAN LOOSE THE DAMNNN IMAGE WTFFFFF so much to be fixed tbh, we just gotta #locktfin
+  //todo, FIX TTHE FACT THAT U CAN LOOSE THE DAMNNN IMAGE WTFFFFF so much to be fixed tbh, we just gotta #lockin
 
 });

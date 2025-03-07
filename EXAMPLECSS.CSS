@@ -10,6 +10,14 @@
  
   background-color: white;
 }
+.brantford-card{
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+  background-color: white;
+}
 .information-text{
   padding: 30px;
 }
@@ -35,7 +43,7 @@
   text-align: center;
   padding: 30px;
 }
-.waterloo-card h1{
+.waterloo-card h1, .brantford-card h1{
   color:#330072;
   font-size: 50px;
   font-weight: bold;
@@ -172,15 +180,51 @@ td:last-child {
   background-color: white;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 1px black solid;
+  border: 2px #330072 solid;
+  color: #330072;
 }
 .phone{
   background-color: white;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 1px black solid;
+  border: 1px #330072 solid;
 }
 .ig{ background-color: white;
   padding: 10px 20px;
   border-radius: 30px;
-  border: 1px black solid;}
+  border: 1px #330072 solid;
+  color: black;}
+  /* Make the container fill its space with no padding or margin */
+.iframe-2 {
+    position: relative; /* Establishes a positioning context */
+    width: 100%;
+    height: 100%; /* Or a fixed height if needed, e.g., 450px */
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Hide any overflow if necessary */
+  }
+  
+  /* Position the iframe absolutely within its container */
+.iframe-2 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes any default borders */
+    margin: 0;
+    padding: 0;
+  }
+  .information-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-info a {
+    color: #330072;
+    font-weight: bold;
+  }
+.contact-info :hover{
+  background-color: #330072;
+  color: white;
+}
