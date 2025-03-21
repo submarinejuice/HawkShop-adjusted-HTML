@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mockup Order Page</title>
+    <link href="mockuptool.css" rel="stylesheet">
+</head>
+<body>
+    <main class="main">
+        <div class="container">
+            <aside class="right-box">
+                <h1>Design Your Shirt</h1>
+                <section class="color-selection">
+                    <h2>Choose a Color</h2>
+                    <div class="colors">
+                        <button class="color-option" data-color="laurier-purple" id="laurier-purple"></button>
+                        <button class="color-option" data-color="white" id="white"></button>
+                        <button class="color-option" data-color="goose-grey" id="goose-grey"></button>
+                        <button class="color-option" data-color="golden-hawk-gold" id="golden-hawk-gold"></button>
+                    </div>
+                </section>
+                <section class="size-selection">
+                    <h2>Choose a Size</h2>
+                    <form id="size-form">
+                        <button type="button" class="size-option" data-size="XS">Xtra Small</button>
+                        <button type="button" class="size-option" data-size="S">Small</button>
+                        <button type="button" class="size-option" data-size="M">Medium</button>
+                        <button type="button" class="size-option" data-size="L">Large</button>
+                        <button type="button" class="size-option" data-size="XL">Xtra Large</button>
+                    </form>
+                </section>
+                <button id="download-design">Download Design</button>
+                <div class="function-container">
+                    <input type="file" id="upload-image" accept="image/png" />
+                </div>
+            </aside>
+            <section class="left-box">
+                <nav class="view-selection">
+                    <button class="view-option" data-view="front">Front</button>
+                    <button class="view-option" data-view="back">Back</button>
+          
+                </nav>
+                <div id="canvas-container">
+                    <canvas id="canvas" width="500" height="600"></canvas>
+                    <div id="dropzone">Drag and drop your design here!</div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <script src="mockupscript.js"></script>
+</body>
+</html>
