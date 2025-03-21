@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+</head>
+<body>
+    <button data-view="front">Front</button>
+    <button data-view="back">Back</button>
+
+    <button data-color="white">White</button>
+    <button data-color="laurier-purple">Purple</button>
+
+    <canvas id="canvas" width="500" height="600"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = new fabric.Canvas('canvas');
+            canvas.setWidth(500);
+            canvas.setHeight(600);
+
+            let currentView = 'front';
+
+            function changeShirtView(view) {
+                currentView = view;
+                changeShirtColor(document.querySelector('[data-color].selected')?.dataset.color || 'laurier-purple');
+            }
+
+            function changeShirtColor(color) {
+                let imgSrc;
+                switch (currentView) {
+                    case 'front':
+                        switch (color) {
+                            case 'white':
+                                imgSrc = 'images/white-shirt-front.avif';
+                                break;
+                            case 'laurier-purple':
+                                imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                                break;
+                            default:
+                                imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                        }
+                        break;
+                    case 'back':
+                        switch (color) {
+                            case 'white':
+                                imgSrc = 'images/white-shirt-back.webp';
+                                break;
+                            case 'laurier-purple':
+                                imgSrc = 'images/front-purple-shirt.jpg';
+                                break;
+                            default:
+                                imgSrc = 'images/front-purple-shirt.jpg';
+                        }
+                        break;
+                    default:
+                        imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                }
+                fabric.Image.fromURL(imgSrc, function (bgImg) {
+                    canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas), {
+                        originX: 'left',
+                        originY: 'top',
+                        scaleX: canvas.width / bgImg.width,
+                        scaleY: canvas.height / bgImg.height,
+                    });
+                }, {
+                    crossOrigin: 'Anonymous',
+                    onerror: function(message) {
+                        console.error('Error loading image:', message);
+                    }
+                });
+            }
+
+            document.querySelectorAll('[data-view]').forEach(button => {
+                button.addEventListener('click', () => {
+                    changeShirtView(button.dataset.view);
+                });
+            });
+
+            document.querySelectorAll('[data-color]').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('[data-color]').forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    changeShirtColor(button.dataset.color);
+                });
+            });
+
+            changeShirtColor('laurier-purple'); // Initial load
+        });
+    </script>
+</body>
+</html>
