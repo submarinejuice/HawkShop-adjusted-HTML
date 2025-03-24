@@ -21,11 +21,9 @@
 <link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
 	href="fonts">
 	<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
-		href="Textbookcss.css">
+		href="textbook2.css">
 	<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
 		href="shopping_2.css">
-		<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
-		href="textbook2.css">
 	
 
 
@@ -1422,7 +1420,73 @@
 										<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-14"
 											class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-14">
 											<div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
-												
+												<div class="text-cont">
+                                                    <h1>What is DTA?</h1>
+                                                    <div class="dta-lore">
+                                                        <div class="left-box-icons">
+                                                            <img src="images\book.png">
+                                                            <div id="header-text">
+                                                                <h1>My Learning Space Access</h1>
+                                                                <h2>The program provides you with digital resources for your enrolled courses through your My Learning Space course page.
+                                                                </h2>
+
+                                                            </div>
+                                                           
+                                                             <img src="images\education (1).png">
+                                                            <div id="header-text">
+                                                                <h1>Email Opt-out Process</h1>
+                                                                <h2>Details for your course materials are sent to your laurier email. Should you find your resources elsewhere, you will need to 'opt out' through the 
+                                                                    link provided in your email.
+                                                               </h2>
+
+                                                            </div>
+                                                             
+                                                            <img src="images\log-out (1).png">
+                                                            <div id="header-text">
+                                                                <h1>Loris Billing</h1>
+                                                                <h2>
+                                                                    After the opt out date has passed, you will be billed to your Loris account. Resources are provided at their most affordable rates.
+                                                                </h2>
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                        <div class="dta-lore2">
+                                                            <div class="left-box-icons2">
+                                                                <img src="images\loose-leaf-paper.png">
+                                                                <div id="header-text">
+                                                                    <h1>Loose-Leaf options</h1>
+                                                                    <h2>The program provides you with digital resources for your enrolled courses through your My Learning Space course page.
+                                                                    </h2>
+    
+                                                                </div>
+                                                               
+                                                                <img src="images\online.png">
+                                                                <div id="header-text">
+                                                                    <h1>Liscenced online textbook</h1>
+                                                                    <h2>Details for your course materials are sent to your laurier email. Should you find your resources elsewhere, you will need to 'opt out' through the 
+                                                                        link provided in your email.
+                                                                   </h2>
+    
+                                                                </div>
+                                                                
+                                                                 
+                                                                <img src="images\online (1).png">
+                                                                <div id="header-text">
+                                                                    <h1>Textbook access</h1>
+                                                                    <h2>
+                                                                        After the opt out date has passed, you will be billed to your Loris account. Resources are provided at their most affordable rates.
+                                                                    </h2>
+                                                                </div>
+                                                                
+                                                                
+                                                            </div>
+                                    
+                                                        </div>
+                                
+                                                    
+                                                </div>
 												
 												<div class="textbook-container">
 													
@@ -1443,38 +1507,23 @@
 													<h2>What is the
 															Digital Textbook Access Program? </h2>
 															<br>
-															<div class="dta-lore">
-																<div class="left-box-icons">
-																	<img src="images\book.png">
-																	<img src="images\education (1).png">
-																	<img src="images\log-out (1).png">
-																	<div id="header-text">
-																		<h1>My Learning Space Access</h1>
-																		<p>The program provides you with digital resources for your enrolled courses through your My Learning Space course page.
-																		</p>
-		
-																	</div>
-																   
-																	 
-																	<div id="header-text">
-																		<h1>Email Opt-out Process</h1>
-																		<p>Details for your course materials are sent to your laurier email. Should you find your resources elsewhere, you will need to 'opt out' through the 
-																			link provided in your email.
-																		</p>
-		
-																	</div>
-																	 
-																	
-																	<div id="header-text">
-																		<h1>Loris Billing</h1>
-																		<p>
-																			After the opt out date has passed, you will be billed to your Loris account. Resources are provided at their most affordable rates.
-																		</p>
-																	</div>
-																	
-																	
-																</div>
-															</div>
+													<p> The Digital
+															Textbook Access (DTA) program provides you with digital
+															resources for your course through your My Learning Space
+															course page. All access components, instructions and links
+															will be provided in the content section of your course. The
+															resources are free for the defined period outlined in the
+															emails you will be sent if you are enrolled in a DTA course.
+															During this time if you wish to source elsewhere you will
+															need to opt out via the link to the student portal which is
+															included in the emails. After the opt out deadline for each
+															term the resources you remain opted into will be billed to
+															your Loris account (same account you were charged for
+															tuition). These resources are provided at the most
+															affordable rate. This is just one of the ways we strive to
+															improve affordability for students. Check out our dedicated
+															Digital Textbook Access page for more information. 
+													</p><br>
 													<h2>Do You Have Digital Options for my Textbooks? </h2>
 													<br>
 													<p> In most cases
@@ -1746,6 +1795,16 @@
 			const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
 			mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
 		});
+        const mobileMenuButton = document.querySelector('.link-mobile-menu');
+        const mobileMenuDropdown = document.querySelector('.link-mobile-menu-dropdown');
+
+        if (mobileMenuButton && mobileMenuDropdown) {
+         mobileMenuButton.addEventListener('click', () => {
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenuDropdown.classList.toggle('open');
+    });
+}
 	});</script>
 	
 
