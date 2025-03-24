@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <title>Mockup Order Page</title>
     <link href="mockuptool.css" rel="stylesheet">
-  <meta charset="UTF-8" />
-  <title>Mockup Order Page</title>
-  <style>
-    /* Basic styling; adjust as needed */
-    #canvas-container {
-      position: relative;
-      border: 1px solid #ccc;
-      display: inline-block;
-      background-image: url('images/61ogc05nK3L._AC_UY1000_.jpg');
-      object-fit: cover;
-      
-      
-    }
-  </style>
-  
 </head>
 <body>
-  <div class="main">
-    <div class="container">
-      <div class="right-box">
-        <h1>Design Your Shirt</h1>
-        <H2>Choose your product</H2>
-        <div class="colors">
-          <div id="black"></div>
-          <div id="white"></div>
+    <main class="main">
+        <div class="container">
+            <aside class="right-box">
+                <h1>Design Your Shirt</h1>
+                <section class="color-selection">
+                    <h2>Choose a Color</h2>
+                    <div class="colors">
+                        <button class="color-option" data-color="laurier-purple" id="laurier-purple"></button>
+                        <button class="color-option" data-color="white" id="white"></button>
+                        <button class="color-option" data-color="goose-grey" id="goose-grey"></button>
+                        <button class="color-option" data-color="golden-hawk-gold" id="golden-hawk-gold"></button>
+                    </div>
+                </section>
+                <section class="size-selection">
+                    <h2>Choose a Size</h2>
+                    <form id="size-form">
+                        <button type="button" class="size-option" data-size="XS">Xtra Small</button>
+                        <button type="button" class="size-option" data-size="S">Small</button>
+                        <button type="button" class="size-option" data-size="M">Medium</button>
+                        <button type="button" class="size-option" data-size="L">Large</button>
+                        <button type="button" class="size-option" data-size="XL">Xtra Large</button>
+                    </form>
+                </section>
+                <button id="download-design">Download Design</button>
+                <div class="function-container">
+                    <input type="file" id="upload-image" accept="image/png" />
+                </div>
+            </aside>
+            <section class="left-box">
+                <nav class="view-selection">
+                    <button class="view-option" data-view="front">Front</button>
+                    <button class="view-option" data-view="back">Back</button>
+          
+                </nav>
+                <div id="canvas-container">
+                    <canvas id="canvas" width="500" height="600"></canvas>
+                    <div id="dropzone">Drag and drop your design here!</div>
+                </div>
+            </section>
         </div>
-        <div class="sizes">
-          <h2>Choose a Size</h2>
-          <button>Xtra Small</button>
-          <button>Small</button>
-          <button>Medium</button>
-          <button>Large</button>
-          <button>Xtra Large</button>
-        </div>
-        <button id="submit">Download Design</button>
-        <div class="function-container">
-          <input type="file" id="upload" accept="image/png" />
-        </div>
-      </div>
-      <div class="left-box">
-        <div class="buttons">
-          <button>Front</button>
-          <button>Back</button>
-          <button>Inside Label</button>
-          <button>Outside Label</button>
-        </div>
-        <div id="canvas-container">
-          <canvas id="canvas" width="500" height="600"></canvas>
-          <div id="dropzone">Drag and drop your design here!</div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  
- 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
-  <script src="mockupscript.js"></script></div>
-  </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <script src="mockupscript.js"></script>
 </body>
 </html>
