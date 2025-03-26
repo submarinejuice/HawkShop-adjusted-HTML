@@ -657,12 +657,11 @@ s
     color: #330072;
     cursor: pointer;
     display: inline-block;
-    font-family: 'Helvetica', Arial, sans-serif;
+
     font-size: 0.875em;
     font-weight: bold;
     outline: none;
     padding: 20px;
-    text-transform: uppercase;
     -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       -ms-transition: all 0.3s;
@@ -915,6 +914,7 @@ s
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
     
     
 }
@@ -960,18 +960,14 @@ s
 }
 
 /* “Push” the button containers to the bottom */
-.find-us-container,
-.submit {
-  margin-top: auto;
-  text-align: center; /* Centers the button within its container */
-}
+
 
 /* Style the buttons as needed */
 .find-us-button,
 #form_button {
   display: inline-block;
   padding: 12px 24px;
-
+  margin: 0 auto;
   color: #330072;
   text-decoration: none;
   border: 2px solid #330072;

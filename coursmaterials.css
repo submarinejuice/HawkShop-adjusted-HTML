@@ -1,6 +1,6 @@
 /*CSS file specific to Course Materials and Student Information pages!*/
 * {
-    font-family: 'Lato', sans-serif; 
+    font-family: 'Lato', sans-serif !important; 
 }
 
 .header-menu-level-container {
@@ -339,7 +339,7 @@
     font-weight: bold;
     padding:  20px;
     text-align: center;
-    font-family: 'lato';
+
     font-weight: bold;
     font-size: 35px;
     display: flex;

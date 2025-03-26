@@ -130,6 +130,7 @@
     font-size: 18px; 
     font-weight: bold; 
     padding: 15px; 
+    justify-content: space-around;
   }
   
   td {
@@ -459,7 +460,14 @@ color: #F2A900
   font-size: 18px; 
   font-weight: bold; 
   padding: 15px;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.table-div2 table thead th:first-child {
+  text-align: left;
+}
+
+.table-div2 table thead th:last-child {
+  text-align: right;
 }
 .table-div2 td{
   color: #3a0055e5;
