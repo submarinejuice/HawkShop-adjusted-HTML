@@ -1,63 +1,270 @@
 /*CSS file specific to dta test 1!*/
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif !important;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-.left-box-icons{
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:20px;
-    width: 1100px;
-    height: auto;
+
+.textbooks-101-container { /* Or body */
+    /* ... other styles ... */
+    background-image: url('images/Group 1.png'); /* Replace with the correct path */
+    background-size: cover; /* This is the key property */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center top; /* Adjust as needed (e.g., center center, center bottom) */
+    min-height: 100vh; /* Ensure it covers at least the viewport height */
+    max-height: 20vh;
+  }
+  .vids-cont { /* Or body */
+    width: 100vw;
+    /* Remove height: 1200px; if you want it to size based on content */
+    background-image: url('images/Group 1 - Copy.png'); /* Replace with the correct path */
+    background-size: cover; /* This is the key property */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center top; /* Adjust as needed (e.g., center center, center bottom) */
+    min-height: 100vh; /* Ensure it covers at least the viewport height */
+    /* Remove max-height: 100vh; */
+  }
+  
+
+.textbook-header-container{
+    position: absolute;
+    margin: 30px 100px;
+    display: flex;
+    flex-direction: row;
+    max-width: 1600px;
+    gap:150px;
+    margin-left: 200px;
+}
+.textbook-header-r{
+    max-width: 800px;
+    padding: 30px;
     margin: 0 auto;
+    justify-content: center;
+ 
+  
+}
+
+.textbook-header-r h2{
+    color: rgba(255, 255, 255, 0.907);
+    font-size: 25px;
+    max-width: 500px;
+    margin: 0 auto;
+   
+
+}
+.textbook-header-container{
+    margin-top:50px;
+}
+
+.important-nav{
+    padding: 15px;
+    border: 1px solid #e2e1e3;
+    color: #e2e1e3;
+    border-radius: 25px;
+    font-size: 10px;
+    font-weight: bold;
+    position: relative; /* Needed for absolute positioning of the arrow */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
+}
+.important-nav::after {
+    content: "→";
+    position: absolute;
+    right: 15px; /* Adjust position as needed */
+    opacity: 0; /* Initially hide the arrow */
+    transform: translateX(-8px); /* Start a bit to the left */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
+    display: inline-block; /* Keep it as inline-block */
+}
+.important-nav:hover{
+    color: #330072;
+    background-color: #e2e1e3;
+}
+.important-nav:hover::after {
+    opacity: 1; /* Fade in the arrow */
+    transform: translateX(0px); /* Move the arrow to its final position */
+}
+
+.links{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Shorthand for 1fr 1fr 1fr */
+    grid-gap: 20px;
     text-align: center;
 }
-.left-box-icons img{
-    width: 100px;
-    filter: brightness(0) saturate(100%) invert(9%) sepia(14%) saturate(2314%) hue-rotate(224deg) brightness(94%) contrast(92%);
-    margin:0 auto;
-}
-.left-box-icons p{
-    font-size: 15px;
-    color: black;
-    padding: 10px;
-}
-.left-box-icons h1{
-    font-size: 20px;
+.textbook-header-l h1{
+    font-size: 70px;
     font-weight: bold;
-    padding: 10px 0;
+    color: #ffb700;
+    padding-top: 40px;
 }
-.left-box-icons2{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: 1fr 1fr 1fr;
-
-    gap:20px;
-    width: 1100px;
-    margin: 0 auto;
-}
-.left-box-icons2 img{
-    width: 100px;
-    filter: brightness(0) saturate(100%) invert(9%) sepia(14%) saturate(2314%) hue-rotate(224deg) brightness(94%) contrast(92%);
-    margin:0 auto;
-}
-.left-box-icons2 h2{
-    font-size: 15px;
-    color: black;
+.textbook-header-l h2{
+    font-size: 20px;
     font-weight: normal;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    padding-bottom: 20px;
+  
 }
-.left-box-icons2 h1{
-    font-size: 20px;
+.textbook-header-r h2{
+    font-size: 19px;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    
+  
+}
+.deadlines-container{
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    max-width:500px;
+
+}
+.deadline-row{
+    display:flex;
+    flex-direction: row;
+    float:right;
+  
+
+}
+.deadlines-header{
+    color: #c6c6c6 !important;
+  
+}
+.header{
+    padding:10px 0px;
+    padding-top: 20px;
+    
+}
+#header{
+    color: rgba(214, 214, 214, 0.744) !important;
+    font-weight: bold !important;
+}
+.deadline-left h2{
+    color: white !important ;
+    font-size: 19px;
     font-weight: bold;
-    padding: 10px 0;
+  
+}
+.deadline-right h2{
+    font-size: 19px !important;
+    font-weight: bold;
+}
+.deadline-left p{
+    color:#c6c6c6;
+   
 }
 .textbooks-101-container{
-    margin-left: 30px;
+    display:flex;
+    flex-direction: column;
+   
 }
-.link-mobile-menu h2{
+.deadlines-container {
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    /* Remove float: right; */
+  }
+  
+  .deadline-row {
+    display: flex;
+    flex-direction: row;
+    /* Remove float: right; */
+    align-items: flex-start; /* Align items vertically at the start */
+  }
+  
+  .deadline-right {
+    /* Add this to push the right content to the left */
+    margin-left: auto;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  /* To align the entire deadlines-container to the left edge of the screen */
+  .textbook-header-r .deadlines-container {
+    margin-left: 0; /* Override any automatic margins */
+  }
+  
+.line{
+    height: 1px;
+    width: 500px;
+    background-color: #c6c6c6;
+    margin-top:0px;
+    margin-bottom: 10px;
+}
+.dta-info{
+    top:650px;
+    position:relative;
     margin: 0 auto;
+    text-align: center;
+    padding-top: 100px;
+   
+}
+.dta-info h1{
+    color:#330072;
+    font-weight: bold;
+    max-width:1000px;
+    margin: 0 auto;
+
+
+}
+.space{
+    height:900px;
+    width:200px;
+    background-color: none;
+}
+.boxes-text-grid{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    justify-content: space-evenly;
+    margin-top:100px;
+}
+.boxes-text-grid img{
+    width: 200px;
+}
+#box h2{
+    color: #330072;
+    font-weight: bold;
+    padding: 20px 0;
+}
+.line-v{
+    height:200px;
+    width: 1px;
+    background-color: #330072;
+    margin: 0px 30px;
+
+}.important-nav2{
+    padding: 10px 30px;
+    border: 1px solid #330072;
+    color: #330072;
+    border-radius: 25px;
+    font-size: 20px;
+
+    position: relative; /* Needed for absolute positioning of the arrow */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
+}
+.important-nav2::after {
+    content: "→";
+    position: relative;
+    right: -1px; /* Adjust position as needed */
+    opacity: 0; /* Initially hide the arrow */
+    transform: translateX(-8px); /* Start a bit to the left */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
+    display: inline-block; /* Keep it as inline-block */
+}
+.important-nav2:hover{
+    color: #ffffff;
+    background-color: #330072;
+}
+.important-nav2:hover::after {
+    opacity: 1; /* Fade in the arrow */
+    transform: translateX(0px); /* Move the arrow to its final position */
+}
+.questions p{
+    color:#330072;
+    padding:40px;
+    font-size: 20px;
 }
