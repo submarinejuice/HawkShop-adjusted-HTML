@@ -13,9 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { crossOrigin: 'Anonymous' });
 
   const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('upload-image');
+
+// Make the drop zone clickable so that it triggers the file input dialog.
+
 
   document.addEventListener("dragover", (e) => e.preventDefault());
   document.addEventListener("drop", (e) => e.preventDefault());
+  document.getElementById('remove-design').addEventListener('click', function () {
+    if (currentImage) {
+        canvas.remove(currentImage);
+        currentImage = null;
+        // Show the dropzone again so user can upload a new file
+        dropzone.style.display = 'block';
+        // Hide the remove button
+        this.style.display = 'none';
+    }
+});
+
 
   dropzone.addEventListener('dragover', (e) => {
       e.preventDefault();
@@ -26,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       dropzone.style.backgroundColor = "rgba(255,255,255,0.8)";
   });
+  dropzone.addEventListener('click', () => {
+    fileInput.click();
+    });
 
   const printArea = {
       left: 100,
@@ -57,41 +75,48 @@ document.addEventListener("DOMContentLoaded", function () {
           canvas.renderAll();
       });
   }
+  // Helper function to handle file reading and image creation
+  function handleFile(file) {
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            fabric.Image.fromURL(event.target.result, function (img) {
+                img.set({
+                    left: printArea.left + printArea.width / 4,
+                    top: printArea.top + printArea.height / 4,
+                    scaleX: 0.5,
+                    scaleY: 0.5,
+                });
+                canvas.add(img);
+                constrainImage(img);
+                canvas.renderAll();
+                
+                // Store the added image so you can remove it later
+                currentImage = img;
+                // Hide the dropzone
+                dropzone.style.display = 'none';
+                // Show the remove button
+                document.getElementById('remove-design').style.display = 'inline-block';
+            });
+        };
+        reader.readAsDataURL(file);
+    }
+}
 
-  dropzone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropzone.style.display = 'none';
 
-      const file = e.dataTransfer.files[0];
-      if (file) {
-          const reader = new FileReader();
-          reader.onload = function (event) {
-              fabric.Image.fromURL(event.target.result, function (img) {
-                  img.set({
-                      left: printArea.left + printArea.width / 4,
-                      top: printArea.top + printArea.height / 4,
-                      scaleX: 0.5,
-                      scaleY: 0.5,
-                  });
-                  canvas.add(img);
-                  constrainImage(img);
-                  canvas.renderAll();
-              });
-          };
-          reader.readAsDataURL(file);
-      }
-  });
+dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files[0];
+    handleFile(file);
+});
 
-  document.getElementById('download-design').addEventListener('click', function () {
-      canvas.renderAll();
-      const dataURL = canvas.toDataURL({ format: 'png', quality: 1.0 });
-      const link = document.createElement('a');
-      link.href = dataURL;
-      link.download = 'custom-design.png';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-  });
+  // Handle file input selection
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    handleFile(file);
+});
+
+ 
 
   document.querySelector('.colors').addEventListener('click', function(event){
       if (event.target.classList.contains('color-option')) {
@@ -185,6 +210,123 @@ document.addEventListener("DOMContentLoaded", function () {
           changeShirtView(button.dataset.view);
       });
   });
+  document.addEventListener("DOMContentLoaded", function () {
+    // Declare currentImage so it can be accessed globally within this function
+    let currentImage = null;
+    
+    const canvas = new fabric.Canvas('canvas');
+    canvas.setWidth(500);
+    canvas.setHeight(600);
+  
+    // ... your background image setup ...
+  
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('upload-image');
+    const removeButton = document.getElementById('remove-design');
+  
+    // Set up the remove button listener
+    removeButton.addEventListener('click', function () {
+      if (currentImage) {
+        canvas.remove(currentImage);
+        currentImage = null;
+        // Show the dropzone again so user can upload a new file
+        dropzone.style.display = 'block';
+        // Hide the remove button
+        this.style.display = 'none';
+      }
+    });
+  
+
+    function handleFile(file) {
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          fabric.Image.fromURL(event.target.result, function (img) {
+            img.set({
+              left: printArea.left + printArea.width / 4,
+              top: printArea.top + printArea.height / 4,
+              scaleX: 0.5,
+              scaleY: 0.5,
+            });
+            canvas.add(img);
+            constrainImage(img);
+            canvas.renderAll();
+            
+            // Store the added image so you can remove it later
+            currentImage = img;
+            // Hide the dropzone
+            dropzone.style.display = 'none';
+            // Show the remove button
+            removeButton.style.display = 'inline-block';
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  
+    
+  });
+  
+
+    // Example: When a color button is clicked (ensure your color buttons have a data-color attribute)
+    document.querySelectorAll('.colors .color-option').forEach(button => {
+    button.addEventListener('click', () => {
+        selectedColor = button.dataset.color;
+        // (Optional) Update visual selection here...
+    });
+    });
+
+    // Example: When a size button is clicked (ensure your size buttons have a data-size attribute)
+    document.querySelectorAll('.size-option').forEach(button => {
+    button.addEventListener('click', () => {
+        selectedSize = button.dataset.size;
+    });
+    });
+
+    // Example: When a view button is clicked (ensure your view buttons have a data-view attribute)
+    document.querySelectorAll('.view-option').forEach(button => {
+    button.addEventListener('click', () => {
+        currentView = button.dataset.view;
+    });
+    });
+    document.getElementById('download-design').addEventListener('click', function () {
+        canvas.renderAll();
+        const dataURL = canvas.toDataURL({ format: 'png', quality: 1.0 });
+        const link = document.createElement('a');
+      
+        // Use the selected values to build the filename. If a value isn’t set, use a default.
+        const fileName = `${selectedColor || 'Color'}-${selectedSize || 'Size'}-${currentView || 'front'}-design.png`;
+        
+        link.href = dataURL;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+      
+    // for view selection, ie, front and back of a product
+    document.querySelectorAll('.view-selection button').forEach(button => {
+        button.addEventListener('click', () => {
+            //remove selected class from all view buttons 
+            document.querySelectorAll('.view-selection button').forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+                currentView = button.dataset.view;
+        });
+    });
+
+    //for size selection same thing 
+
+    document.querySelectorAll('.size-selection button').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.size-selection button').forEach(btn => btn.classList.remove('selected'));
+            // add selected class to da clicked button
+            button.classList.add('selected');
+            selectedSize = button.dataset.size;
+        });
+    });
+
+  
+  
   
   
 });

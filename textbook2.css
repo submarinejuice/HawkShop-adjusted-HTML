@@ -30,11 +30,11 @@
 
 .textbook-header-container{
     position: absolute;
-    margin: 30px 100px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     max-width: 1600px;
-    gap:150px;
+    gap:60px;
     margin-left: 200px;
 }
 .textbook-header-r{
@@ -55,7 +55,7 @@
 
 }
 .textbook-header-container{
-    margin-top:50px;
+    margin-top:100px;
 }
 
 .important-nav{
@@ -93,7 +93,7 @@
     text-align: center;
 }
 .textbook-header-l h1{
-    font-size: 70px;
+    font-size: 80px;
     font-weight: bold;
     color: #ffb700;
     padding-top: 40px;
@@ -267,4 +267,26 @@
     color:#330072;
     padding:40px;
     font-size: 20px;
+}
+.questions {
+    margin-top: 100px;  /* Pushes .questions to the bottom of .info-content */
+    padding-top: 50px; /* Adds extra space above questions if desired */
+  }
+.vid-container{
+    display:flex;
+    margin: 0 auto;
+
+}
+.opt-out-container{
+    margin-top: 30px;
+    margin: 0 auto;
+}
+.opt-out-container h1{
+    color:#ffb700;
+    font-weight: bold;
+    text-align: center;
+}
+.opt-out-container h2{
+    color:#ffb700;
+    font-weight: bold;
 }

@@ -26,9 +26,13 @@
 		window.applicationStartTime = Date.now();
 	</script>
 	<!--ADDED-->
+    <meta charset="UTF-8" />
+    <title>Mockup Order Page</title>
+  
 	<link rel="stylesheet" href="fonts">
-	<link rel="stylesheet" href="course_materials.css">
+    <link rel="stylesheet" href="course_materials.css">
 	<link rel="stylesheet" href="shopping_2.css">
+    <link rel="stylesheet" href="mockuptool2.css">
 	
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1324,63 +1328,67 @@
 							</div>
 							
 								<div><!-- TEMPLATE STARTS: custom_content_type_container-->
-									<div class="header-h1">
-										<h1>Course Materials</h1>
+									<div class="header">
+										<h1>Mockup Generator</h1>
+										<p>Got a design revved up and are curious how it would look on some golden hawk merch? Drag & drop your design, or click the grey box
+											to upload one, and play around with it! When your placement is finalized, you can download a copy, or send it straight to 
+											our custom order staff to inquire about designs!
+										<p>
 									</div>
 									
-									
-									<div class="box-container">
-										<div class="box">
-											<img src="images\bts.jpg" alt="Kaleigh with a book!" class="box-img"> 
-											<div class="content-wrapper">
-												<h1>Textbook Search</h1>
-												<p>Getting ready for the new semester? Search all textbooks available for your classes!</p>
+                                    <main class="mockup-main">
+										
+                                        <div class="container-main">
+                                            <aside class="right-box">
+                                                
+                                                <section class="color-selection">
+                                                    <h2>Choose a Color</h2>
+                                                    <div class="colors">
+                                                        <button class="color-option" data-color="laurier-purple" id="laurier-purple"></button>
+                                                        <button class="color-option" data-color="white" id="white"></button>
+                                                        <button class="color-option" data-color="goose-grey" id="goose-grey"></button>
+                                                        <button class="color-option" data-color="golden-hawk-gold" id="golden-hawk-gold"></button>
+                                                    </div>
+                                                </section>
+                                                <section class="size-selection">
+                                                    <h2>Choose a Size</h2>
+                                                    <form id="size-form">
+                                                        <button type="button" class="size-option" data-size="XS">Xtra Small</button>
+                                                        <button type="button" class="size-option" data-size="S">Small</button>
+                                                        <button type="button" class="size-option" data-size="M">Medium</button>
+                                                        <button type="button" class="size-option" data-size="L">Large</button>
+                                                        <button type="button" class="size-option" data-size="XL">Xtra Large</button>
+                                                    </form>
+                                                </section>
+                                                <button id="download-design">Download Design</button>
+												<button id="download-design" class="inquire-button" href="custom-order-mock.html">Inquire about Design</button>
+                                                <div class="function-container">
+                                                    
+                                                </div>
+                                            </aside>
+                                            <section class="left-box">
+                                                <nav class="view-selection">
+                                                    <button class="view-option" data-view="front">Front</button>
+                                                    <button class="view-option" data-view="back">Back</button>
+                                          
+                                                </nav>
+                                                <div id="canvas-container">
+													<canvas id="canvas" width="500" height="600"></canvas>
+													<div id="dropzone" class="dropzone">
+													  Drag and drop your design here or click to upload.
+													  <input type="file" id="upload-image" accept="image/png" style="display: none;">
+													</div>
+													
+												</div>
+												<button id="remove-design" style="display: none;">Remove Image</button>
 												
-												<a href="https://www.wlubookstore.com/adoption-search" class="find-us-button">
-													Learn more <span class="arrow">→</span>
-												</a>
-											</div>
-											
-										</div>
-										<div class="box">
-											<img src="images\carousel_roots2024.jpg" alt="roots :)" class="box-img">
-											<div class="content-wrapper">
-												<h1>Student Information</h1> <!-- THIS NEEDS TO BE FINISHED AS WELL !! GIRLLLLL.... -->
-												<p>Textbook access, reedeming access codes, textbooks 101, and textbook partners.</p>
-												
-												<a href="Student_info_landing.HTML" class="find-us-button">
-													Learn more <span class="arrow">→</span>
-												</a>
-											</div>
-											
-										</div>
-										<div class="box">
-											<img src="images\IMG_1493.JPG" alt="convo lol" class="box-img">
-											<div class="content-wrapper">
-												<h1>Faculty Information</h1>
-												<p>Faculty adoption, guide, publishers, deadlines & return schedules.</p>
-											
-												<a href="https://www.wlubookstore.com/faculty-guide"  class="find-us-button">
-													Learn more <span class="arrow">→</span>
-												</a>
-										</div>
-											
-					
-										</div>
-										<div class="box">
-											<img src="images\textbooks.jpg" alt="pinterest stolen" class="box-img">
-											<div class="content-wrapper">
-												<h1>General Books</h1>
-												
-												<p>Faculty authored books & events.</p>
-												
-												<a href="https://www.wlubookstore.com/classroom/classroom-general-books/classroom-faculty-authored?page=1"  class="find-us-button">
-													Learn more <span class="arrow">→</span>
-												</a>
-											</div>
-											
-											
-									</div>
+												  
+                                            </section>
+                                        </div>
+										
+                                    </main>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+                                    <script src="mockupscript.js"></script>
 									<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-24"
 										class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-24">
 										<div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->

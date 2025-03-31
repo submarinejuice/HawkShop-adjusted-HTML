@@ -198,7 +198,7 @@ color: #F2A900
   
 }
 .contact-line{
-  border-left: 3px solid #FDD757;
+  border-left: 2px solid #F2A900;
   height: 90px;
 
 }
@@ -484,4 +484,30 @@ color: #F2A900
   color:rgb(0, 0, 0)
 
 }
-.waterloo-card{}
+.important-nav2{
+  padding: 10px 30px;
+  border: 1px solid #330072;
+  color: #330072;
+  border-radius: 25px;
+  font-size: 20px;
+
+  position: relative; /* Needed for absolute positioning of the arrow */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
+}
+.important-nav2::after {
+  content: "→";
+  position: relative;
+  right: -1px; /* Adjust position as needed */
+  opacity: 0; /* Initially hide the arrow */
+  transform: translateX(-2px); /* Start a bit to the left */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
+  display: inline-block; /* Keep it as inline-block */
+}
+.important-nav2:hover{
+  color: #ffffff;
+  background-color: #330072;
+}
+.important-nav2:hover::after {
+  opacity: 1; /* Fade in the arrow */
+  transform: translateX(0px); /* Move the arrow to its final position */
+}
