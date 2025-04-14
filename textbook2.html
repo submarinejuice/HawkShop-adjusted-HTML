@@ -17,13 +17,15 @@
 		window.applicationStartTime = Date.now();
 	</script>
 	<script src="jquery-3.7.1.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
-	href="fonts">
-	<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
-		href="textbook2.css">
 	<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
 		href="shopping_2.css">
+	<link rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"
+		href="textbook2.css">
+	
 	
 
 
@@ -1351,144 +1353,255 @@
 						</div>
 						
 					</div>
-								<div class="textbooks-101-container">
-									<div class="waveimg">
-										
+					<body class="bg-gray-50">
+						<!-- Progress bar -->
+						<div class="progress-container">
+						  <div class="progress-bar" id="progressBar"></div>
+						</div>
+					  
+						
+					  
+						<!-- Hero Section -->
+						<section class="hero-bg text-white py-20 md:py-28">
+						  <div class="container mx-auto px-4 hero-content">
+							<div class="flex flex-col md:flex-row md:space-x-16 items-center">
+							  <!-- Left Side - Title and Quick Links -->
+							  <div class="md:w-1/2 mb-12 md:mb-0 fade-in" style="animation-delay: 0.1s">
+								<h1 class="text-5xl md:text-6xl font-bold text-yellow-300 mb-4">Textbooks 101</h1>
+								<p class="text-lg mb-8 text-gray-200">Everything you need to know about accessing and using your course materials.</p>
+								<h2 class="text-xl mb-4">Quick Links</h2>
+								
+								<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+								  <a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">COURSES</a>
+								  <a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">STUDENTS</a>
+								  <a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
+								  <a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DTA</a>
+								  <a href="#faculty" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY</a>
+								  <a href="#textbooks" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">TEXTBOOKS</a>
+								</div>
+							  </div>
+							  
+							  <!-- Right Side - Deadlines -->
+							  <div class="bg-black bg-opacity-30 rounded-lg p-8 md:w-1/2 fade-in" style="animation-delay: 0.3s">
+								<div class="floating-label">IMPORTANT</div>
+								<p class="text-text-yellow-lg leading-relaxed">The return deadlines for all course materials are the following. All course materials purchased after this deadline are considered final sale.</p>
+								
+								<h3 class="text-orange-300 font-bold mt-8 mb-4 flex items-center">
+								  <i class="fas fa-calendar-alt mr-2"></i> DEADLINES
+								</h3>
+								<div class="w-full h-px bg-yellow-300 mb-6"></div>
+								
+								<div class="space-y-6">
+								  <div class="deadline-row">
+									<div>
+									  <h4 class="font-bold text-gray-lg">May Start</h4>
+									  <p class="text-gray-300 text-sm">6 & 12 week courses</p>
 									</div>
-									<div class="textbook-header-container">
-										<div class="textbook-header-l">
-											<h1>Textbooks 101</h1>
-											<h2>Quick Links</h2>
-											<div class="links">
-												<a href="custom-order-gallery.html" class="important-nav">
-													COURSE INFO 
-												</a>
-												<a href="custom-order-gallery.html" class="important-nav">
-													STUDENT INFO 
-												</a>
-												<a href="custom-order-gallery.html" class="important-nav">
-													CONTACT INFO 
-												</a>
-												<a href="custom-order-gallery.html" class="important-nav">
-													DTA INFO 
-												</a>
-												<a href="custom-order-gallery.html" class="important-nav">
-													FACULTY INFO 
-												</a>
-												<a href="custom-order-gallery.html" class="important-nav">
-													TEXTBOOOKS 
-												</a>
-
-											</div>
-											
-											
-										</div>
-										<div class="textbook-header-r">
-											<h2>The return deadlines for all course materials are the following. All course materials purchased after this deadline are considered final sale.</h2>
-											<h2 class="header" id="header">DEADLINES</h2>
-											<div class="line"></div>
-											  <div class="deadlines-container">
-											
-											
-												<div class="deadline-row">
-												  <div class="deadline-left">
-													<h2>May Start</h2>
-													<p>6 &amp; 12 week</p>
-												  </div>
-												  <div class="deadline-right">MAY 17</div>
-												</div>
-											
-												<div class="deadline-row">
-												  <div class="deadline-left">
-													<h2>July Start</h2>
-													<p>8 Weeks</p>
-												  </div>
-												  <div class="deadline-right">JULY 19</div>
-												</div>
-											</div>
-										</div>
-										
+									<div class="deadline-date">
+									  <i class="fas fa-exclamation-circle"></i>
+									  MAY 17
 									</div>
-									<div class="dta-info">
-										<h1>What is the Digital Textbook Access (DTA) Program?</h1>
-										<div class="grid-container">
-											<div class="boxes-text-grid">
-												<div id="box">
-													<img src="images\d2l-master-logo-100.jpg">
-													<h2>Information Head 1</h2>
-													<p>YADDA YADDA YYADDA</p>
-													<a href="" class="find-us-button">
-														Take me there
-													</a>
-												</div>
-												<div class="line-v"></div>
-												<div id="box">
-													<img src="images\library.png">
-													<h2>Information Head 2</h2>
-													<p>YADDA YADDA YYADDA</p>
-													<a href="" class="find-us-button">
-														Redeem My Codes 
-													</a>
-												</div>
-												<div class="line-v"></div>
-												<div id="box">
-													<img src="images\VitalSource_Logo.jpg">
-													<h2>Information Head 3</h2>
-													<p>YADDA YADDA YYADDA</p>
-													<a href="" class="find-us-button">
-														Take me There
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="questions"><p>Still have questions?</p>
-											<a href="custom-order-gallery.html" class="important-nav2">
-												View FAQ 
-											</a>
-										</div>
-									
-										
-									
-										
+								  </div>
+								  
+								  <div class="deadline-row">
+									<div>
+									  <h4 class="font-bold text-lg">July Start</h4>
+									  <p class="text-gray-300 text-sm">8 Week courses</p>
 									</div>
-									
-									
-									
-									
-
+									<div class="deadline-date">
+									  <i class="fas fa-exclamation-circle"></i>
+									  JULY 19
+									</div>
+								  </div>
 								</div>
 								
+								<div class="deadline-alert">
+								  <p class="text-sm font-medium text-normal">
+									<i class="fas fa-info-circle mr-1"></i>
+									Set a reminder! Missing the deadline may result in non-refundable purchases.
+								  </p>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</section>
+					  
+						<!-- Stats Section -->
+						<section class="bg-white py-12">
+						  <div class="container mx-auto px-4">
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+							  <div class="statistic-item fade-in" style="animation-delay: 0.2s">
+								<div class="statistic-number">90%</div>
+								<p class="text-gray-700">of courses use digital textbooks</p>
+							  </div>
+							  <div class="statistic-item fade-in" style="animation-delay: 0.3s">
+								<div class="statistic-number">30%</div>
+								<p class="text-gray-700">average savings compared to print</p>
+							  </div>
+							  <div class="statistic-item fade-in" style="animation-delay: 0.4s">
+								<div class="statistic-number">24/7</div>
+								<p class="text-gray-700">access to your materials</p>
+							  </div>
+							</div>
+						  </div>
+						</section>
+					  
+						<!-- DTA Info Section -->
+						<section class="py-16 md:py-24 bg-gray-50">
+						  <div class="container mx-auto px-4">
+							<h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 text-indigo-900">What is the Digital Textbook Access (DTA) Program?</h2>
+							<div class="section-divider mx-auto"></div>
+							
+							<p class="text-lg text-center max-w-3xl mx-auto mb-12 text-orange-700">
+							  The DTA program provides students with digital access to required course materials at reduced prices, available from day one of your courses.
+							</p>
+							
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+							  <!-- Info Card 1 -->
+							  <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.2s">
+								<div class="card-icon">
+								  <i class="fas fa-laptop"></i>
+								</div>
+								<img src="images\d2l-master-logo-100.jpg" alt="D2L Logo" class="w-32 h-16 object-contain mb-6">
+								<h3 class="text-xl font-bold text-indigo-900 mb-4">Access Your Course Materials</h3>
 								
+								<div class="flex flex-wrap mb-4">
+								  <span class="feature-tag">Online Access</span>
+								  <span class="feature-tag">Mobile-Friendly</span>
+								</div>
+								
+								<p class="text-gray-700 mb-6">Get instant access to digital textbooks and learning resources through our D2L platform. Available on any device, anywhere you study.</p>
+								
+								<a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
+							  </div>
+							  
+							  <!-- Info Card 2 -->
+							  <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.4s">
+								<div class="card-icon">
+								  <i class="fas fa-book"></i>
+								</div>
+								<img src="images\VitalSource_Logo.jpg" alt="Library Logo" class="w-32 h-16 object-contain mb-6">
+								<h3 class="text-xl font-bold text-indigo-900 mb-4">Library Resources</h3>
+								
+								<div class="flex flex-wrap mb-4">
+								  <span class="feature-tag">Research Tools</span>
+								  <span class="feature-tag">Study Guides</span>
+								</div>
+								
+								<p class="text-gray-700 mb-6">Explore additional academic resources available through our university library. Access journals, research papers, and study materials.</p>
+								
+								<a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
+							  </div>
+							  
+							  <!-- Info Card 3 -->
+							  <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.6s">
+								<div class="card-icon">
+								  <i class="fas fa-mobile-alt"></i>
+								</div>
+								<img src="/api/placeholder/120/60" alt="VitalSource Logo" class="w-32 h-16 object-contain mb-6">
+								<h3 class="text-xl font-bold text-indigo-900 mb-4">VitalSource Platform</h3>
+								
+								<div class="flex flex-wrap mb-4">
+								  <span class="feature-tag">Highlighting</span>
+								  <span class="feature-tag">Notes</span>
+								  <span class="feature-tag">Offline Access</span>
+								</div>
+								
+								<p class="text-gray-700 mb-6">Access your eTextbooks on any device with our VitalSource integration. Highlight, take notes, and study offline with the mobile app.</p>
+								
+								<a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
+							  </div>
 							</div>
 							
-							
-
-							<div class="space"></div>
-							<div class="vids-cont">
-								<div class="opt-out-container">
-									<h1>Textbook Access & Opt-Out</h1>
-									<div class="vid-container">
-										<div class="opt-out-box">
-											
-											<p><b>How To Opt Out of Your Digital Textbook Access Resources</b></p>
-											<br>
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/rcaVi-T3wRU?si=XTy-FlVcHQxzoC_N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-											
-										</div>
-										<div class="opt-out-box">
-											<p><b>Accessing Your Digital Textbook Access Resources</b></p>
-											<br>
-											<iframe width="560" height="315" src="https://www.youtube.com/embed/w-7_SZhh67M?si=p0hgQaY58A1jeXJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-											
-										</div>
-									</div><!-- TEMPLATE ENDS: cms_landing_page -->
-				</div>
+							<div class="quick-contact fade-in" style="animation-delay: 0.6s">
+							  <h3 class="text-xl font-bold text-indigo-900 mb-4">Still have questions?</h3>
+							  <p class="text-gray-700 mb-6">Our comprehensive FAQ answers common questions about the DTA program, accessing materials, and troubleshooting.</p>
+							  <a href="#faq" class="button-secondary py-3 px-8 rounded-full text-center inline-block">View FAQ</a>
 							</div>
+						  </div>
+						</section>
+					  
+						<!-- Opt-Out Section -->
+						<section class="opt-out-section text-white py-16 md:py-24 relative">
+						  <div class="container mx-auto px-4 relative z-10">
+							<h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-300 mb-4">Textbook Access & Opt-Out</h2>
+							<div class="section-divider mx-auto"></div>
 							
-					</div>
-
-					
-				</div>
+							<p class="text-lg text-center max-w-3xl mx-auto mb-12">
+							  Learn how to access your digital materials or opt out of the program if you prefer to purchase materials elsewhere.
+							</p>
+							
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+							  <div class="text-center fade-in" style="animation-delay: 0.3s">
+								<h3 class="text-2xl font-bold mb-6">How To Opt Out of Your Digital Textbook Access Resources</h3>
+								<div class="video-container mt-6">
+								  <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/rcaVi-T3wRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="mt-6">
+								  <a href="#opt-out" class="button-primary py-3 px-8 rounded-full text-center inline-block">Opt-Out Instructions</a>
+								</div>
+							  </div>
+							  
+							  <div class="text-center fade-in" style="animation-delay: 0.5s">
+								<h3 class="text-2xl font-bold mb-6">Accessing Your Digital Textbook Access Resources</h3>
+								<div class="video-container mt-6">
+								  <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/w-7_SZhh67M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+								<div class="mt-6">
+								  <a href="#access" class="button-primary py-3 px-8 rounded-full text-center inline-block">Access Instructions</a>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</section>
+					  
+						<!-- Footer Support Section -->
+						<section class="bg-indigo-900 text-white py-12">
+						  <div class="container mx-auto px-4">
+							<div class="flex flex-col md:flex-row items-center justify-between">
+							  <div>
+								<h3 class="text-xl font-bold mb-2">Need Help?</h3>
+								<p>Contact the Bookstore for assistance with your digital textbooks</p>
+							  </div>
+							  <div class="mt-6 md:mt-0">
+								<a href="#contact" class="button-primary py-3 px-8 rounded-full text-center inline-block">Contact Support</a>
+							  </div>
+							</div>
+						  </div>
+						</section>
+					  
+						<script>
+						  // Progress bar
+						  window.onscroll = function() {
+							const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+							const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+							const scrolled = (winScroll / height) * 100;
+							document.getElementById("progressBar").style.width = scrolled + "%";
+						  };
+						  
+						  // Fade in animations for elements as they come into view
+						  document.addEventListener("DOMContentLoaded", function() {
+							const fadeElements = document.querySelectorAll(".fade-in");
+							
+							const observer = new IntersectionObserver((entries) => {
+							  entries.forEach(entry => {
+								if (entry.isIntersecting) {
+								  entry.target.style.opacity = "1";
+								  entry.target.style.transform = "translateY(0)";
+								}
+							  });
+							}, { threshold: 0.1 });
+							
+							fadeElements.forEach(element => {
+							  element.style.opacity = "0";
+							  element.style.transform = "translateY(20px)";
+							  element.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+							  observer.observe(element);
+							});
+						  });
+						</script>
+					  </body>
+								
 				<footer id="site-footer" class="shopping-layout-footer" data-view="Footer">
 					<!-- TEMPLATE STARTS: footer-->
 					<div data-view="Global.BackToTop"><!-- TEMPLATE STARTS: global_views_back_to_top-->
@@ -1681,6 +1794,36 @@
 	<script>
 		try { var startApplication = function () { require(["Loggers", "Loggers.Configuration.SCA"], function (e, t) { e.Loggers.setConfiguration(t.configuration) }), require(["SC.Shopping.Starter"]) }; window.loadedResourcesPromises ? Deferred.all(window.loadedResourcesPromises).done(function () { try { startApplication() } catch (e) { document.getElementById("main").style.display = "block" } }) : startApplication() } catch (e) { document.getElementById("main") && (document.getElementById("main").style.display = "block") }
 	</script>
+	 <script>
+		// Progress bar
+		window.onscroll = function() {
+		  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		  const scrolled = (winScroll / height) * 100;
+		  document.getElementById("progressBar").style.width = scrolled + "%";
+		};
+		
+		// Fade in animations for elements as they come into view
+		document.addEventListener("DOMContentLoaded", function() {
+		  const fadeElements = document.querySelectorAll(".fade-in");
+		  
+		  const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+			  if (entry.isIntersecting) {
+				entry.target.style.opacity = "1";
+				entry.target.style.transform = "translateY(0)";
+			  }
+			});
+		  }, { threshold: 0.1 });
+		  
+		  fadeElements.forEach(element => {
+			element.style.opacity = "0";
+			element.style.transform = "translateY(20px)";
+			element.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+			observer.observe(element);
+		  });
+		});
+	  </script>
 	<!--JavaScript addition-->
 	<script>
 	document.addEventListener('DOMContentLoaded', () => {

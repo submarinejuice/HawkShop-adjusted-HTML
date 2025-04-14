@@ -377,14 +377,7 @@ color: #F2A900
 
 
 
-.waveimg{
-  position: absolute;
-  width: 100vw;
-  padding: none;
-  margin: none;
-  z-index: 0;
 
-}
 #tablediv{
   padding: 0px;
   max-width: 601px;
@@ -428,16 +421,7 @@ color: #F2A900
     width: 100vw;
   }
 }
-.waveimg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw; /* always span the viewport width */
-  max-width: none; /* prevent any max-width restrictions */
-  /* Optionally, set a min-height to keep it tall on small screens */
-  min-height: 300px; 
-  object-fit: cover; /* if this is an <img> element */
-}
+
 .table-header {
   background-color: #e0e0e0; /* light grey background */
 }
@@ -492,23 +476,41 @@ color: #F2A900
   font-size: 20px;
 
   position: relative; /* Needed for absolute positioning of the arrow */
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 .important-nav2::after {
   content: "→";
   position: relative;
-  right: -1px; /* Adjust position as needed */
-  opacity: 0; /* Initially hide the arrow */
-  transform: translateX(-2px); /* Start a bit to the left */
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
-  display: inline-block; /* Keep it as inline-block */
+  right: -1px; 
+  opacity: 0; 
+  transform: translateX(-2px); 
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; 
+  display: inline-block; 
 }
 .important-nav2:hover{
   color: #ffffff;
   background-color: #330072;
 }
 .important-nav2:hover::after {
-  opacity: 1; /* Fade in the arrow */
-  transform: translateX(0px); /* Move the arrow to its final position */
+  opacity: 1; 
+  transform: translateX(0px); 
 }
+/* FIXING THE BACKGROUND IMAGE!! REUSABLE CODE*/
+.main-s {
+  background-image: url('images/Group 1.png'); 
+  background-size: cover;         
+  background-repeat: no-repeat;   
+  min-height: 100vh;            
+  width: 100vw;                   
+  margin: 0 auto;                      
 
+}
+.information-card-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
