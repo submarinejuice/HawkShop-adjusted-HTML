@@ -2,7 +2,12 @@
   * {
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
+    text-transform: none !important;
+    
   }
+ .bg-gray-50, .bg-white{
+  background-color: #bcbcbc19;
+ }
   
   :root {
     --primary: #330072;
@@ -25,6 +30,7 @@
     min-height: 100vh;            
     width: 100vw; 
     padding-top:30px;
+    margin: none;
   }
 
   
@@ -67,7 +73,7 @@
   .button-primary {
     background-color: transparent;
     color: var(--accent);
-    border: 2px solid var(--accent);
+    border: 1px solid var(--accent);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -96,7 +102,7 @@
   .button-secondary {
     background-color: transparent;
     color: var(--primary);
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -114,7 +120,7 @@
   .button-secondary:hover {
     background-color: var(--primary);
     color: white;
-    padding-right: 30px;
+    padding-right: 40px;
   }
   
   .button-secondary:hover::after {
@@ -123,12 +129,17 @@
   }
   
   .info-card {
-    border-radius: 12px;
+   
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border: 1px solid rgba(0,0,0,0.05);
     position: relative;
     overflow: hidden;
+    background-color: white;
+    
+  
+    
+   
   }
   
   .info-card::before {
@@ -149,6 +160,8 @@
   
   .info-card:hover {
     transform: translateY(-5px);
+    
+    
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
   }
   
@@ -216,11 +229,13 @@
   }
   
   .section-divider {
-    height: 6px;
-    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    height: 2.5px;
+    background:#3f0a90;
     margin: 2rem 0;
     border-radius: 3px;
-    width: 100px;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 15px;
   }
   
   .highlight-text {
@@ -310,15 +325,28 @@
     text-align: center;
     padding: 1.5rem;
     background: white;
-    border-radius: 8px;
+
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    
+    
   }
+ 
   
   .statistic-number {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 0.5rem;
+  }
+  
+  .blue{
+    color: #0593b3;
+  }
+  .green{
+    color:#91861e;
+  }
+  .purple{
+    color: #924DA7;
   }
   
   .quick-contact {
@@ -348,4 +376,128 @@
    
     
   }
+  .quick-contact{
+    position: absolute;
+    z-index: 1;
+    margin-inline: auto;
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    width: fit-content;
+    background-color: none;
+    
+  }
+  .opt-out-section{
+    background-color: #330072;
+    padding-top: 200px;
+    margin-bottom: none;
+    padding-bottom: none;
+  }
+  .opt-out-section h2{
+    color: #F2A900;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  .opt-out-section p{
+    color: var(--light-accent);
+  }
+  .opt-out-section h3{
+    color: #F2A900;
+  }
+  .container h2{
+    color: #330072;
+
+  }
+  .opt-out-section  h2{
+    color: #F2A900;
+  }
+  #footer{
+    background-color: #F2A900;
+    
+  }
+  #footer h3{
+    color: #22004d;
+  }
+  #footer p{
+    color:black;
+  }
+
+  .quick-contact{
+    margin-top: 50px;
+    background-color: white;
+  }
+  .quick-contact h3{
+    color: #330072;
+  }
+  .quick-contact a{
+    background-color: none;
+    color: #330072;
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  .quick-contact a:hover{
+    color: white;
+    background-color:#330072 ;
+    border: 1px  solid #330072;
+  }
+  #footer a{
+    background-color: none;
+    border: 1px solid #330072;
+    font-weight: bold;
+    color: #330072;
+  }
+  #footer a:hover{
+    background-color: #22004d;
+    color: white;
+  }
+  .opt-out-section a{
+    border-radius: 30px;
+    color: #F2A900;
+    border: 1px solid #FDD757;
+    font-weight: bold;
+
+  }
+ 
   
+ 
+  .opt-out-section a::after {
+    content: "→";
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .opt-out-section a:hover {
+    background-color: #F2A900;
+    color: #330072;
+    padding-right: 45px;
+  }
+  
+  #footer a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  #footer a::after {
+    content: "→";
+    position: absolute;
+    right: 10px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  #footer a:hover {
+   
+    padding-right: 45px;
+  }
+  
+  #footer a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .container{
+    margin-bottom: 50px;
+   
+  }

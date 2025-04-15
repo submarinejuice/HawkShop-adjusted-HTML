@@ -20,6 +20,9 @@
 		window.applicationStartTime = Date.now();
 	</script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="custom-order-faq-mock.css">
 	<link rel="stylesheet" href="shopping_2.css">
@@ -1382,18 +1385,14 @@
 						
                         <h1>Custom Order Frequently Asked Questions</h1>
                         <div class="header-desc">
-                            
-                            <a href="#pricing"><p>PRICING</p></a>
-                            <div class="contact-line"></div>
-                            <a href="#orders"><P>ORDERS</P></a>
-                            <div class="contact-line"></div>
-                            <a href="#artwork"><P>DESIGN</P></a>
-                            
-                            <div class="contact-line"></div>
-                            <a href="#shipping"> <P>SHIPPING</P></a>
-                           
-                            <div class="contact-line"></div>
-                            <a href="#return"> <P>RETURN POLICY</P></a>
+							<div class="grid grid-cols-6  gap-3">
+								<a href="#price" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">PRICING</a>
+								<a href="#orders" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">ORDERS</a>
+								<a href="#artwork" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DESIGN</a>
+								<a href="#shipping" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">SHIPPING</a>
+								<a href="#payment" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">PAYMENT</a>
+								<a href="#return" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">RETURNS</a>
+							  </div>
                            
                         </div>
                         
@@ -1767,7 +1766,8 @@
                         
                       </div> 
                     </div>
-                  </div>
+                  </div><!-- Footer Support Section -->
+				  
 
 
 
@@ -1785,6 +1785,19 @@
 						</div>
 					</div>
 				</div>
+				<section id="footer" class="bg-900 text-white py-12">
+					<div  class="container mx-auto px-4">
+					  <div class="flex flex-col md:flex-row items-center justify-between">
+						<div>
+						  <h3 class="text-xl font-bold mb-2">Still Need Help?</h3>
+						  <p>Contact the HawkShop or find us in person for assistance with your digital textbooks.</p>
+						</div>
+						<div class="mt-6 md:mt-0">
+						  <a href="#contact" class="button-primary py-3 px-8 rounded-full text-center inline-block">Contact Us</a>
+						</div>
+					  </div>
+					</div>
+				  </section>
 				<footer id="site-footer" class="shopping-layout-footer" data-view="Footer">
 					<!-- TEMPLATE STARTS: footer-->
 					<div data-view="Global.BackToTop"><!-- TEMPLATE STARTS: global_views_back_to_top-->
@@ -1993,6 +2006,7 @@
                });
            });
        });
+	   
        
        </script>
 	
