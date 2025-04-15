@@ -77,6 +77,7 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    
   }
   
   .button-primary::after {
@@ -154,7 +155,7 @@
     transition: opacity 0.3s ease;
   }
   .info-card a{
-    border-radius: 20px;
+    
     font-weight: bold;
   }
   
@@ -296,7 +297,7 @@
   }
   
   .progress-bar {
-    height: 4px;
+    height: 2px;
     background-color: #F2A900;
     width: 0%;
     transition: width 0.3s ease;
@@ -432,7 +433,7 @@
   .quick-contact a{
     background-color: none;
     color: #330072;
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: bold;
   }
   .quick-contact a:hover{
@@ -451,7 +452,7 @@
     color: white;
   }
   .opt-out-section a{
-    border-radius: 30px;
+    border-radius: 10px;
     color: #F2A900;
     border: 1px solid #FDD757;
     font-weight: bold;
