@@ -3,1010 +3,974 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Textbooks 101 - Laurier University</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <title>Laurier Bookstore - Custom Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-      font-family: 'Lato', sans-serif;
-      box-sizing: border-box;
-    }
-    
     :root {
       --primary: #330072;
-      --accent: #FDD757;
-      --light-accent: #FFF1C6;
-      --text-light: #F5F5F5;
-      --text-dark: #333333;
+      --secondary: #F2A900;
+      --light: #FFF9E6;
+      --dark: #1F1646;
+      --neutral: #EEE5E9;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease;
     }
     
-    .hero-bg {
-      background: linear-gradient(135deg, rgba(51, 0, 114, 0.9), rgba(81, 30, 144, 0.85)), url('/api/placeholder/1600/800') no-repeat center center;
-      background-size: cover;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    body {
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
       position: relative;
+      height: 500px;
       overflow: hidden;
-    }
-    
-    .hero-bg::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('/api/placeholder/400/400') no-repeat;
-      background-size: 400px 400px;
-      opacity: 0.05;
-      z-index: 0;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .button-primary {
-      background-color: transparent;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .button-primary::after {
-      content: "→";
-      position: absolute;
-      right: 15px;
-      opacity: 0;
-      transform: translateX(-8px);
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    }
-    
-    .button-primary:hover {
-      background-color: var(--accent);
-      color: var(--primary);
-      padding-right: 30px;
-    }
-    
-    .button-primary:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .button-secondary {
-      background-color: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .button-secondary::after {
-      content: "→";
-      position: absolute;
-      right: 15px;
-      opacity: 0;
-      transform: translateX(-8px);
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    }
-    
-    .button-secondary:hover {
       background-color: var(--primary);
-      color: white;
-      padding-right: 30px;
     }
     
-    .button-secondary:hover::after {
-      opacity: 1;
-      transform: translateX(0);
+    .hero-carousel {
+      height: 100%;
     }
     
-    .info-card {
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.05);
+    .hero-carousel-inner {
       position: relative;
-      overflow: hidden;
+      height: 100%;
+      transition: transform 0.8s ease;
     }
     
-    .info-card::before {
-      content: "";
+    .hero-carousel-item {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      height: 100%;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.8s ease;
     }
     
-    .info-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-    }
-    
-    .info-card:hover::before {
+    .hero-carousel-item.active {
       opacity: 1;
     }
     
-    .deadline-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+    .hero-carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
     }
     
-    .deadline-row:last-child {
-      border-bottom: none;
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 2;
+      width: 80%;
     }
     
-    .deadline-date {
-      font-size: 1.25rem;
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 700;
-      color: var(--accent);
+      margin-bottom: 20px;
+      color: var(--secondary);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .carousel-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      list-style: none;
+      z-index: 3;
+    }
+    
+    .carousel-indicators li {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .carousel-indicators li.active {
+      background-color: var(--secondary);
+      transform: scale(1.2);
+    }
+    
+    .carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      font-size: 2rem;
+      z-index: 3;
+      cursor: pointer;
+      padding: 10px;
+      transition: var(--transition);
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      justify-content: center;
     }
     
-    .opt-out-section {
-      background: linear-gradient(135deg, rgba(51, 0, 114, 0.85), rgba(81, 30, 144, 0.8)), url('/api/placeholder/1600/800') no-repeat center center;
-      background-size: cover;
+    .carousel-control.prev {
+      left: 20px;
+    }
+    
+    .carousel-control.next {
+      right: 20px;
+    }
+    
+    .carousel-control:hover {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--primary);
+      margin-bottom: 15px;
       position: relative;
+      display: inline-block;
     }
     
-    .opt-out-section::before {
-      content: "";
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+    
+    .section-header p {
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+    
+    /* Printing Methods Gallery */
+    .printing-methods {
+      padding: 40px 0 80px;
+      background-color: white;
+    }
+    
+    .method-carousel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 40px;
+    }
+    
+    .method-wrapper {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .method-card {
+      flex: 0 0 300px;
+      margin: 0 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      background-color: white;
+      transform: translateY(0);
+    }
+    
+    .method-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .method-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .method-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .method-card:hover .method-image img {
+      transform: scale(1.1);
+    }
+    
+    .method-content {
+      padding: 25px 20px;
+    }
+    
+    .method-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    
+    .method-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 20px;
+      height: 120px;
+      overflow: hidden;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    .method-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .method-nav:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+    }
+    
+    .method-nav.prev {
+      left: 10px;
+    }
+    
+    .method-nav.next {
+      right: 10px;
+    }
+    
+    /* Previous Work Section */
+    .previous-work {
+      padding: 80px 0;
+      background-color: var(--neutral);
+    }
+    
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .work-item {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      height: 300px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    
+    .work-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .work-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .work-item:hover .work-image {
+      transform: scale(1.1);
+    }
+    
+    .work-item:hover .work-overlay {
+      transform: translateY(0);
+    }
+    
+    .work-overlay h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+    
+    .work-overlay p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    
+    /* Custom Order Section */
+    .custom-order {
+      position: relative;
+      padding: 100px 0;
+      background: linear-gradient(to right, var(--primary), var(--dark));
+      color: white;
+      overflow: hidden;
+    }
+    
+    .custom-order::before {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('/api/placeholder/400/400') no-repeat;
-      background-size: 400px 400px;
-      opacity: 0.05;
+      width: 100%;
+      height: 100%;
+      background-image: url('/api/placeholder/1600/800');
+      background-size: cover;
+      opacity: 0.2;
       z-index: 0;
     }
     
-    .video-container {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    .custom-order-container {
       position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
     
-    .video-container iframe {
-      border-radius: 12px;
+    .custom-order h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      margin-bottom: 20px;
+      color: var(--secondary);
     }
     
-    .section-divider {
-      height: 6px;
-      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-      margin: 2rem 0;
-      border-radius: 3px;
-      width: 100px;
+    .custom-order p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
     }
     
-    .highlight-text {
-      color: var(--accent);
-      font-weight: 700;
+    /* Contact Form Section */
+    .contact-section {
+      padding: 80px 0;
+      background-color: white;
     }
     
-    .floating-label {
-      position: absolute;
-      top: -10px;
-      left: 20px;
-      background: var(--accent);
+    .contact-container {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .contact-info {
+      flex: 1;
+      padding: 30px;
+      background-color: var(--light);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-form {
+      flex: 2;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .contact-info h3 {
+      font-size: 1.5rem;
       color: var(--primary);
-      padding: 0.25rem 1rem;
-      font-weight: 700;
-      font-size: 0.875rem;
-      border-radius: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    
-    .section-header {
+      margin-bottom: 25px;
       position: relative;
-      display: inline-block;
-      margin-bottom: 2rem;
     }
     
-    .section-header::after {
-      content: "";
+    .contact-info h3::after {
+      content: '';
       position: absolute;
       bottom: -10px;
       left: 0;
-      width: 60%;
-      height: 4px;
-      background: var(--accent);
+      width: 50px;
+      height: 3px;
+      background-color: var(--secondary);
     }
     
-    .card-icon {
-      width: 64px;
-      height: 64px;
-      background: rgba(51, 0, 114, 0.1);
+    .info-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .info-icon {
+      margin-right: 15px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-      font-size: 1.5rem;
+      flex-shrink: 0;
     }
     
-    .progress-container {
+    .info-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+    
+    .info-content p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 1.2rem;
+    }
+    
+    .social-icons a:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(51, 0, 114, 0.2);
+    }
+    
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .form-row .form-group {
+      flex: 1;
+    }
+    
+    textarea.form-control {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .btn-submit {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 12px 30px;
+      font-size: 1rem;
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--secondary);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-col ul li a:hover {
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Modal */
+    .modal {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: transparent;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
     }
     
-    .progress-bar {
-      height: 4px;
-      background: var(--accent);
-      width: 0%;
-      transition: width 0.3s ease;
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
     }
     
-    .announcement-banner {
-      background: linear-gradient(90deg, var(--primary), #4a0072);
-      padding: 0.75rem 0;
-      text-align: center;
+    .modal-content {
+      background-color: white;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      overflow: hidden;
+      position: relative;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+    
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+    
+    .modal-header {
+      padding: 20px;
+      background-color: var(--primary);
       color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     
-    .feature-tag {
-      display: inline-block;
-      background-color: rgba(51, 0, 114, 0.1);
-      color: var(--primary);
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+    .modal-header h3 {
+      font-size: 1.5rem;
+      margin: 0;
     }
     
-    .statistic-item {
-      text-align: center;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    .modal-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
     
-    .statistic-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
+    .modal-body {
+      padding: 30px;
+      max-height: 70vh;
+      overflow-y: auto;
     }
     
-    .quick-contact {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
+    .modal-body img {
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-radius: 5px;
     }
     
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+      .contact-container {
+        flex-direction: column;
+      }
     }
     
-    .fade-in {
-      animation: fadeIn 0.6s ease-out forwards;
+    @media (max-width: 768px) {
+      .hero {
+        height: 400px;
+      }
+      
+      .method-card {
+        flex: 0 0 250px;
+      }
+      
+      .work-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+      
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: 30px;
+      }
     }
     
-    .deadline-alert {
-      background-color: rgba(253, 215, 87, 0.15);
-      border-left: 4px solid var(--accent);
-      padding: 1rem;
-      margin-top: 1.5rem;
-      border-radius: 0 8px 8px 0;
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.75rem;
+      }
+      
+      .method-card {
+        flex: 0 0 calc(100% - 30px);
+      }
+      
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-content {
+        width: 95%;
+      }
     }
-    /* mind u this is my code....*/ /*CSS file specific to dta test 1!*/
-* {
-    font-family: 'Lato', sans-serif !important;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-
-.textbooks-101-container { /* Or body */
-    /* ... other styles ... */
-    background-image: url('images/Group 1.png'); /* Replace with the correct path */
-    background-size: cover; /* This is the key property */
-    background-repeat: no-repeat; /* Prevent tiling */
-    background-position: center top; /* Adjust as needed (e.g., center center, center bottom) */
-    min-height: 100vh; /* Ensure it covers at least the viewport height */
-    max-height: 20vh;
-  }
-  .vids-cont { /* Or body */
-    width: 100vw;
-    /* Remove height: 1200px; if you want it to size based on content */
-    background-image: url('images/Group 1 - Copy.png'); /* Replace with the correct path */
-    background-size: cover; /* This is the key property */
-    background-repeat: no-repeat; /* Prevent tiling */
-    background-position: center top; /* Adjust as needed (e.g., center center, center bottom) */
-    min-height: 100vh; /* Ensure it covers at least the viewport height */
-    /* Remove max-height: 100vh; */
-  }
-  
-
-.textbook-header-container{
-    position: absolute;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    max-width: 1600px;
-    gap:60px;
-    justify-content: center;
-    align-items: center;
- 
-}
-.textbook-header-r{
-    max-width: 800px;
-    padding: 30px;
-    margin: 0 auto;
-    justify-content: center;
- 
-  
-}
-
-.textbook-header-r h2{
-    color: rgba(255, 255, 255, 0.907);
-    font-size: 25px;
-    max-width: 500px;
-    margin: 0 auto;
-   
-
-}
-.textbook-header-container{
-    margin-top:100px;
-}
-
-.important-nav{
-    padding: 15px 20px;
-    border: 1px solid #FDD757;
-    color: #FDD757;
-    border-radius: 25px;
-    font-size: 10px;
-    font-weight: bold;
-    position: relative; /* Needed for absolute positioning of the arrow */
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
-}
-.important-nav::after {
-    content: "→";
-    position: absolute;
-    right: 15px; /* Adjust position as needed */
-    opacity: 0; /* Initially hide the arrow */
-    transform: translateX(-8px); /* Start a bit to the left */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
-    display: inline-block; /* Keep it as inline-block */
-}
-.important-nav:hover{
-    color: #330072;
-    background-color: #FDD757;
-}
-.important-nav:hover::after {
-    opacity: 1; /* Fade in the arrow */
-    transform: translateX(0px); /* Move the arrow to its final position */
-}
-
-.links{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Shorthand for 1fr 1fr 1fr */
-    grid-gap: 20px;
-    text-align: center;
-}
-.textbook-header-l h1{
-    font-size: 80px;
-    font-weight: bold;
-    color: #ffb700;
-    padding-top: 40px;
-}
-.textbook-header-l h2{
-    font-size: 20px;
-    font-weight: normal;
-    color: rgb(255, 255, 255);
-    margin: 10px;
-    padding-bottom: 20px;
-  
-}
-.textbook-header-r h2{
-    font-size: 19px;
-    font-weight: normal;
-    color: rgb(255, 255, 255);
-    
-  
-}
-.deadlines-container{
-    padding: 30px 0px;
-    display: flex;
-    flex-direction: column;
-    max-width:500px;
-
-}
-.deadline-row{
-    display:flex;
-    flex-direction: row;
-    float:right;
-  
-
-}
-.deadlines-header{
-    color: #c6c6c6 !important;
-  
-}
-.header{
-    padding:10px 0px;
-    padding-top: 20px;
-    
-}
-#header{
-    color: rgba(214, 214, 214, 0.744) !important;
-    font-weight: bold !important;
-}
-.deadline-left h2{
-    color: white !important ;
-    font-size: 19px;
-    font-weight: bold;
-  
-}
-.deadline-right h2{
-    font-size: 19px !important;
-    font-weight: bold;
-}
-.deadline-left p{
-    color:#c6c6c6;
-   
-}
-.textbooks-101-container{
-    display:flex;
-    flex-direction: column;
-   
-}
-.deadlines-container {
-    padding: 30px 0px;
-    display: flex;
-    flex-direction: column;
-    gap:30px;
-    /* Remove float: right; */
-  }
-  
-  .deadline-row {
-    display: flex;
-    flex-direction: row;
-    /* Remove float: right; */
-    align-items: flex-start; /* Align items vertically at the start */
-  }
-  
-  .deadline-right {
-    /* Add this to push the right content to the left */
-    margin-left: auto;
-    font-weight: bold;
-    color: #ffffff;
-  }
-  
-  /* To align the entire deadlines-container to the left edge of the screen */
-  .textbook-header-r .deadlines-container {
-    margin-left: 0; /* Override any automatic margins */
-  }
-  
-.line{
-    height: 1px;
-    width: 500px;
-    background-color: #c6c6c6;
-    margin-top:0px;
-    margin-bottom: 10px;
-}
-.dta-info{
-    top:650px;
-    position:relative;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 100px;
-   
-}
-.dta-info h1{
-    color:#330072;
-    font-weight: bold;
-    max-width:1000px;
-    margin: 0 auto;
-
-
-}
-.space{
-    height:900px;
-    width:200px;
-    background-color: none;
-}
-.boxes-text-grid{
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
-    justify-content: space-evenly;
-    margin-top:200px;
-}
-.dta-info{
-    border: 1px solid #5e5e5e3b; /* Optional for visual separation */
-    border-radius: 15px;
-    box-shadow: rgba(98, 98, 98, 0.62) 2px 2px 3px; /* Optional shadow */
-    background-color: white;
-    margin-top: 100px;
-}
-.dta-info h1{
-    padding-bottom: 50px;
-}
-.boxes-text-grid img{
-    width: 200px;
-}.box h2{
-    color: #330072;
-    font-weight: bold;
-    padding: 20px 0;
-}
-.line-v{
-    height:200px;
-    width: 1px;
-    background-color: #330072;
-    margin: 0px 30px;
-
-}.important-nav2{
-    padding: 10px 30px;
-    border: 1px solid #330072;
-    color: #330072;
-    border-radius: 25px;
-    font-size: 20px;
-
-    position: relative; /* Needed for absolute positioning of the arrow */
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
-}
-.important-nav2::after {
-    content: "→";
-    position: relative;
-    right: -1px; /* Adjust position as needed */
-    opacity: 0; /* Initially hide the arrow */
-    transform: translateX(-8px); /* Start a bit to the left */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
-    display: inline-block; /* Keep it as inline-block */
-}
-.important-nav2:hover{
-    color: #ffffff;
-    background-color: #330072;
-}
-.important-nav2:hover::after {
-    opacity: 1; /* Fade in the arrow */
-    transform: translateX(0px); /* Move the arrow to its final position */
-}
-.questions p{
-    color:#330072;
-    padding: 10px 0;
-
-    font-size: 15px;
-}
-
-.opt-out-container h1{
-    color:#ffb700;
-    font-weight: bold;
-    text-align: center;
-}
-.opt-out-container h2{
-    color:#ffb700;
-    font-weight: bold;
-}
-.questions{
-   
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-.opt-out-container{
-    margin:auto 0;
-    display: flex;
-    flex-direction: column;
-}
-.vid-container{
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-    gap: 50px;
-    padding: 30px;
-}
-.opt-out-box p{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-}
-.opt-out-container{
-    margin-top:100px;
-}
-.opt-out-container h1{
-    margin-top: 300px;
-}.find-us-button{
-    padding: 10px 30px;
-    border: 1px solid #330072;
-    color: #330072;
-    border-radius: 25px;
-    font-size: 20px;
-
-    position: relative; /* Needed for absolute positioning of the arrow */
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transition for potential future transformations */
-}
-.find-us-button::after {
-    content: "→";
-    position: relative;
-    right: -1px; /* Adjust position as needed */
-    opacity: 0; /* Initially hide the arrow */
-    transform: translateX(-8px); /* Start a bit to the left */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Transition transform and opacity */
-    display: inline-block; /* Keep it as inline-block */
-}
-.find-us-button:hover{
-    color: #ffffff;
-    background-color: #330072;
-}
-.find-us-button:hover::after {
-    opacity: 1; /* Fade in the arrow */
-    transform: translateX(0px); /* Move the arrow to its final position */
-}
-.box {
-    display: flex;
-    flex-direction: column;
-    /* Add a fixed height to the box if needed for more consistency */
-    max-width:400px ; 
-  }
-  
-  .box img {
-    /* Allow the image to shrink if the box has a fixed height */
-    max-height: 300px;
- 
-    
-   
-  }
-  
-  .box h2 {
-    color: #330072;
-    font-weight: bold;
-    padding: 20px 0;
-  }
-  
-
-  
-  .box .find-us-button {
-    margin-top: auto; 
-  }
-  .boxes-text-grid{
-    justify-content: space-evenly;
-    margin: 0 auto;
-  }
-  .textbook-header-container{
-    position: absolute;     
-    top: 100px;              
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-width: 1700px;
-    gap: 80px;
-   
-  }
-  .questions{
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    margin-top: 500px;
-
-  }
-  .box{
-    max-width: 300px;
-
-  }
-  .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-   
-    width: 300px;               /* Fixed width for consistency */
-    min-height: 450px;          /* Ensure a similar height; adjust as needed */
-    background: #fff;           /* Optional background color */
-
-  }
-  .box img {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;  /* Ensures the image fills the space without distortion */
-    margin-bottom: 20px;
-  }
-
-  .box h2 {
-    font-size: 20px;
-    color: #330072;
-    margin: 20px 0;
-  }
-  
-  .box p {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-    flex-grow: 1; /* Allows the paragraph to expand and keep other items aligned */
-  }
-  .dta-info h1{
-    font-size: 40px
-  }
   </style>
 </head>
-<body class="bg-gray-50">
-  <!-- Progress bar -->
-  <div class="progress-container">
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-
-  <!-- Announcement Banner -->
-  <div class="announcement-banner">
-    <div class="container mx-auto px-4">
-      <p><strong>Important:</strong> Summer term textbook ordering is now open! <a href="#" class="underline text-yellow-300">Order now</a></p>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero-bg text-white py-20 md:py-28">
-    <div class="container mx-auto px-4 hero-content">
-      <div class="flex flex-col md:flex-row md:space-x-16 items-center">
-        <!-- Left Side - Title and Quick Links -->
-        <div class="md:w-1/2 mb-12 md:mb-0 fade-in" style="animation-delay: 0.1s">
-          <h1 class="text-5xl md:text-6xl font-bold text-yellow-300 mb-4">Textbooks 101</h1>
-          <p class="text-lg mb-8 text-gray-200">Everything you need to know about accessing and using your course materials.</p>
-          <h2 class="text-xl mb-4">Quick Links</h2>
-          
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">COURSES</a>
-            <a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">STUDENTS</a>
-            <a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
-            <a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DTA</a>
-            <a href="#faculty" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY</a>
-            <a href="#textbooks" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">TEXTBOOKS</a>
-          </div>
+<body>
+  <!-- Hero Section with Carousel -->
+  <section class="hero">
+    <div class="hero-carousel">
+      <div class="hero-carousel-inner">
+        <div class="hero-carousel-item active">
+          <img src="/api/placeholder/1600/600" alt="Custom Orders">
         </div>
-        
-        <!-- Right Side - Deadlines -->
-        <div class="bg-black bg-opacity-30 rounded-lg p-8 md:w-1/2 fade-in" style="animation-delay: 0.3s">
-          <div class="floating-label">IMPORTANT</div>
-          <p class="text-lg leading-relaxed">The return deadlines for all course materials are the following. All course materials purchased after this deadline are considered final sale.</p>
-          
-          <h3 class="text-yellow-300 font-bold mt-8 mb-4 flex items-center">
-            <i class="fas fa-calendar-alt mr-2"></i> DEADLINES
-          </h3>
-          <div class="w-full h-px bg-yellow-300 mb-6"></div>
-          
-          <div class="space-y-6">
-            <div class="deadline-row">
-              <div>
-                <h4 class="font-bold text-lg">May Start</h4>
-                <p class="text-gray-300 text-sm">6 & 12 week courses</p>
-              </div>
-              <div class="deadline-date">
-                <i class="fas fa-exclamation-circle"></i>
-                MAY 17
-              </div>
+        <div class="hero-carousel-item">
+          <img src="/api/placeholder/1600/600" alt="Printing Methods">
+        </div>
+        <div class="hero-carousel-item">
+          <img src="/api/placeholder/1600/600" alt="Previous Work">
+        </div>
+      </div>
+      
+      <div class="hero-content">
+        <h1>Laurier Custom Orders</h1>
+        <p>From team apparel to promotional items, we help bring your ideas to life with quality printing and professional service.</p>
+      </div>
+      
+      <ol class="carousel-indicators">
+        <li class="active" data-slide="0"></li>
+        <li data-slide="1"></li>
+        <li data-slide="2"></li>
+      </ol>
+      
+      <div class="carousel-control prev">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="carousel-control next">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Printing Methods Gallery -->
+  <section class="printing-methods">
+    <div class="container">
+      <div class="section-header">
+        <h2>Printing Method Gallery</h2>
+        <p>Discover our range of high-quality printing methods available for your custom orders</p>
+      </div>
+      
+      <div class="method-carousel">
+        <div class="method-wrapper">
+          <!-- Method 1: Embroidery -->
+          <div class="method-card">
+            <div class="method-image">
+              <img src="/api/placeholder/400/300" alt="Embroidery">
             </div>
-            
-            <div class="deadline-row">
-              <div>
-                <h4 class="font-bold text-lg">July Start</h4>
-                <p class="text-gray-300 text-sm">8 Week courses</p>
-              </div>
-              <div class="deadline-date">
-                <i class="fas fa-exclamation-circle"></i>
-                JULY 19
-              </div>
+            <div class="method-content">
+              <h3>Embroidery</h3>
+              <p>A traditional decoration method for fabric, embroidery provides a classic, high-quality feel to your design with exceptional detail and texture.</p>
+              <button class="btn btn-outline show-examples" data-method="embroidery">View Examples</button>
             </div>
           </div>
           
-          <div class="deadline-alert">
-            <p class="text-sm font-medium text-primary">
-              <i class="fas fa-info-circle mr-1"></i>
-              Set a reminder! Missing the deadline may result in non-refundable purchases.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="bg-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="statistic-item fade-in" style="animation-delay: 0.2s">
-          <div class="statistic-number">90%</div>
-          <p class="text-gray-700">of courses use digital textbooks</p>
-        </div>
-        <div class="statistic-item fade-in" style="animation-delay: 0.3s">
-          <div class="statistic-number">30%</div>
-          <p class="text-gray-700">average savings compared to print</p>
-        </div>
-        <div class="statistic-item fade-in" style="animation-delay: 0.4s">
-          <div class="statistic-number">24/7</div>
-          <p class="text-gray-700">access to your materials</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DTA Info Section -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4 text-indigo-900">What is the Digital Textbook Access (DTA) Program?</h2>
-      <div class="section-divider mx-auto"></div>
-      
-      <p class="text-lg text-center max-w-3xl mx-auto mb-12 text-gray-700">
-        The DTA program provides students with digital access to required course materials at reduced prices, available from day one of your courses.
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Info Card 1 -->
-        <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.2s">
-          <div class="card-icon">
-            <i class="fas fa-laptop"></i>
-          </div>
-          <img src="/api/placeholder/120/60" alt="D2L Logo" class="w-32 h-16 object-contain mb-6">
-          <h3 class="text-xl font-bold text-indigo-900 mb-4">Access Your Course Materials</h3>
-          
-          <div class="flex flex-wrap mb-4">
-            <span class="feature-tag">Online Access</span>
-            <span class="feature-tag">Mobile-Friendly</span>
+          <!-- Method 2: Puff Print -->
+          <div class="method-card">
+            <div class="method-image">
+              <img src="/api/placeholder/400/300" alt="Puff Print">
+            </div>
+            <div class="method-content">
+              <h3>Puff Print</h3>
+              <p>Also known as 3D embroidery, puff embroidery creates a dimensional effect that's popular on caps and heavier-weight apparel items.</p>
+              <button class="btn btn-outline show-examples" data-method="puff-print">View Examples</button>
+            </div>
           </div>
           
-          <p class="text-gray-700 mb-6">Get instant access to digital textbooks and learning resources through our D2L platform. Available on any device, anywhere you study.</p>
-          
-          <a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
-        </div>
-        
-        <!-- Info Card 2 -->
-        <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.4s">
-          <div class="card-icon">
-            <i class="fas fa-book"></i>
-          </div>
-          <img src="/api/placeholder/120/60" alt="Library Logo" class="w-32 h-16 object-contain mb-6">
-          <h3 class="text-xl font-bold text-indigo-900 mb-4">Library Resources</h3>
-          
-          <div class="flex flex-wrap mb-4">
-            <span class="feature-tag">Research Tools</span>
-            <span class="feature-tag">Study Guides</span>
+          <!-- Method 3: Emboss -->
+          <div class="method-card">
+            <div class="method-image">
+              <img src="/api/placeholder/400/300" alt="Emboss">
+            </div>
+            <div class="method-content">
+              <h3>Emboss</h3>
+              <p>Embossing creates a raised effect that pops out of the surface, giving your items a luxurious tactile quality that makes it feel special.</p>
+              <button class="btn btn-outline show-examples" data-method="emboss">View Examples</button>
+            </div>
           </div>
           
-          <p class="text-gray-700 mb-6">Explore additional academic resources available through our university library. Access journals, research papers, and study materials.</p>
-          
-          <a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
-        </div>
-        
-        <!-- Info Card 3 -->
-        <div class="info-card bg-white p-8 flex flex-col items-center text-center fade-in" style="animation-delay: 0.6s">
-          <div class="card-icon">
-            <i class="fas fa-mobile-alt"></i>
-          </div>
-          <img src="/api/placeholder/120/60" alt="VitalSource Logo" class="w-32 h-16 object-contain mb-6">
-          <h3 class="text-xl font-bold text-indigo-900 mb-4">VitalSource Platform</h3>
-          
-          <div class="flex flex-wrap mb-4">
-            <span class="feature-tag">Highlighting</span>
-            <span class="feature-tag">Notes</span>
-            <span class="feature-tag">Offline Access</span>
+          <!-- Method 4: Heat Transfer -->
+          <div class="method-card">
+            <div class="method-image">
+              <img src="/api/placeholder/400/300" alt="Heat Transfer">
+            </div>
+            <div class="method-content">
+              <h3>Heat Transfer</h3>
+              <p>Heat transfer allows for detailed, full-color designs on various materials, creating vibrant and long-lasting results perfect for custom apparel.</p>
+              <button class="btn btn-outline show-examples" data-method="heat-transfer">View Examples</button>
+            </div>
           </div>
           
-          <p class="text-gray-700 mb-6">Access your eTextbooks on any device with our VitalSource integration. Highlight, take notes, and study offline with the mobile app.</p>
-          
-          <a href="#" class="button-secondary py-3 px-6 rounded-full text-center mt-auto">Take me there</a>
-        </div>
-      </div>
-      
-      <div class="quick-contact fade-in" style="animation-delay: 0.6s">
-        <h3 class="text-xl font-bold text-indigo-900 mb-4">Still have questions?</h3>
-        <p class="text-gray-700 mb-6">Our comprehensive FAQ answers common questions about the DTA program, accessing materials, and troubleshooting.</p>
-        <a href="#faq" class="button-secondary py-3 px-8 rounded-full text-center inline-block">View FAQ</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Opt-Out Section -->
-  <section class="opt-out-section text-white py-16 md:py-24 relative">
-    <div class="container mx-auto px-4 relative z-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-yellow-300 mb-4">Textbook Access & Opt-Out</h2>
-      <div class="section-divider mx-auto"></div>
-      
-      <p class="text-lg text-center max-w-3xl mx-auto mb-12">
-        Learn how to access your digital materials or opt out of the program if you prefer to purchase materials elsewhere.
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div class="text-center fade-in" style="animation-delay: 0.3s">
-          <h3 class="text-2xl font-bold mb-6">How To Opt Out of Your Digital Textbook Access Resources</h3>
-          <div class="video-container mt-6">
-            <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/rcaVi-T3wRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="mt-6">
-            <a href="#opt-out" class="button-primary py-3 px-8 rounded-full text-center inline-block">Opt-Out Instructions</a>
+          <!-- Method 5: Screen Printing -->
+          <div class="method-card">
+            <div class="method-image">
+              <img src="/api/placeholder/400/300" alt="Screen Printing">
+            </div>
+            <div class="method-content">
+              <h3>Screen Printing</h3>
+              <p>A versatile method ideal for producing durable designs on t-shirts, hoodies, and more with vibrant colors and long-lasting results.</p>
+              <button class="btn btn-outline show-examples" data-method="screen-printing">View Examples</button>
+            </div>
           </div>
         </div>
         
-        <div class="text-center fade-in" style="animation-delay: 0.5s">
-          <h3 class="text-2xl font-bold mb-6">Accessing Your Digital Textbook Access Resources</h3>
-          <div class="video-container mt-6">
-            <iframe class="w-full h-64 md:h-80" src="https://www.youtube.com/embed/w-7_SZhh67M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- Navigation Buttons -->
+        <div class="method-nav prev">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="method-nav next">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Work Section -->
+  <section class="previous-work">
+    <div class="container">
+      <div class="section-header">
+        <h2>Previous Work</h2>
+        <p>Check out some of our recent custom orders for Laurier student organizations, clubs, and departments</p>
+      </div>
+      
+      <div class="work-grid">
+        <!-- Previous Work Item 1 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Student Council Hoodies" class="work-image">
+          <div class="work-overlay">
+            <h3>Student Council Hoodies</h3>
+            <p>Custom embroidered hoodies for the Student Council with personalized names</p>
           </div>
-          <div class="mt-6">
-            <a href="#access" class="button-primary py-3 px-8 rounded-full text-center inline-block">Access Instructions</a>
+        </div>
+        
+        <!-- Previous Work Item 2 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Business Club Polos" class="work-image">
+          <div class="work-overlay">
+            <h3>Business Club Polos</h3>
+            <p>Professional polo shirts with embroidered logos for networking events</p>
+          </div>
+        </div>
+        
+        <!-- Previous Work Item 3 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Athletic Team Jerseys" class="work-image">
+          <div class="work-overlay">
+            <h3>Athletic Team Jerseys</h3>
+            <p>Custom designed and printed jerseys for intramural sports teams</p>
+          </div>
+        </div>
+        
+        <!-- Previous Work Item 4 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Department Event T-shirts" class="work-image">
+          <div class="work-overlay">
+            <h3>Department Event T-shirts</h3>
+            <p>Vibrant screen-printed t-shirts for the annual faculty events</p>
+          </div>
+        </div>
+        
+        <!-- Previous Work Item 5 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Orientation Week Merchandise" class="work-image">
+          <div class="work-overlay">
+            <h3>Orientation Week Merchandise</h3>
+            <p>Various custom items created for new student welcome packages</p>
+          </div>
+        </div>
+        
+        <!-- Previous Work Item 6 -->
+        <div class="work-item">
+          <img src="/api/placeholder/400/300" alt="Greek Life Apparel" class="work-image">
+          <div class="work-overlay">
+            <h3>Greek Life Apparel</h3>
+            <p>Customized clothing items for fraternity and sorority events</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Support Section -->
-  <section class="bg-indigo-900 text-white py-12">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div>
-          <h3 class="text-xl font-bold mb-2">Need Help?</h3>
-          <p>Contact the Bookstore for assistance with your digital textbooks</p>
-        </div>
-        <div class="mt-6 md:mt-0">
-          <a href="#contact" class="button-primary py-3 px-8 rounded-full text-center inline-block">Contact Support</a>
-        </div>
-      </div>
+  <!-- Custom Order CTA Section -->
+  <section class="custom-order">
+    <div class="container custom-order-container">
+      <h2>Want Your Ideas to Come to Life?</h2>
+      <p>Whether you need custom apparel for your club, team merchandise, or promotional items for your next event, we're here to help bring your vision to reality with quality materials and expert printing.</p>
+      <a href="#contact-form" class="btn btn-submit">Start Your Custom Order</a>
     </div>
   </section>
 
-  <script>
-    // Progress bar
-    window.onscroll = function() {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-    };
-    
-    // Fade in animations for elements as they come into view
-    document.addEventListener("DOMContentLoaded", function() {
-      const fadeElements = document.querySelectorAll(".fade-in");
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact-form">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Fill out the form below to send an inquiry to our custom order team, and we'll get back to you as soon as possible</p>
+      </div>
       
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      fadeElements.forEach(element => {
-        element.style.opacity = "0";
-        element.style.transform = "translateY(20px)";
-        element.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-        observer.observe(element);
-      });
-    });
-  </script>
-</body>
-</html>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Location</h4>
+              <p>Laurier University Bookstore, Main Campus</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-content">
+              <h4>Phone</h4>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
