@@ -36,6 +36,751 @@
 
 	<link rel="stylesheet" href="custom-order-gallery.css">
 	<link rel="stylesheet" href="shopping_2.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Laurier Bookstore - Custom Orders</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<style>
+	  :root {
+		--primary: #330072;
+		--secondary: #F2A900;
+		--light: #FFF9E6;
+		--dark: #1F1646;
+		--neutral: #EEE5E9;
+		--shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+		--transition: all 0.3s ease;
+	  }
+	  
+	  * {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: 'Montserrat', sans-serif;
+	  }
+	  
+	  body {
+		background-color: var(--light);
+		color: var(--dark);
+		line-height: 1.6;
+	  }
+	  
+	  .container {
+		max-width: 1300px;
+		margin: 0 auto;
+		padding: 0 20px;
+	  }
+	  
+	  /* Hero Section */
+	  .hero {
+		position: relative;
+		height: 500px;
+		overflow: hidden;
+		background-color: var(--primary);
+	  }
+	  
+	  .hero-carousel {
+		height: 100%;
+	  }
+	  
+	  .hero-carousel-inner {
+		position: relative;
+		height: 100%;
+		transition: transform 0.8s ease;
+	  }
+	  
+	  .hero-carousel-item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.8s ease;
+	  }
+	  
+	  .hero-carousel-item.active {
+		opacity: 1;
+	  }
+	  
+	  .hero-carousel-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: brightness(70%);
+	  }
+	  
+	  .hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		z-index: 2;
+		width: 80%;
+	  }
+	  
+	  .hero-content h1 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		font-weight: 700;
+		margin-bottom: 20px;
+		color: var(--secondary);
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	  }
+	  
+	  .hero-content p {
+		font-size: clamp(1rem, 2vw, 1.25rem);
+		margin-bottom: 30px;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	  }
+	  
+	  .carousel-indicators {
+		position: absolute;
+		bottom: 20px;
+		
+		transform: translateX(-50%);
+		display: flex;
+		list-style: none;
+		z-index: 3;
+	  }
+	  
+	  .carousel-indicators li {
+		width: 12px;
+		height: 12px;
+		background-color: rgba(255, 255, 255, 0.6);
+		border-radius: 50%;
+		margin: 0 5px;
+		cursor: pointer;
+		transition: var(--transition);
+	  }
+	  
+	  .carousel-indicators li.active {
+		background-color: var(--secondary);
+		transform: scale(1.2);
+	  }
+	  
+	  .carousel-control {
+		position: absolute;
+		top: 50%;
+		
+		color: white;
+		font-size: 2rem;
+		z-index: 3;
+		cursor: pointer;
+		padding: 10px;
+		transition: var(--transition);
+		background-color: rgba(0, 0, 0, 0.2);
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	  }
+	  
+	  .carousel-control.prev {
+		left: 20px;
+	  }
+	  
+	  .carousel-control.next {
+		right: 20px;
+	  }
+	  
+	  .carousel-control:hover {
+		background-color: rgba(0, 0, 0, 0.4);
+	  }
+	  
+	  /* Section Headers */
+	  .section-header {
+		text-align: center;
+		
+	  }
+	  
+	  .section-header h2 {
+		font-size: clamp(1.75rem, 3vw, 2.5rem);
+		color: var(--primary);
+		margin-bottom: 15px;
+		position: relative;
+		display: inline-block;
+	  }
+	  
+	  .section-header h2::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 3px;
+		background-color: var(--secondary);
+	  }
+	  
+	  .section-header p {
+		max-width: 800px;
+		margin: 0 auto;
+		color: var(--dark);
+		font-size: 1.1rem;
+	  }
+	  
+	  /* Printing Methods Gallery */
+	  .printing-methods {
+		padding: 40px 0 80px;
+		background-color: white;
+	  }
+	  
+	  .method-carousel {
+		position: relative;
+		overflow: hidden;
+		margin-top: 40px;
+	  }
+	  
+	  .method-wrapper {
+		display: flex;
+		transition: transform 0.5s ease;
+	  }
+	  
+	  .method-card {
+		flex: 0 0 300px;
+		margin: 0 15px;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: var(--shadow);
+		transition: var(--transition);
+		background-color: white;
+		transform: translateY(0);
+	  }
+	  
+	  .method-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+	  }
+	  
+	  .method-image {
+		position: relative;
+		height: 220px;
+		overflow: hidden;
+	  }
+	  
+	  .method-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	  }
+	  
+	  .method-card:hover .method-image img {
+		transform: scale(1.1);
+	  }
+	  
+	  .method-content {
+		padding: 25px 20px;
+	  }
+	  
+	  .method-content h3 {
+		font-size: 1.5rem;
+		margin-bottom: 15px;
+		color: var(--primary);
+	  }
+	  
+	  .method-content p {
+		font-size: 0.95rem;
+		color: #555;
+		margin-bottom: 20px;
+		height: 120px;
+		overflow: hidden;
+	  }
+	  
+	  .btn {
+		display: inline-block;
+		padding: 10px 25px;
+		background-color: var(--primary);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		font-weight: 600;
+		transition: var(--transition);
+		text-decoration: none;
+		font-size: 0.95rem;
+	  }
+	  
+	  .btn-outline {
+		background-color: transparent;
+		border: 2px solid var(--primary);
+		color: var(--primary);
+	  }
+	  
+	  .btn:hover {
+		background-color: var(--secondary);
+		color: var(--primary);
+		transform: translateY(-2px);
+	  }
+	  
+	  .btn-outline:hover {
+		background-color: var(--primary);
+		color: white;
+	  }
+	  
+	  .method-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.5rem;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: var(--primary);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 10;
+		box-shadow: var(--shadow);
+		transition: var(--transition);
+	  }
+	  
+	  .method-nav:hover {
+		background-color: var(--secondary);
+		color: var(--primary);
+	  }
+	  
+	  .method-nav.prev {
+		left: 10px;
+	  }
+	  
+	  .method-nav.next {
+		right: 10px;
+	  }
+	  
+	  /* Previous Work Section */
+	  .previous-work {
+		padding: 80px 0;
+		background-color: var(--neutral);
+	  }
+	  
+	  .work-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 30px;
+		margin-top: 40px;
+	  }
+	  
+	  .work-item {
+		border-radius: 10px;
+		overflow: hidden;
+		position: relative;
+		height: 300px;
+		box-shadow: var(--shadow);
+		cursor: pointer;
+	  }
+	  
+	  .work-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	  }
+	  
+	  .work-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 20px;
+		background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+		color: white;
+		transform: translateY(100%);
+		transition: transform 0.4s ease;
+	  }
+	  
+	  .work-item:hover .work-image {
+		transform: scale(1.1);
+	  }
+	  
+	  .work-item:hover .work-overlay {
+		transform: translateY(0);
+	  }
+	  
+	  .work-overlay h3 {
+		font-size: 1.25rem;
+		margin-bottom: 10px;
+	  }
+	  
+	  .work-overlay p {
+		font-size: 0.9rem;
+		opacity: 0.9;
+	  }
+	  
+	  /* Custom Order Section */
+	  .custom-order {
+		position: relative;
+		padding: 100px 0;
+		background: linear-gradient(to right, var(--primary), var(--dark));
+		color: white;
+		overflow: hidden;
+	  }
+	  
+	  .custom-order::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url('/api/placeholder/1600/800');
+		background-size: cover;
+		opacity: 0.2;
+		z-index: 0;
+	  }
+	  
+	  .custom-order-container {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	  }
+	  
+	  .custom-order h2 {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		margin-bottom: 20px;
+		color: var(--secondary);
+	  }
+	  
+	  .custom-order p {
+		max-width: 700px;
+		margin: 0 auto 40px;
+		font-size: 1.1rem;
+	  }
+	  
+	  /* Contact Form Section */
+	  .contact-section {
+		padding: 80px 0;
+		background-color: white;
+	  }
+	  
+	  .contact-container {
+		display: flex;
+		gap: 40px;
+		margin-top: 40px;
+	  }
+	  
+	  .contact-info {
+		flex: 1;
+		padding: 30px;
+		background-color: var(--light);
+		border-radius: 10px;
+		box-shadow: var(--shadow);
+	  }
+	  
+	  .contact-form {
+		flex: 2;
+		padding: 30px;
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: var(--shadow);
+	  }
+	  
+	  .contact-info h3 {
+		font-size: 1.5rem;
+		color: var(--primary);
+		margin-bottom: 25px;
+		position: relative;
+	  }
+	  
+	  .contact-info h3::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 0;
+		width: 50px;
+		height: 3px;
+		background-color: var(--secondary);
+	  }
+	  
+	  .info-item {
+		margin-bottom: 20px;
+		display: flex;
+		align-items: flex-start;
+	  }
+	  
+	  .info-icon {
+		margin-right: 15px;
+		width: 40px;
+		height: 40px;
+		background-color: var(--primary);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	  }
+	  
+	  .info-content h4 {
+		font-size: 1.1rem;
+		margin-bottom: 5px;
+		color: var(--dark);
+	  }
+	  
+	  .info-content p {
+		color: #555;
+		font-size: 0.95rem;
+	  }
+	  
+	  .social-icons {
+		display: flex;
+		gap: 15px;
+		margin-top: 30px;
+	  }
+	  
+	  .social-icons a {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: var(--primary);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: var(--transition);
+		font-size: 1.2rem;
+	  }
+	  
+	  .social-icons a:hover {
+		background-color: var(--secondary);
+		color: var(--primary);
+		transform: translateY(-3px);
+	  }
+	  
+	  .form-group {
+		margin-bottom: 20px;
+	  }
+	  
+	  .form-control {
+		width: 100%;
+		padding: 12px 15px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		font-size: 1rem;
+		transition: var(--transition);
+	  }
+	  
+	  .form-control:focus {
+		outline: none;
+		border-color: var(--primary);
+		box-shadow: 0 0 0 2px rgba(51, 0, 114, 0.2);
+	  }
+	  
+	  .form-row {
+		display: flex;
+		gap: 20px;
+	  }
+	  
+	  .form-row .form-group {
+		flex: 1;
+	  }
+	  
+	  textarea.form-control {
+		resize: vertical;
+		min-height: 150px;
+	  }
+	  
+	  .btn-submit {
+		background-color: var(--secondary);
+		color: var(--primary);
+		font-weight: 700;
+		padding: 12px 30px;
+		font-size: 1rem;
+	  }
+	  
+	  .btn-submit:hover {
+		background-color: var(--primary);
+		color: white;
+	  }
+	  
+	  /* Footer */
+	  footer {
+		background-color: var(--dark);
+		color: white;
+		padding: 40px 0 20px;
+	  }
+	  
+	  .footer-content {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 40px;
+		margin-bottom: 30px;
+	  }
+	  
+	  .footer-col {
+		flex: 1;
+		min-width: 200px;
+	  }
+	  
+	  .footer-col h3 {
+		font-size: 1.2rem;
+		margin-bottom: 20px;
+		color: var(--secondary);
+	  }
+	  
+	  .footer-col ul {
+		list-style: none;
+	  }
+	  
+	  .footer-col ul li {
+		margin-bottom: 10px;
+	  }
+	  
+	  .footer-col ul li a {
+		color: #ccc;
+		text-decoration: none;
+		transition: var(--transition);
+	  }
+	  
+	  .footer-col ul li a:hover {
+		color: var(--secondary);
+		padding-left: 5px;
+	  }
+	  
+	  .copyright {
+		text-align: center;
+		padding-top: 30px;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		color: #aaa;
+		font-size: 0.9rem;
+	  }
+	  
+	  /* Modal */
+	  .modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1000;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+	  }
+	  
+	  .modal.active {
+		opacity: 1;
+		visibility: visible;
+	  }
+	  
+	  .modal-content {
+		background-color: white;
+		border-radius: 10px;
+		max-width: 800px;
+		width: 90%;
+		overflow: hidden;
+		position: relative;
+		transform: scale(0.8);
+		transition: transform 0.3s ease;
+	  }
+	  
+	  .modal.active .modal-content {
+		transform: scale(1);
+	  }
+	  
+	  .modal-header {
+		padding: 20px;
+		background-color: var(--primary);
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	  }
+	  
+	  .modal-header h3 {
+		font-size: 1.5rem;
+		margin: 0;
+	  }
+	  
+	  .modal-close {
+		background: none;
+		border: none;
+		color: white;
+		font-size: 1.5rem;
+		cursor: pointer;
+	  }
+	  
+	  .modal-body {
+		padding: 30px;
+		max-height: 70vh;
+		overflow-y: auto;
+	  }
+	  
+	  .modal-body img {
+		max-width: 100%;
+		margin-bottom: 20px;
+		border-radius: 5px;
+	  }
+	  
+	  /* Mobile Responsiveness */
+	  @media (max-width: 992px) {
+		.contact-container {
+		  flex-direction: column;
+		}
+	  }
+	  
+	  @media (max-width: 768px) {
+		.hero {
+		  height: 400px;
+		}
+		
+		.method-card {
+		  flex: 0 0 250px;
+		}
+		
+		.work-grid {
+		  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		}
+		
+		.form-row {
+		  flex-direction: column;
+		  gap: 0;
+		}
+		
+		.footer-content {
+		  flex-direction: column;
+		  gap: 30px;
+		}
+	  }
+	  
+	  @media (max-width: 576px) {
+		.hero-content h1 {
+		  font-size: 2rem;
+		}
+		
+		.section-header h2 {
+		  font-size: 1.75rem;
+		}
+		
+		.method-card {
+		  flex: 0 0 calc(100% - 30px);
+		}
+		
+		.work-grid {
+		  grid-template-columns: 1fr;
+		}
+		
+		.modal-content {
+		  width: 95%;
+		}
+	  }
+	</style>
 
 
 
@@ -1321,72 +2066,7 @@
 					</div><!-- TEMPLATE ENDS: header -->
 				</header>
 			
-				<div id="main-container" style="min-height: 305px;">
-					<div class="shopping-layout-breadcrumb">
-						<div data-view="Global.Breadcrumb" data-type="breadcrumb">
-							<!-- TEMPLATE STARTS: global_views_breadcrumb-->
-							<div id="banner-breadcrumb-top" class="content-banner banner-breadcrumb-top"
-								data-cms-area="breadcrumb_top" data-cms-area-filters="global"></div>
-							<ul class="global-views-breadcrumb" itemprop="breadcrumb">
-								<li class="global-views-breadcrumb-item"><a href="https://www.wlubookstore.com/"
-										data-touchpoint="home" data-hashtag="#"> Home </a></li>
-								<li class="global-views-breadcrumb-divider">/</li>
-								<li class="global-views-breadcrumb-item-active"> Hours &amp; Locations | Laurier
-									Bookstore </li>
-							</ul>
-							<div id="banner-breadcrumb-bottom" class="content-banner banner-breadcrumb-bottom"
-								data-cms-area="breadcrumb_bottom" data-cms-area-filters="global">
-								<div><!-- TEMPLATE STARTS: custom_content_type_container-->
-									<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-24"
-										class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-24">
-										<div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
-											<div>
-												<style>
-													.product-views-option-color-picker-label img {
-														display: block;
-														height: 40px;
-														width: 40px;
-													}
-
-													.product-views-option-facets-color-picker-label img {
-														display: block;
-														height: 15px;
-														width: 15px;
-													}
-
-													.shopping-layout-breadcrumb,
-													.shopping-layout-notifications,
-													.shopping-layout-content {
-														padding-left: 15px !important;
-														padding-right: 15px !important;
-													}
-												</style>
-											</div><!-- TEMPLATE ENDS: sc_cct_html -->
-										</div>
-									</div><!-- TEMPLATE ENDS: custom_content_type_container -->
-								</div>
-							</div><!-- TEMPLATE ENDS: global_views_breadcrumb -->
-						</div>
-					</div>
-
-					<div class="shopping-layout-notifications">
-						<div data-view="Notifications"><!-- TEMPLATE STARTS: notifications-->
-							<div class="notifications">
-								<div data-view="Order.Notifications"><!-- TEMPLATE STARTS: notifications_order-->
-									<div class="notifications-order">
-										<div data-view="Promocode.Notifications"></div>
-										<div data-view="FreeGift.Notifications"></div>
-									</div><!-- TEMPLATE ENDS: notifications_order -->
-								</div>
-								<div data-view="Profile.Notifications"><!-- TEMPLATE STARTS: notifications_profile-->
-									<div class="notifications-profile">
-										<div data-view="ProfileChanges.Notifications"></div>
-									</div><!-- TEMPLATE ENDS: notifications_profile -->
-								</div>
-							</div><!-- TEMPLATE ENDS: notifications -->
-						</div>
-					</div>
-					<!-- Hero Section with Carousel -->
+				
   <section class="hero">
     <div class="hero-carousel">
       <div class="hero-carousel-inner">
@@ -1394,7 +2074,7 @@
           <img src="images\FOS DISPLAY L.jpg" alt="Custom Orders">
         </div>
         <div class="hero-carousel-item">
-          <img src="/api/placeholder/1600/600" alt="Printing Methods">
+          <img src="images\FOS DISPLAY.jpg" alt="Printing Methods">
         </div>
         <div class="hero-carousel-item">
           <img src="/api/placeholder/1600/600" alt="Previous Work">
@@ -1420,7 +2100,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Printing Methods Gallery -->
   <section class="printing-methods">
     <div class="container">
@@ -1434,7 +2114,7 @@
           <!-- Method 1: Embroidery -->
           <div class="method-card">
             <div class="method-image">
-              <img src="images\infoblock_classics.avif" alt="Embroidery">
+              <img src="images\IMG_1493.JPG" alt="Embroidery">
             </div>
             <div class="method-content">
               <h3>Embroidery</h3>
@@ -1446,7 +2126,7 @@
           <!-- Method 2: Puff Print -->
           <div class="method-card">
             <div class="method-image">
-              <img src="images\infoblocktext.avif" alt="Puff Print">
+              <img src="images\HARLOW TERRY PULLOVER NATURAL 4.jpg" alt="Puff Print">
             </div>
             <div class="method-content">
               <h3>Puff Print</h3>
@@ -1458,7 +2138,7 @@
           <!-- Method 3: Emboss -->
           <div class="method-card">
             <div class="method-image">
-              <img src="/api/placeholder/400/300" alt="Emboss">
+              <img src="images\carousel_roots2024.jpg" alt="Emboss">
             </div>
             <div class="method-content">
               <h3>Emboss</h3>
@@ -1470,7 +2150,7 @@
           <!-- Method 4: Heat Transfer -->
           <div class="method-card">
             <div class="method-image">
-              <img src="/api/placeholder/400/300" alt="Heat Transfer">
+              <img src="images\CLOUD FLEECE DBL LINE TWILL HOOD GREY 2.jpg" alt="Heat Transfer">
             </div>
             <div class="method-content">
               <h3>Heat Transfer</h3>
@@ -1482,7 +2162,7 @@
           <!-- Method 5: Screen Printing -->
           <div class="method-card">
             <div class="method-image">
-              <img src="/api/placeholder/400/300" alt="Screen Printing">
+              <img src="images\carousel_soarabove.jpg" alt="Screen Printing">
             </div>
             <div class="method-content">
               <h3>Screen Printing</h3>
@@ -1578,98 +2258,62 @@
     </div>
   </section>
 
-				
-					
-					<div class="custom-order-links">
-						<img src="images\Untitled design (2).png">
-						
-
-						<div class="custom-order-links-content">
-							<div class="custom-order-top">
-								<h1 id="custom">Want your ideas to come to life?</h1>
-							</div>
-							<div class="container-two">
-								<div class="custom-order-links">
-												
-									<div class="custom-order-links-bkg">
-									
-									
-									<div class="container-two">
-										<div class="right-form">
-											<div class="content">
-												<h1>Have an Inquiry?</h1>
-												<div class="icons-bkg">
-													<div class="social-icons">
-														<a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-														<a href="https://www.twitter.com" target="_blank"><i class="fa-solid fa-phone"></i></a>
-														<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-														<a href="mailto:example@example.com"><i class="fas fa-envelope"></i></a>
-													</div>
-												<p>Fill out this form with your information to send an inquiry to the bookstore custom order staff, and we'll get back to you as soon as possible!</p>
-												<p>Or, you can come find us on campus and inquire with our custom order team IRL!</p>
-												<div class="contact-us">
-													<div class="find-us-container">
-														<a href="hours-location-vers2.html" class="find-us-button">
-															Find Us 
-														</a>
-													</div>
-													
-													
-
-												</div>
-												</div>
-												
-											</div>
-											<form action="#" method="post" id="contact_form">
-												<div class="name">
-												  <label for="name"></label>
-												  <input type="text" placeholder="My name is" name="name" id="name_input" required>
-												</div>
-												<div class="email">
-												  <label for="email"></label>
-												  <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
-												</div>
-												<div class="telephone">
-												  <label for="name"></label>
-												  <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
-												</div>
-												<div class="subject">
-												  <label for="subject"></label>
-												  <select placeholder="Subject line" name="subject" id="subject_input" required>
-													<option disabled hidden selected>Subject line</option>
-													<option>I'd like to start a project</option>
-													<option>I'd like to ask a question</option>
-													<option>I'd like to make a proposal</option>
-												  </select>
-												</div>
-												<div class="message">
-												  <label for="message"></label>
-												  <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
-												</div>
-												<div class="submit">
-													<button type="submit" id="form_button">
-														Send message
-													</button>
-												</div>
-												
-											</form><!-- // End form -->
-											
-			
-										</div>
-								
-								
-							</div>
-						
-						
-						
-						
+  <!-- Contact Form Section -->
+  <section class="contact-section" id="contact-form">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get in Touch</h2>
+        <p>Fill out the form below to send an inquiry to our custom order team, and we'll get back to you as soon as possible</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Location</h4>
+              <p>Laurier University Bookstore, Main Campus</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-content">
+              <h4>Phone</h4>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">
+							</div><!-- TEMPLATE ENDS: global_views_breadcrumb -->
+						</div>
 					</div>
 
-
-					  </div>
-					   </div>
-
-				</div><!-- TEMPLATE ENDS: custom_content_type_container -->
+					<div class="shopping-layout-notifications">
+						<div data-view="Notifications"><!-- TEMPLATE STARTS: notifications-->
+							<div class="notifications">
+								<div data-view="Order.Notifications"><!-- TEMPLATE STARTS: notifications_order-->
+									<div class="notifications-order">
+										<div data-view="Promocode.Notifications"></div>
+										<div data-view="FreeGift.Notifications"></div>
+									</div><!-- TEMPLATE ENDS: notifications_order -->
+								</div>
+								<div data-view="Profile.Notifications"><!-- TEMPLATE STARTS: notifications_profile-->
+									<div class="notifications-profile">
+										<div data-view="ProfileChanges.Notifications"></div>
+									</div><!-- TEMPLATE ENDS: notifications_profile -->
+								</div>
+							</div><!-- TEMPLATE ENDS: notifications -->
+						</div>
+					</div>
+					
 				<div class="empty"></div>
 			</div>
 		</div>
@@ -1901,63 +2545,68 @@
 		});
 
 	</script>
-	<script>const track = document.querySelector('.carousel-control');
-		const products = Array.from(document.querySelectorAll('.product'));
-		const prevBtn = document.querySelector('.prev');
-		const nextBtn = document.querySelector('.next');
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		  //
+		  // 1) HERO CAROUSEL
+		  //
+		  const slides = document.querySelectorAll('.hero-carousel-item');
+		  const indicators = document.querySelectorAll('.carousel-indicators li');
+		  const prevCtrl   = document.querySelector('.carousel-control.prev');
+		  const nextCtrl   = document.querySelector('.carousel-control.next');
+		  let currentSlide = 0;
 		
-		const productWidth = products[0].offsetWidth + 30; // Width + margin
-		let currentOffset = 0; // Track the current offset for translation
+		  function showHero(index) {
+			// wrap
+			index = (index + slides.length) % slides.length;
+			// hide old / tick off dots
+			slides[currentSlide].classList.remove('active');
+			indicators[currentSlide].classList.remove('active');
+			// show new
+			slides[index].classList.add('active');
+			indicators[index].classList.add('active');
+			currentSlide = index;
+		  }
 		
-		// Duplicate all products to create an infinite scrolling illusion
-		products.forEach((product) => {
-		  const clone = product.cloneNode(true);
-		  track.appendChild(clone);
+		  prevCtrl.addEventListener('click', () => showHero(currentSlide - 1));
+		  nextCtrl.addEventListener('click', () => showHero(currentSlide + 1));
+		  indicators.forEach((dot,i) => dot.addEventListener('click', () => showHero(i)));
+		  // auto‐advance every 5s
+		  setInterval(() => showHero(currentSlide + 1), 5000);
+		
+		
+		
+		  //
+		  // 2) PRINTING METHODS CAROUSEL
+		  //
+		  const wrapper     = document.querySelector('.method-wrapper');
+		  const cards       = wrapper.querySelectorAll('.method-card');
+		  const prevMethod  = document.querySelector('.method-nav.prev');
+		  const nextMethod  = document.querySelector('.method-nav.next');
+		
+		  // calculate full width of one card + the gaps in between
+		  const cardStyle   = getComputedStyle(cards[0]);
+		  const gap         = parseFloat(cardStyle.marginLeft) + parseFloat(cardStyle.marginRight);
+		  const cardWidth   = cards[0].offsetWidth + gap;
+		  let methodOffset  = 0;
+		  const maxOffset   = (cards.length * cardWidth) - wrapper.parentElement.offsetWidth;
+		
+		  function updateMethods() {
+			wrapper.style.transition = 'transform 0.5s ease';
+			wrapper.style.transform  = `translateX(-${methodOffset}px)`;
+		  }
+		
+		  nextMethod.addEventListener('click', () => {
+			methodOffset = Math.min(methodOffset + cardWidth, maxOffset);
+			updateMethods();
+		  });
+		  prevMethod.addEventListener('click', () => {
+			methodOffset = Math.max(methodOffset - cardWidth, 0);
+			updateMethods();
+		  });
 		});
+		</script>
 		
-		// Set initial position
-		track.style.transform = `translateX(${currentOffset}px)`;
-		
-		// Move to the next slide
-		function moveNext() {
-		  currentOffset -= productWidth; // Shift left
-		  track.style.transition = 'transform 0.5s ease-in-out';
-		  track.style.transform = `translateX(${currentOffset}px)`;
-		
-		  // If reached the end, reset the position seamlessly
-		  setTimeout(() => {
-			const firstProduct = track.firstElementChild;
-			track.appendChild(firstProduct); // Move first product to the end
-			currentOffset += productWidth; // Adjust offset back
-			track.style.transition = 'none'; // Disable animation for seamless effect
-			track.style.transform = `translateX(${currentOffset}px)`;
-		  }, 500); // Match the transition duration
-		}
-		
-		// Move to the previous slide
-		function movePrev() {
-		  const lastProduct = track.lastElementChild;
-		  track.prepend(lastProduct); // Move last product to the beginning
-		  currentOffset -= productWidth; // Adjust offset before transition
-		  track.style.transition = 'none'; // Disable animation for seamless effect
-		  track.style.transform = `translateX(${currentOffset}px)`;
-		
-		  // Then animate to show the next product
-		  setTimeout(() => {
-			currentOffset += productWidth; // Shift right
-			track.style.transition = 'transform 0.5s ease-in-out';
-			track.style.transform = `translateX(${currentOffset}px)`;
-		  }, 0);
-		}
-		
-		// Add event listeners to buttons
-		nextBtn.addEventListener('click', moveNext);
-		prevBtn.addEventListener('click', movePrev);
-		
-
-		
-		
-	</script> 
 
 </body>
 

@@ -20,9 +20,8 @@
   }
   
   .hero-bg {
-   
+
     background-size: cover;
-    position: relative;
     overflow: hidden;
     background-image: url('images/Group 1.png'); 
     background-size: cover;         
@@ -31,6 +30,7 @@
     width: 100vw; 
     padding-top:30px;
     margin: none;
+    position: relative;
   }
 
   
