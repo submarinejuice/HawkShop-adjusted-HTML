@@ -21,27 +21,49 @@
   line-height: 1.6;
   }
   
-  .container {
-  max-width: 1300px;
-  margin: 0 ;
-  padding: 0 20px;
-
- 
+  .method-carousel {
+    width: 100vw;
+    
+    position: relative;
   }
+  
+  .method-wrapper {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease;
+  }
+  .method-carousel {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+  
   .printing-methods{
     margin: 0 auto !important;
   }
+  .printing-methods {
+    width: 100vw; /* Full screen width */
+    background-color: var(--light); /* Make sure it's matching your site's light background */
+   
+    padding: 60px 0; /* Some nice top/bottom padding */
+  }
+    .method-carousel {
+    overflow: visible !important; /* key line */
+    padding: 0 20px;
+  }
+  
   
   /* Hero Section */
   .hero {
   position: relative;
   height: 500px;
-  overflow: hidden;
+ 
   background-color: var(--primary);
   }
   
   .hero-carousel {
   height: 100%;
+  
   }
   
   .hero-carousel-inner {
@@ -79,7 +101,9 @@
   text-align: center;
   color: white;
   z-index: 2;
-  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   }
   
   .hero-content h1 {
@@ -96,18 +120,29 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  color: white;
+  text-shadow: #1F1646 2px 4px 6px;
   }
   
-  
-  
+  .carousel-indicators{
+    
+  }
+ 
+
   .carousel-indicators li {
   width: 12px;
   height: 12px;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  margin: 0 5px;
   cursor: pointer;
   transition: var(--transition);
+  margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+
   }
   
   .carousel-indicators li.active {
@@ -115,6 +150,14 @@
   transform: scale(1.2);
   }
   
+
+  .carousel-arrow.left {
+  left: -25px; 
+}
+
+.carousel-arrow.right {
+  right: -25px;
+}
   .carousel-control {
   position: absolute;
   top: 50%;
@@ -149,6 +192,8 @@
   .section-header {
   text-align: center;
   margin-bottom: 40px;
+  margin-top:60px;
+  margin-bottom: 60px;
 
 
   }
@@ -183,27 +228,23 @@
   /* Printing Methods Gallery */
   .printing-methods {
     display: flex;
+    flex-direction: column;
   overflow: visible;
   padding: 40px 0 80px;
   background-color: white;
   justify-content: center;
   align-items: center;
   justify-items: center;
+  margin: 0 auto;
  
   }
   
   .method-carousel {
-  position: relative;
-  overflow: visible;
-  margin-top: 40px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
-  .method-carousel {
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-}
 
   
   .method-wrapper {
@@ -216,7 +257,7 @@
   flex: 0 0 300px;
   margin: 0 15px;
   border-radius: 10px;
-  overflow: hidden;
+
   box-shadow: var(--shadow);
   transition: var(--transition);
   background-color: white;
@@ -231,7 +272,7 @@
   .method-image {
   position: relative;
   height: 220px;
-  overflow: hidden;
+
   }
   
   .method-image img {
@@ -260,7 +301,7 @@
   color: #555;
   margin-bottom: 20px;
   height: 120px;
-  overflow: hidden;
+
   }
   
   .btn {
@@ -300,7 +341,7 @@
     border: 1px solid var(--primary);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    
     margin: 0 auto;
     text-align: center;
   }
@@ -363,7 +404,7 @@
   /* Previous Work Section */
   .previous-work {
   padding: 80px 0;
-  background-color: var(--neutral);
+  background-color: #ececec;
   }
   
   .work-grid {
@@ -375,7 +416,7 @@
   
   .work-item {
   border-radius: 10px;
-  overflow: hidden;
+
   position: relative;
   height: 300px;
   box-shadow: var(--shadow);
@@ -433,7 +474,7 @@
   padding: 100px 0;
   background: linear-gradient(to right, var(--primary), var(--dark));
   color: white;
-  overflow: hidden;
+
   }
   
   .custom-order::before {
@@ -683,7 +724,7 @@
   justify-content: center;
   z-index: 1000;
   opacity: 0;
-  visibility: hidden;
+
   transition: all 0.3s ease;
   }
   
@@ -697,7 +738,7 @@
   border-radius: 10px;
   max-width: 800px;
   width: 90%;
-  overflow: hidden;
+  
   position: relative;
   transform: scale(0.8);
   transition: transform 0.3s ease;
@@ -800,4 +841,32 @@
     width: 1400px;
     margin: 0 auto;
     margin-left: 0 !important;
+  }.carousel-indicators {
+    position: absolute;
+    bottom: 20px; /* Push it down */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* space between dots */
+    z-index: 5; /* higher than slides, lower than arrows if needed */
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
+  
+  .carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .carousel-indicators li.active {
+    background-color: var(--secondary);
+    transform: scale(1.2);
+  }
+  
