@@ -293,4 +293,13 @@ html, body {
     object-fit: cover;
     object-position: top; /* Align to top so image isn't cropped there */
     display: block;
+}.custom-full-bleed {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    overflow: visible;
+    padding-bottom: 150px;
 }
+
