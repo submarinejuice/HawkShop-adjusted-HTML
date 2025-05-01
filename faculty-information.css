@@ -1,0 +1,184 @@
+
+* {
+    font-family: 'Lato', sans-serif !important; 
+}
+html, body {
+   
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-h1 p{
+
+    color: white;
+    font-size: 20px;
+    text-align: center;
+
+}
+ 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Laurier colors */
+  :root {
+    --laurier-purple: #330072;
+    --laurier-gold: #F2A900;
+    --light-purple: #EBE0F5;
+    --dark-purple: #1F1646;
+  }
+  
+  /* Header */
+  .page-header {
+    background-color: var(--laurier-purple);
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .page-header h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  .page-header p {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+  }
+  
+  /* Sections */
+  .section {
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .section-header {
+    background-color: var(--laurier-purple);
+    color: #F2A900;
+    padding: 12px 20px;
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .section-content {
+    padding: 20px;
+  }
+  
+  /* Faculty Guide */
+  .guide-link {
+    display: inline-block;
+    background-color: #330072;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .guide-link:hover {
+    background-color: var(--dark-purple);
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+  
+  th {
+    background-color: var(--light-purple);
+    color: var(--laurier-purple);
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Info Box */
+  .info-box {
+    background-color: var(--light-purple);
+    border-left: 4px solid var(--laurier-purple);
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .info-box h4 {
+    margin-top: 0;
+    color: var(--laurier-purple);
+  }
+  
+  /* Publisher Cards */
+  .publisher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .publisher-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .publisher-card h4 {
+    color: var(--laurier-purple);
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+ 
+  .find-us-button{
+    color: #330072;
+    border: 1px solid #1F1646;
+    
+  }
+  
+  .button-primary {
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+  }
+  
+  .button-primary::after {
+    content: "→";
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .button-primary:hover {
+    background-color: #F2A900;
+    color: #330072;
+    padding-right: 30px;
+  }
+  
+  .button-primary:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+
+  

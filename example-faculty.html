@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laurier Hawkshop Faculty Resources</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Laurier colors */
+    :root {
+      --laurier-purple: #4F2D7F;
+      --laurier-gold: #CFB87C;
+      --light-purple: #EAE6F0;
+      --dark-purple: #3B2161;
+    }
+    
+    /* Header */
+    .page-header {
+      background-color: var(--laurier-purple);
+      color: white;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    
+    .page-header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    
+    .page-header p {
+      margin: 5px 0 0 0;
+      font-size: 16px;
+    }
+    
+    /* Sections */
+    .section {
+      margin-bottom: 40px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .section-header {
+      background-color: var(--laurier-purple);
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .section-content {
+      padding: 20px;
+    }
+    
+    /* Faculty Guide */
+    .guide-link {
+      display: inline-block;
+      background-color: var(--laurier-purple);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    .guide-link:hover {
+      background-color: var(--dark-purple);
+    }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    
+    th {
+      background-color: var(--light-purple);
+      color: var(--laurier-purple);
+      font-weight: bold;
+      text-align: left;
+      padding: 12px;
+      border: 1px solid #ddd;
+    }
+    
+    td {
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    /* Info Box */
+    .info-box {
+      background-color: var(--light-purple);
+      border-left: 4px solid var(--laurier-purple);
+      padding: 15px;
+      margin: 15px 0;
+    }
+    
+    .info-box h4 {
+      margin-top: 0;
+      color: var(--laurier-purple);
+    }
+    
+    /* Publisher Cards */
+    .publisher-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .publisher-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    
+    .publisher-card h4 {
+      color: var(--laurier-purple);
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    
+    /* Status Indicators */
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    .status-open {
+      background-color: #e6f7e6;
+      color: #2e7d32;
+    }
+    
+    .status-coming {
+      background-color: #fff8e1;
+      color: #f57f17;
+    }
+    
+    .status-closed {
+      background-color: #eeeeee;
+      color: #616161;
+    }
+    
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .publisher-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      
+      td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+      
+      td:before {
+        position: absolute;
+        top: 10px;
+        left: 12px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>Faculty Resources - Laurier Hawkshop</h1>
+      <p>Essential information for course materials and bookstore services</p>
+    </header>
+    
+    <!-- Faculty Guide Section -->
+    <div class="section">
+      <h2 class="section-header">Faculty Guide</h2>
+      <div class="section-content">
+        <p>Our comprehensive Faculty Guide contains everything you need to know about course material adoption procedures, important dates, and bookstore services.</p>
+        <div class="info-box">
+          <h4>What's Inside:</h4>
+          <ul>
+            <li>Course material adoption procedures</li>
+            <li>Important dates and deadlines</li>
+            <li>Contact information and support resources</li>
+          </ul>
+        </div>
+        <a href="#" class="guide-link">Download Faculty Guide</a>
+      </div>
+    </div>
+    
+    <!-- Publisher Reps Section -->
+    <div class="section">
+      <h2 class="section-header">Publisher Representatives</h2>
+      <div class="section-content">
+        <p>Contact these representatives directly for inquiries about textbooks and course materials from their publishers.</p>
+        <div class="publisher-grid">
+          <div class="publisher-card">
+            <h4>Jessica Wong</h4>
+            <p><strong>Pearson Education</strong></p>
+            <p>Email: j.wong@pearson.ca</p>
+            <p>Phone: 519-555-0123</p>
+          </div>
+          <div class="publisher-card">
+            <h4>Michael Chen</h4>
+            <p><strong>McGraw Hill</strong></p>
+            <p>Email: m.chen@mcgrawhill.ca</p>
+            <p>Phone: 519-555-0124</p>
+          </div>
+          <div class="publisher-card">
+            <h4>Sarah Johnson</h4>
+            <p><strong>Nelson Education</strong></p>
+            <p>Email: s.johnson@nelson.ca</p>
+            <p>Phone: 519-555-0125</p>
+          </div>
+          <div class="publisher-card">
+            <h4>David Patel</h4>
+            <p><strong>Oxford University Press</strong></p>
+            <p>Email: d.patel@oup.ca</p>
+            <p>Phone: 519-555-0126</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Return Schedule Section -->
+    <div class="section">
+      <h2 class="section-header">Return Schedule</h2>
+      <div class="section-content">
+        <p>Book returns must be processed within these windows. Returns are subject to publisher policies and conditions.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Return Window Opens</th>
+              <th>Return Window Closes</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Term">Fall Term</td>
+              <td data-label="Opens">October 15</td>
+              <td data-label="Closes">December 15</td>
+              <td data-label="Notes">All fall-only courses</td>
+            </tr>
+            <tr>
+              <td data-label="Term">Winter Term</td>
+              <td data-label="Opens">February 15</td>
+              <td data-label="Closes">April 15</td>
+              <td data-label="Notes">All winter-only courses</td>
+            </tr>
+            <tr>
+              <td data-label="Term">Spring Term</td>
+              <td data-label="Opens">June 15</td>
+              <td data-label="Closes">August 15</td>
+              <td data-label="Notes">All spring/summer courses</td>
+            </tr>
+            <tr>
+              <td data-label="Term">Full Year</td>
+              <td data-label="Opens">April 1</td>
+              <td data-label="Closes">April 30</td>
+              <td data-label="Notes">All full-year courses</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact the bookstore for special return requirements.</p>
+      </div>
+    </div>
+    
+    <!-- Deadlines Section -->
+    <div class="section">
+      <h2 class="section-header">Important Deadlines</h2>
+      <div class="section-content">
+        <p>Submit your course material requests by these dates to ensure timely availability for students.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Term</th>
+              <th>Textbook Order Deadline</th>
+              <th>Custom Course Pack Deadline</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Term">Fall 2025</td>
+              <td data-label="Textbook Deadline">June 15, 2025</td>
+              <td data-label="Course Pack Deadline">May 30, 2025</td>
+              <td data-label="Status"><span class="status status-open">Open</span></td>
+            </tr>
+            <tr>
+              <td data-label="Term">Winter 2026</td>
+              <td data-label="Textbook Deadline">October 15, 2025</td>
+              <td data-label="Course Pack Deadline">September 30, 2025</td>
+              <td data-label="Status"><span class="status status-coming">Coming Soon</span></td>
+            </tr>
+            <tr>
+              <td data-label="Term">Spring 2026</td>
+              <td data-label="Textbook Deadline">February 15, 2026</td>
+              <td data-label="Course Pack Deadline">January 30, 2026</td>
+              <td data-label="Status"><span class="status status-closed">Not Open</span></td>
+            </tr>
+            <tr>
+              <td data-label="Term">Summer 2026</td>
+              <td data-label="Textbook Deadline">March 15, 2026</td>
+              <td data-label="Course Pack Deadline">February 28, 2026</td>
+              <td data-label="Status"><span class="status status-closed">Not Open</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="info-box">
+          <h4>Important Notes:</h4>
+          <ul>
+            <li>Earlier submissions help ensure materials are available on time for students.</li>
+            <li>Late submissions may result in delayed availability of materials.</li>
+            <li>For assistance, please contact the Course Materials Coordinator.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Course Materials Section -->
+    <div class="section">
+      <h2 class="section-header">Course Materials Status</h2>
+      <div class="section-content">
+        <p>The following status indicators are used in the bookstore system to track course materials:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Status"><span class="status status-open">Approved</span></td>
+              <td data-label="Description">Materials have been reviewed and approved for course use</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="status status-coming">Pending Review</span></td>
+              <td data-label="Description">Materials submitted and awaiting approval</td>
+            </tr>
+            <tr>
+              <td data-label="Status"><span class="status status-closed">Not Available</span></td>
+              <td data-label="Description">Materials not yet received or not available</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="info-box">
+          <h4>How to Submit Course Materials:</h4>
+          <ol>
+            <li>Log into the Faculty Portal using your Laurier credentials</li>
+            <li>Navigate to "Course Materials" section</li>
+            <li>Select your course and fill out the required information</li>
+            <li>Submit for review and approval</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div>
+        <strong>Contact:</strong> Bookstore Course Materials Team<br>
+        Email: coursematerials@wlu.ca | Phone: 519-555-0000
+      </div>
+      <div style="margin-top: 10px;">
+        <a href="#" style="color: var(--laurier-purple); margin-right: 15px;">Help</a>
+        <a href="#" style="color: var(--laurier-purple);">FAQs</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

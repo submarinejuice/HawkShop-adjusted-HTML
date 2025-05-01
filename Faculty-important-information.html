@@ -13,7 +13,9 @@
 
 
 	<link rel="stylesheet" href="./Faculty Information_files/shopping_2.css">
-	
+    <link rel="stylesheet" href="course_materials.css">
+	<link rel="stylesheet" href="faculty-information.css">
+    
 
 
 
@@ -30,7 +32,6 @@
 	<script src="./Faculty Information_files/nlRUM.js"></script>
 	<link rel="stylesheet" href="./Faculty Information_files/css" media="all">
 	<link rel="stylesheet" href="shopping_2.css">
-	<link rel="stylesheet" href="course_materials.css">
 	<style></style>
 	<script
 		type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","name":"Home","position":1,"item":"https://www.wlubookstore.com/"},{"@type":"ListItem","name":"Faculty Information","position":2,"item":"https://www.wlubookstore.com/faculty-information"}]}}]</script>
@@ -1304,56 +1305,210 @@
 								data-cms-area="breadcrumb_bottom" data-cms-area-filters="global">
 								<div><!-- TEMPLATE STARTS: custom_content_type_container-->
 									<section class="custom-full-bleed">
-										<div class="waveimg">
-											<img src="images/wave-background-purple.png">
-										</div>
-										<div class="wave-content">
-											<div class="header-h1">
-												<h1>Faculty Information</h1>
-											</div>
-											<div class="box-container">
-												<div class="box">
-													<img src="images\faculty-adoption.avif" alt="Textbook Search Image"> <!--REPLACE IMAGE WITH FILE CABINET LINK-->
-													<div class="content-wrapper">
-														<h1>Faculty Adoption</h1>
-														<p>Getting ready for the new semester? Adopt your course textbooks & materials.</p>
-														<a href="https://laurier.verbacollect.com/session/selfassign" class="find-us-button">
-															Learn more <span class="arrow">→</span>
-														</a>
-													</div>
-												</div>
-												<div class="box">
-													<img src="images\DTA-image-faculty.jfif" alt="Student Information Image"><!--REPLACE IMAGE WITH FILE CABINET LINK-->
-													<div class="content-wrapper">
-														<h1>Digital Textbook Access</h1>
-														<p>Digital Textbook Access information for faculty, publisher information, and important dates.</p>
-														<a href="https://www.wlubookstore.com/digital-textbook-access-for-faculty" class="find-us-button">
-															Learn more <span class="arrow">→</span>
-														</a>
-													</div>
-												</div>
-												<div class="box">
-													<img src="images\accessible-procurement.jpg" alt="Faculty Information Image"> <!--REPLACE IMAGE WITH FILE CABINET LINK-->
-													<div class="content-wrapper">
-														<h1>Accessible Procurement</h1>
-														<p>Acessible Procurement information and publisher representatives.</p>
-														<a href="https://www.wlubookstore.com/accessible-procurement" class="find-us-button">
-															Learn more <span class="arrow">→</span>
-														</a>
-													</div>
-												</div>
-												<div class="box">
-													<img src="images\importnt-guides.webp" alt="General Books Image"> <!--REPLACE IMAGE WITH FILE CABINET LINK-->
-													<div class="content-wrapper">
-														<h1>Important Guides</h1>
-														<p>Faculty Guide, return schedule, deadlines, & course materials staff information.</p>
-														<a href="https://www.wlubookstore.com/classroom/classroom-general-books/classroom-faculty-authored?page=1" class="find-us-button">
-															Learn more <span class="arrow">→</span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
+                                        
+                                            <div class="waveimg">
+                                                <img src="images/wave-background-purple.png">
+                                            </div>
+										<div class="container">
+                                            <header class="header-h1">
+                                              <h1>Faculty Resources</h1>
+                                              <p>Essential information for course materials and bookstore services</p>
+                                              <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                                <a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">COURSES</a>
+                                                <a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">STUDENTS</a>
+                                                <a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
+                                                <a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DTA</a>
+                                                <a href="#faculty" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY</a>
+                                                <a href="#textbooks" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">TEXTBOOKS</a>
+                                              </div>
+                                            </header>
+                                            
+                                            <!-- Faculty Guide Section -->
+                                            <div class="section">
+                                              <h2 class="section-header">Faculty Guide</h2>
+                                              <div class="section-content">
+                                                <p>Our comprehensive Faculty Guide contains everything you need to know about course material adoption procedures, important dates, and bookstore services.</p>
+                                                <div class="info-box">
+                                                  <h4>What's Inside:</h4>
+                                                  <ul>
+                                                    <li>Course material adoption procedures</li>
+                                                    <li>Important dates and deadlines</li>
+                                                    <li>Contact information and support resources</li>
+                                                  </ul>
+                                                </div>
+                                                <a href="#" class="find-us-button">Download Faculty Guide <span class="arrow">→</span></a>
+                                              </div>
+                                            </div>
+                                            
+                                            <!-- Publisher Reps Section -->
+                                            <div class="section">
+                                              <h2 class="section-header">Publisher Representatives</h2>
+                                              <div class="section-content">
+                                                <p>Contact these representatives directly for inquiries about textbooks and course materials from their publishers.</p>
+                                                <div class="publisher-grid">
+                                                  <div class="publisher-card">
+                                                    <h4>Jessica Wong</h4>
+                                                    <p><strong>Pearson Education</strong></p>
+                                                    <p>Email: j.wong@pearson.ca</p>
+                                                    <p>Phone: 519-555-0123</p>
+                                                  </div>
+                                                  <div class="publisher-card">
+                                                    <h4>Michael Chen</h4>
+                                                    <p><strong>McGraw Hill</strong></p>
+                                                    <p>Email: m.chen@mcgrawhill.ca</p>
+                                                    <p>Phone: 519-555-0124</p>
+                                                  </div>
+                                                  <div class="publisher-card">
+                                                    <h4>Sarah Johnson</h4>
+                                                    <p><strong>Nelson Education</strong></p>
+                                                    <p>Email: s.johnson@nelson.ca</p>
+                                                    <p>Phone: 519-555-0125</p>
+                                                  </div>
+                                                  <div class="publisher-card">
+                                                    <h4>David Patel</h4>
+                                                    <p><strong>Oxford University Press</strong></p>
+                                                    <p>Email: d.patel@oup.ca</p>
+                                                    <p>Phone: 519-555-0126</p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                            <!-- Return Schedule Section -->
+                                            <div class="section">
+                                              <h2 class="section-header">Return Schedule</h2>
+                                              <div class="section-content">
+                                                <p>Book returns must be processed within these windows. Returns are subject to publisher policies and conditions.</p>
+                                                <table>
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Term</th>
+                                                      <th>Return Window Opens</th>
+                                                      <th>Return Window Closes</th>
+                                                      <th>Notes</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Term">Fall Term</td>
+                                                      <td data-label="Opens">October 15</td>
+                                                      <td data-label="Closes">December 15</td>
+                                                      <td data-label="Notes">All fall-only courses</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Winter Term</td>
+                                                      <td data-label="Opens">February 15</td>
+                                                      <td data-label="Closes">April 15</td>
+                                                      <td data-label="Notes">All winter-only courses</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Spring Term</td>
+                                                      <td data-label="Opens">June 15</td>
+                                                      <td data-label="Closes">August 15</td>
+                                                      <td data-label="Notes">All spring/summer courses</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Full Year</td>
+                                                      <td data-label="Opens">April 1</td>
+                                                      <td data-label="Closes">April 30</td>
+                                                      <td data-label="Notes">All full-year courses</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact the bookstore for special return requirements.</p>
+                                              </div>
+                                            </div>
+                                            
+                                            <!-- Deadlines Section -->
+                                            <div class="section">
+                                              <h2 class="section-header">Important Deadlines</h2>
+                                              <div class="section-content">
+                                                <p>Submit your course material requests by these dates to ensure timely availability for students.</p>
+                                                <table>
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Term</th>
+                                                      <th>Textbook Order Deadline</th>
+                                                      <th>Custom Course Pack Deadline</th>
+                                                      <th>Status</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Term">Fall 2025</td>
+                                                      <td data-label="Textbook Deadline">June 15, 2025</td>
+                                                      <td data-label="Course Pack Deadline">May 30, 2025</td>
+                                                      <td data-label="Status"><span class="status status-open">Open</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Winter 2026</td>
+                                                      <td data-label="Textbook Deadline">October 15, 2025</td>
+                                                      <td data-label="Course Pack Deadline">September 30, 2025</td>
+                                                      <td data-label="Status"><span class="status status-coming">Coming Soon</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Spring 2026</td>
+                                                      <td data-label="Textbook Deadline">February 15, 2026</td>
+                                                      <td data-label="Course Pack Deadline">January 30, 2026</td>
+                                                      <td data-label="Status"><span class="status status-closed">Not Open</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Term">Summer 2026</td>
+                                                      <td data-label="Textbook Deadline">March 15, 2026</td>
+                                                      <td data-label="Course Pack Deadline">February 28, 2026</td>
+                                                      <td data-label="Status"><span class="status status-closed">Not Open</span></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                <div class="info-box">
+                                                  <h4>Important Notes:</h4>
+                                                  <ul>
+                                                    <li>Earlier submissions help ensure materials are available on time for students.</li>
+                                                    <li>Late submissions may result in delayed availability of materials.</li>
+                                                    <li>For assistance, please contact the Course Materials Coordinator.</li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                            <!-- Course Materials Section -->
+                                            <div class="section">
+                                              <h2 class="section-header">Course Materials Status</h2>
+                                              <div class="section-content">
+                                                <p>The following status indicators are used in the bookstore system to track course materials:</p>
+                                                <table>
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Status</th>
+                                                      <th>Description</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Status"><span class="status status-open">Approved</span></td>
+                                                      <td data-label="Description">Materials have been reviewed and approved for course use</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Status"><span class="status status-coming">Pending Review</span></td>
+                                                      <td data-label="Description">Materials submitted and awaiting approval</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Status"><span class="status status-closed">Not Available</span></td>
+                                                      <td data-label="Description">Materials not yet received or not available</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                <div class="info-box">
+                                                  <h4>How to Submit Course Materials:</h4>
+                                                  <ol>
+                                                    <li>Log into the Faculty Portal using your Laurier credentials</li>
+                                                    <li>Navigate to "Course Materials" section</li>
+                                                    <li>Select your course and fill out the required information</li>
+                                                    <li>Submit for review and approval</li>
+                                                  </ol>
+                                                </div>
+                                              </div>
+                                            </div>
 									</section>
 									<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-24"
 										class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-24">
