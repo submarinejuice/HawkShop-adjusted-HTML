@@ -19,19 +19,6 @@
     --text-yellow: #F2A900;
   }
   
-  .hero-bg {
-
-    background-size: cover;
-    overflow: hidden;
-    background-image: url('images/Group 1.png'); 
-    background-size: cover;         
-    background-repeat: no-repeat;   
-    min-height: 100vh;            
-    width: 100vw; 
-    padding-top:30px;
-    margin: none;
-    position: relative;
-  }
 
   
   .hero-bg::before {

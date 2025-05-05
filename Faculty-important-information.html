@@ -15,6 +15,12 @@
 	<link rel="stylesheet" href="./Faculty Information_files/shopping_2.css">
     <link rel="stylesheet" href="course_materials.css">
 	<link rel="stylesheet" href="faculty-information.css">
+	<script src="jquery-3.7.1.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+	
+
     
 
 
@@ -32,6 +38,8 @@
 	<script src="./Faculty Information_files/nlRUM.js"></script>
 	<link rel="stylesheet" href="./Faculty Information_files/css" media="all">
 	<link rel="stylesheet" href="shopping_2.css">
+	<link rel="stylesheet" href="textbook2.css">
+	<link rel="stylesheet"
 	<style></style>
 	<script
 		type="application/ld+json">[{"@context":"https://schema.org","@type":"WebPage","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","name":"Home","position":1,"item":"https://www.wlubookstore.com/"},{"@type":"ListItem","name":"Faculty Information","position":2,"item":"https://www.wlubookstore.com/faculty-information"}]}}]</script>
@@ -1305,210 +1313,227 @@
 								data-cms-area="breadcrumb_bottom" data-cms-area-filters="global">
 								<div><!-- TEMPLATE STARTS: custom_content_type_container-->
 									<section class="custom-full-bleed">
+										
                                         
-                                            <div class="waveimg">
-                                                <img src="images/wave-background-purple.png">
-                                            </div>
-										<div class="container">
-                                            <header class="header-h1">
-                                              <h1>Faculty Resources</h1>
-                                              <p>Essential information for course materials and bookstore services</p>
-                                              <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                                <a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">COURSES</a>
-                                                <a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">STUDENTS</a>
-                                                <a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
-                                                <a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DTA</a>
-                                                <a href="#faculty" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY</a>
-                                                <a href="#textbooks" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">TEXTBOOKS</a>
-                                              </div>
-                                            </header>
                                             
-                                            <!-- Faculty Guide Section -->
-                                            <div class="section">
-                                              <h2 class="section-header">Faculty Guide</h2>
-                                              <div class="section-content">
-                                                <p>Our comprehensive Faculty Guide contains everything you need to know about course material adoption procedures, important dates, and bookstore services.</p>
-                                                <div class="info-box">
-                                                  <h4>What's Inside:</h4>
-                                                  <ul>
-                                                    <li>Course material adoption procedures</li>
-                                                    <li>Important dates and deadlines</li>
-                                                    <li>Contact information and support resources</li>
-                                                  </ul>
-                                                </div>
-                                                <a href="#" class="find-us-button">Download Faculty Guide <span class="arrow">→</span></a>
-                                              </div>
-                                            </div>
+											
+						<!-- Hero Section -->
+						 
+						<section class="hero-bg text-white py-20 md:py-28">
+							<div class="waveimg">
+								<img src="images/wave-background-purple.png">
+							</div>
+							<div class="container mx-auto px-4 hero-content">
+								
+							  <div class="flex flex-col md:flex-row md:space-x-16 items-center">
+								<!-- Left Side - Title and Quick Links -->
+								<div class="md:w-1/2 mb-12 md:mb-0 fade-in" style="animation-delay: 0.1s">
+								  <h1 class="text-5xl md:text-7xl font-bold text-yellow-300 mb-4 important">Important Faculty Information</h1>
+								  <p class="text-lg mb-8 text-gray-200">Everything you need to know about accessing and using your course materials.</p>
+					
+								  
+								  <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+									<a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY GUIDE</a>
+									<a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DEADLINES</a>
+									<a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">PUBLISHERS</a>
+									<a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
+								  </div>
+								</div>
+								
+								<!-- Right Side - Deadlines -->
+								<div class="bg-black bg-opacity-30 rounded-lg p-8 md:w-1/2 fade-in" style="animation-delay: 0.3s">
+								  <div class="floating-label">FACULTY GUIDE</div>
+								  <p class="text-text-yellow-lg leading-relaxed">Our comprehensive Faculty Guide contains everything you need to know about course material adoption procedures, important dates, and bookstore services. </p>
+								  
+								  <h3 class="text-orange-300 font-bold mt-8 mb-4 flex items-center">
+									 WHATS INSIDE
+								  </h3>
+								  <div class="w-full h-px bg-yellow-300 mb-6"></div>
+								  
+								  
+								  
+								  <div class="deadline-alert">
+									<p class="text-sm font-medium text-normal">
+									  <i class="fas fa-info-circle mr-1"></i>
+									  Course material adoption procedures. 
+									</p>
+									<p class="text-sm font-medium text-normal">
+										<i class="fas fa-info-circle mr-1"></i>
+										Detailed instructions, and support resources. 
+									</p>
+									<p class="text-sm font-medium text-normal">
+										<i class="fas fa-info-circle mr-1"></i>
+										Contact information and deadlines. 
+									</p>
+								
+								  </div>
+								  <a href="#"  class="find-us-button guidedownload">Download Guide <span class="arrow">→</span></a>
+								</div>
+								
+							  </div>
+							  
+							</div>
+						  </section>
                                             
-                                            <!-- Publisher Reps Section -->
-                                            <div class="section">
-                                              <h2 class="section-header">Publisher Representatives</h2>
-                                              <div class="section-content">
-                                                <p>Contact these representatives directly for inquiries about textbooks and course materials from their publishers.</p>
-                                                <div class="publisher-grid">
-                                                  <div class="publisher-card">
-                                                    <h4>Jessica Wong</h4>
-                                                    <p><strong>Pearson Education</strong></p>
-                                                    <p>Email: j.wong@pearson.ca</p>
-                                                    <p>Phone: 519-555-0123</p>
-                                                  </div>
-                                                  <div class="publisher-card">
-                                                    <h4>Michael Chen</h4>
-                                                    <p><strong>McGraw Hill</strong></p>
-                                                    <p>Email: m.chen@mcgrawhill.ca</p>
-                                                    <p>Phone: 519-555-0124</p>
-                                                  </div>
-                                                  <div class="publisher-card">
-                                                    <h4>Sarah Johnson</h4>
-                                                    <p><strong>Nelson Education</strong></p>
-                                                    <p>Email: s.johnson@nelson.ca</p>
-                                                    <p>Phone: 519-555-0125</p>
-                                                  </div>
-                                                  <div class="publisher-card">
-                                                    <h4>David Patel</h4>
-                                                    <p><strong>Oxford University Press</strong></p>
-                                                    <p>Email: d.patel@oup.ca</p>
-                                                    <p>Phone: 519-555-0126</p>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
+						  <div class="tabs">
+							<!-- Radio buttons -->
+							<input type="radio" name="tabset" id="tab1" checked>
+							<input type="radio" name="tabset" id="tab2">
+							<input type="radio" name="tabset" id="tab3">
+						  
+							<!-- Labels -->
+							<div class="tab-labels">
+							  <label for="tab1">DEADLINES</label>
+							  <label for="tab2">PUBLISHERS</label>
+							  <label for="tab3">RETURN GUIDE</label>
+							</div>
+						  
+							<!-- Content -->
+							<div class="contents">
+							  <div id="content1" class="tab-content">
+								<div class="section deadlines">
+									<h2 class="section-header">Important Deadlines</h2>
+									<div class="section-content">
+									  <p>Submit your course material requests by these dates to ensure timely availability for students.</p>
+									  <table>
+										<thead>
+										  <tr>
+											<th>Term</th>
+											<th>Textbook Order Deadline</th>
+											<th>Custom Course Pack Deadline</th>
+											<th>Status</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td data-label="Term">Fall 2025</td>
+											<td data-label="Textbook Deadline">June 15, 2025</td>
+											<td data-label="Course Pack Deadline">May 30, 2025</td>
+											<td data-label="Status"><span class="status status-open">Open</span></td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Winter 2026</td>
+											<td data-label="Textbook Deadline">October 15, 2025</td>
+											<td data-label="Course Pack Deadline">September 30, 2025</td>
+											<td data-label="Status"><span class="status status-coming">Coming Soon</span></td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Spring 2026</td>
+											<td data-label="Textbook Deadline">February 15, 2026</td>
+											<td data-label="Course Pack Deadline">January 30, 2026</td>
+											<td data-label="Status"><span class="status status-closed">Not Open</span></td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Summer 2026</td>
+											<td data-label="Textbook Deadline">March 15, 2026</td>
+											<td data-label="Course Pack Deadline">February 28, 2026</td>
+											<td data-label="Status"><span class="status status-closed">Not Open</span></td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <div class="info-box">
+										<h4>Important Notes:</h4>
+										<ul>
+										  <li>Earlier submissions help ensure materials are available on time for students.</li>
+										  <li>Late submissions may result in delayed availability of materials.</li>
+										  <li>For assistance, please contact the Course Materials Coordinator.</li>
+										</ul>
+									  </div>
+									</div>
+								  </div>
+							  </div>
+							  <div id="content2" class="tab-content">
+								<div class="section pub-rep">
+									<h2 class="section-header">Publisher Representatives</h2>
+									<div class="section-content">
+									  <p>Contact these representatives directly for inquiries about textbooks and course materials from their publishers.</p>
+									  <div class="publisher-grid">
+										<div class="publisher-card">
+										  <h4>Jessica Wong</h4>
+										  <p><strong>Pearson Education</strong></p>
+										  <p>Email: j.wong@pearson.ca</p>
+										  <p>Phone: 519-555-0123</p>
+										</div>
+										<div class="publisher-card">
+										  <h4>Michael Chen</h4>
+										  <p><strong>McGraw Hill</strong></p>
+										  <p>Email: m.chen@mcgrawhill.ca</p>
+										  <p>Phone: 519-555-0124</p>
+										</div>
+										<div class="publisher-card">
+										  <h4>Sarah Johnson</h4>
+										  <p><strong>Nelson Education</strong></p>
+										  <p>Email: s.johnson@nelson.ca</p>
+										  <p>Phone: 519-555-0125</p>
+										</div>
+										<div class="publisher-card">
+										  <h4>David Patel</h4>
+										  <p><strong>Oxford University Press</strong></p>
+										  <p>Email: d.patel@oup.ca</p>
+										  <p>Phone: 519-555-0126</p>
+										</div>
+									  </div>
+									</div>
+								  </div>
+							  </div>
+							  <div id="content3" class="tab-content">
+								<!-- Return Schedule Section -->
+								<div class="section ret-sched">
+									<h2 class="section-header">Return Schedule</h2>
+									<div class="section-content">
+									  <p>Book returns must be processed within these windows. Returns are subject to publisher policies and conditions.</p>
+									  <table>
+										<thead>
+										  <tr>
+											<th>Term</th>
+											<th>Return Window Opens</th>
+											<th>Return Window Closes</th>
+											<th>Notes</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td data-label="Term">Fall Term</td>
+											<td data-label="Opens">October 15</td>
+											<td data-label="Closes">December 15</td>
+											<td data-label="Notes">All fall-only courses</td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Winter Term</td>
+											<td data-label="Opens">February 15</td>
+											<td data-label="Closes">April 15</td>
+											<td data-label="Notes">All winter-only courses</td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Spring Term</td>
+											<td data-label="Opens">June 15</td>
+											<td data-label="Closes">August 15</td>
+											<td data-label="Notes">All spring/summer courses</td>
+										  </tr>
+										  <tr>
+											<td data-label="Term">Full Year</td>
+											<td data-label="Opens">April 1</td>
+											<td data-label="Closes">April 30</td>
+											<td data-label="Notes">All full-year courses</td>
+										  </tr>
+										</tbody>
+									  </table>
+									  <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact the bookstore for special return requirements.</p>
+									</div>
+								  </div>
+								  
+							  </div>
+							</div>
+							
+						  </div>
+										<div class="quick-contact fade-in" style="animation-delay: 0.6s">
+											<h3 class="text-xl font-bold text-indigo-900 mb-4">Still have questions?</h3>
+											<p class="text-gray-700 mb-6">Contact us or come see us on campus! Our staff is ready to help.</p>
+											<a href="#faq" class="button-secondary py-3 px-8 rounded-full text-center inline-block secondary">FIND US</a>
+										</div>
+						  
+						  
                                             
-                                            <!-- Return Schedule Section -->
-                                            <div class="section">
-                                              <h2 class="section-header">Return Schedule</h2>
-                                              <div class="section-content">
-                                                <p>Book returns must be processed within these windows. Returns are subject to publisher policies and conditions.</p>
-                                                <table>
-                                                  <thead>
-                                                    <tr>
-                                                      <th>Term</th>
-                                                      <th>Return Window Opens</th>
-                                                      <th>Return Window Closes</th>
-                                                      <th>Notes</th>
-                                                    </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                    <tr>
-                                                      <td data-label="Term">Fall Term</td>
-                                                      <td data-label="Opens">October 15</td>
-                                                      <td data-label="Closes">December 15</td>
-                                                      <td data-label="Notes">All fall-only courses</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Winter Term</td>
-                                                      <td data-label="Opens">February 15</td>
-                                                      <td data-label="Closes">April 15</td>
-                                                      <td data-label="Notes">All winter-only courses</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Spring Term</td>
-                                                      <td data-label="Opens">June 15</td>
-                                                      <td data-label="Closes">August 15</td>
-                                                      <td data-label="Notes">All spring/summer courses</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Full Year</td>
-                                                      <td data-label="Opens">April 1</td>
-                                                      <td data-label="Closes">April 30</td>
-                                                      <td data-label="Notes">All full-year courses</td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                                <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact the bookstore for special return requirements.</p>
-                                              </div>
-                                            </div>
-                                            
-                                            <!-- Deadlines Section -->
-                                            <div class="section">
-                                              <h2 class="section-header">Important Deadlines</h2>
-                                              <div class="section-content">
-                                                <p>Submit your course material requests by these dates to ensure timely availability for students.</p>
-                                                <table>
-                                                  <thead>
-                                                    <tr>
-                                                      <th>Term</th>
-                                                      <th>Textbook Order Deadline</th>
-                                                      <th>Custom Course Pack Deadline</th>
-                                                      <th>Status</th>
-                                                    </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                    <tr>
-                                                      <td data-label="Term">Fall 2025</td>
-                                                      <td data-label="Textbook Deadline">June 15, 2025</td>
-                                                      <td data-label="Course Pack Deadline">May 30, 2025</td>
-                                                      <td data-label="Status"><span class="status status-open">Open</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Winter 2026</td>
-                                                      <td data-label="Textbook Deadline">October 15, 2025</td>
-                                                      <td data-label="Course Pack Deadline">September 30, 2025</td>
-                                                      <td data-label="Status"><span class="status status-coming">Coming Soon</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Spring 2026</td>
-                                                      <td data-label="Textbook Deadline">February 15, 2026</td>
-                                                      <td data-label="Course Pack Deadline">January 30, 2026</td>
-                                                      <td data-label="Status"><span class="status status-closed">Not Open</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Term">Summer 2026</td>
-                                                      <td data-label="Textbook Deadline">March 15, 2026</td>
-                                                      <td data-label="Course Pack Deadline">February 28, 2026</td>
-                                                      <td data-label="Status"><span class="status status-closed">Not Open</span></td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                                <div class="info-box">
-                                                  <h4>Important Notes:</h4>
-                                                  <ul>
-                                                    <li>Earlier submissions help ensure materials are available on time for students.</li>
-                                                    <li>Late submissions may result in delayed availability of materials.</li>
-                                                    <li>For assistance, please contact the Course Materials Coordinator.</li>
-                                                  </ul>
-                                                </div>
-                                              </div>
-                                            </div>
-                                            
-                                            <!-- Course Materials Section -->
-                                            <div class="section">
-                                              <h2 class="section-header">Course Materials Status</h2>
-                                              <div class="section-content">
-                                                <p>The following status indicators are used in the bookstore system to track course materials:</p>
-                                                <table>
-                                                  <thead>
-                                                    <tr>
-                                                      <th>Status</th>
-                                                      <th>Description</th>
-                                                    </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                    <tr>
-                                                      <td data-label="Status"><span class="status status-open">Approved</span></td>
-                                                      <td data-label="Description">Materials have been reviewed and approved for course use</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Status"><span class="status status-coming">Pending Review</span></td>
-                                                      <td data-label="Description">Materials submitted and awaiting approval</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td data-label="Status"><span class="status status-closed">Not Available</span></td>
-                                                      <td data-label="Description">Materials not yet received or not available</td>
-                                                    </tr>
-                                                  </tbody>
-                                                </table>
-                                                <div class="info-box">
-                                                  <h4>How to Submit Course Materials:</h4>
-                                                  <ol>
-                                                    <li>Log into the Faculty Portal using your Laurier credentials</li>
-                                                    <li>Navigate to "Course Materials" section</li>
-                                                    <li>Select your course and fill out the required information</li>
-                                                    <li>Submit for review and approval</li>
-                                                  </ol>
-                                                </div>
-                                              </div>
-                                            </div>
 									</section>
 									<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-24"
 										class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-24">
