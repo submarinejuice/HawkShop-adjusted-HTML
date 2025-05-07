@@ -51,17 +51,17 @@ html, body {
   /* Sections */
   .section {
     margin-bottom: 40px;
-    border: 1px solid #ddd;
+
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
   }
   
   .section-header {
-    background-color: var(--laurier-purple);
-    color: #F2A900;
+    
+    color: #330072;
     padding: 12px 20px;
-    font-size: 18px;
+    font-size: 35px;
     margin: 0;
     font-weight: bold;
   }
@@ -86,34 +86,10 @@ html, body {
     background-color: var(--dark-purple);
   }
   
-  /* Tables */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-  }
-  
-  th {
-    background-color: var(--light-purple);
-    color: var(--laurier-purple);
-    font-weight: bold;
-    text-align: left;
-    padding: 12px;
-    border: 1px solid #ddd;
-  }
-  
-  td {
-    padding: 10px 12px;
-    border: 1px solid #ddd;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
+
   /* Info Box */
   .info-box {
-    background-color: var(--light-purple);
+    background-color: #c84fda29;
     border-left: 4px solid var(--laurier-purple);
     padding: 15px;
     margin: 15px 0;
@@ -202,10 +178,10 @@ html, body {
   .tabs {
     width: 1100px;
     margin: auto;
-   background-color: #330072;
+   background-color:#772583;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-    margin-bottom: 30px;
+ 
     border-radius: 5px;
     box-shadow: rgba(119, 118, 118, 0.281) 2px 3px 6px;
   }
@@ -246,14 +222,14 @@ html, body {
   #tab1:checked ~ .tab-labels label[for="tab1"],
   #tab2:checked ~ .tab-labels label[for="tab2"],
   #tab3:checked ~ .tab-labels label[for="tab3"] {
-    background: #330072;
+    background: #772583;
     border-top: 2px solid #F2A900;
     font-weight: bold;
   }
   #tab1:not(checked) ~ .tab-labels label[for="tab1"],
   #tab2:not(checked) ~ .tab-labels label[for="tab2"],
   #tab3:not(checked) ~ .tab-labels label[for="tab3"] {
-    background: #1F1646;
+    background: #63196e;
     border-top: none;
     font-weight: bold;
   }
@@ -269,6 +245,8 @@ html, body {
     width: 100vw !important;
     border-radius: 0 !important;
     position: relative !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
   }
   .quick-contact p{
     color: black;
@@ -292,3 +270,340 @@ html, body {
     flex-direction: column;
     gap: 10px !important;
   }
+  .section-content p{
+    color: rgb(30, 30, 30);
+    font-size: 15px;
+  }
+  
+  .table-div-black {
+    padding: 10px 30px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    
+   
+  }
+  
+  .table-div-black table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .table-div-black th {
+    color: #1F1646; /* Black text */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    justify-content: space-around;
+    text-align: left;
+
+  }
+    
+  .table-div-black th:last-child {
+  
+    justify-content: space-around;
+    text-align: right;
+    
+  }
+  
+  .table-div-black td {
+    border-bottom: solid 1px #00000066; /* Black-ish divider */
+    padding: 15px;
+    font-size: 15px;
+    color: black; /* Black text */
+  }
+  
+  .table-div-black td:first-child {
+
+    font-size: 15px;
+  }
+  
+  .table-div-black td:last-child {
+    text-align: right;
+  }
+  .button-secondary {
+    font-weight: bold !important;
+    
+  }
+.section-header{
+  margin: 0px 40px;
+  padding-top: 30px;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.section-content p{
+  padding-bottom: 20px;
+}
+.info-box{
+  padding-bottom: 20px;
+  color: #151515;
+}
+.info-box h4{
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.info-box u{
+  color: #330072;
+}
+
+.faq-question:hover{
+  background-color: #330072;
+  transition:0.8s;
+  
+
+}
+
+.faq-question .arrow {
+  border: solid gray;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .arrow {
+  transform: rotate(-135deg);
+  border-color: #F2A900
+}
+
+.faq-answer p, .faq-answer li{
+  font-size: 14px;
+  line-height: 25.6px;
+  color: black;
+  
+  
+
+  
+  
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  background-color:  white;
+  padding-left: 30px;
+  color: #333;
+}
+
+.faq-answer.open {
+  max-height: 500px; 
+  padding: 15px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  margin-bottom:5px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  border-left: 0.1px solid #acacac;
+  border-right: 0.1px solid #acacac ;
+  background-color:  white;
+}
+
+
+.faq-items-container{
+  display:flex;
+  flex-direction: column;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100vw;
+  box-sizing:border-box;
+  padding-top: 40px;
+  width: 100vw; 
+  height: auto; 
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  
+  
+  
+ 
+  
+}
+
+.faq-items-container .faq-title{
+  border:#5a5757;
+}
+
+.faq-items-box{
+  gap: 10px;
+  
+  width: 1140px;
+  align-items: center;
+}
+.faq-container{
+  justify-content: center;
+  
+  
+}
+
+.faq-items-container h1{
+  color:#F2A900;
+  
+} 
+.faq-items-container p{
+  color:rgb(41, 38, 38);
+  
+}
+.faq-items-container h2{
+  color: white;
+  padding: 20px 0;
+  font-weight: bold;
+  font-size: 16px;
+  
+}
+.one {
+  border: #2a2a2a18 solid 0.1px;
+  border-top: 0.0001px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: 720px;
+  height: auto;    
+  display: flex;
+  gap: 35px;
+  margin: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.one:hover {
+  transform: scale(1.05); /* Grow the element by 5% */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+  border-top:#330072 solid 4px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.two {
+  border: #2a2a2a18 solid 0.1px;
+  border-top: 0.0001px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: 720px;
+  display: flex;
+  gap: 35px;
+  margin: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.two:hover {
+  transform: scale(1.05); /* Grow the element by 5% */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+  border-top:#330072 solid 4px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.three {
+  border: #2a2a2a18 solid 0.1px;
+  border-top: 0.0001px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: 720px;
+  display: flex;
+  gap: 35px;
+  margin: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.three:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
+  border-top:#330072 solid 4px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.two:hover {
+  transform: scale(1.05); /* Grow the element by 5% */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+  border-top:#330072 solid 4px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.four {
+  border: #2a2a2a18 solid 0.1px;
+  border-top: 0.0001px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  width: px;
+  display: flex;
+  gap: 35px;
+  margin: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+.four:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
+  border-top:#330072 solid 4px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Previous css from textbook101*/
+.faq-container {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+
+.faq-item {
+
+  
+  overflow: hidden;
+  width: 1140px;
+
+}
+
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  font-size: 15px;
+  padding-left: 30px;
+  color:#2a2a2a;
+  background-color:  white;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.1px solid;
+  border-radius: 1px;
+  border-color:#acacac;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  
+ 
+  
+}
+.faq-question:hover {
+  color:#F2A900;
+  transition: 0.8s;
+
+}
+
+.faq-question[aria-expanded="true"]{
+  color: #EBA900;
+  background-color: #330072;
+  font-weight: bold;
+  margin-top: 5px;
+  border-left:#EBA900 solid 5px;
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+  
+}
+.faq-question[aria-expanded="true"]:hover{
+ 
+  color:#EBA900
+  
+  
+}

@@ -250,15 +250,7 @@
     margin-bottom: 2rem;
   }
   
-  .section-header::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60%;
-    height: 4px;
-    background: var(--accent);
-  }
+
   
   .card-icon {
     width: 64px;
