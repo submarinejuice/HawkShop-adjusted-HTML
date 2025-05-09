@@ -123,6 +123,7 @@ html, body {
   .find-us-button{
     color: #330072;
     border: 1px solid #1F1646;
+    font-size: 13px !important;
     
   }
   
@@ -240,35 +241,51 @@ html, body {
     display: block;
   }
  
-  .quick-contact{
-    background-color: #F2A900 !important;
+  .quick-contact1S{
+    background-color: #330072 !important;
     width: 100vw !important;
     border-radius: 0 !important;
     position: relative !important;
     margin-left: 0px !important;
     padding-left: 0px !important;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto !important;
+    padding: 20px 50px !important;
+    text-align: center !important;
+
+    justify-content: center;
+    gap: 50px;
+   
+
   }
-  .quick-contact p{
-    color: black;
+  .quick-contact1S p{
+    color: rgb(255, 255, 255);
   }
-  .quick-contact h3{
-    color: #330072 !important;
+  .quick-contact1S h3{
+    color: #F2A900 !important;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .left{
+    flex-direction: column !important;
   }
   .secondary{
-    color:#330072 !important;
-    border: 1px solid #330072 !important;
+    color:#F2A900 !important;
+    border: 1px solid #F2A900 !important;
     border-radius: 5px !important;
   }
   .secondary:hover{
-    color:#F2A900 !important;
-    border: 1px solid #330072 !important;
+    color:#330072 !important;
+    border: 1px solid #F2A900 !important;
     border-radius: 5px !important;
-    background-color: #330072 !important;
+    background-color: #F2A900 !important;
   }
   .custom-full-bleed{
     display: flex;
     flex-direction: column;
     gap: 10px !important;
+    margin-bottom: none !important;
   }
   .section-content p{
     color: rgb(30, 30, 30);
@@ -349,261 +366,248 @@ html, body {
   color: #330072;
 }
 
-.faq-question:hover{
-  background-color: #330072;
-  transition:0.8s;
-  
 
+/* data labels for publisher stuff*/
+.term-cell{
+  font-weight: bold;
+  color: #000000 !important;
+  font-size: 15px !important;
 }
-
-.faq-question .arrow {
-  border: solid gray;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 5px;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
+.email:hover{
+  color: #330072 !important;
+  cursor: pointer;
+  text-decoration: underline;
 }
-
-.faq-question[aria-expanded="true"] .arrow {
-  transform: rotate(-135deg);
-  border-color: #F2A900
-}
-
-.faq-answer p, .faq-answer li{
-  font-size: 14px;
-  line-height: 25.6px;
-  color: black;
-  
-  
-
-  
-  
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  padding: 0 15px;
-  background-color:  white;
-  padding-left: 30px;
-  color: #333;
-}
-
-.faq-answer.open {
-  max-height: 500px; 
-  padding: 15px;
-  padding-left: 30px;
-  padding-bottom: 15px;
-  margin-bottom:5px;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
-  border-left: 0.1px solid #acacac;
-  border-right: 0.1px solid #acacac ;
-  background-color:  white;
-}
-
-
-.faq-items-container{
-  display:flex;
-  flex-direction: column;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  width: 100vw;
-  box-sizing:border-box;
-  padding-top: 40px;
-  width: 100vw; 
-  height: auto; 
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  
-  
-  
+.pub-rep{
+  margin: 0 13px;
  
   
 }
-
-.faq-items-container .faq-title{
-  border:#5a5757;
+.table-div-black p{
+  margin: 0 13px;
+  padding-bottom: 35px;
+}
+.tabs {
+  width: 1100px;
+  margin: auto;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: rgba(119, 118, 118, 0.281) 2px 3px 6px;
+  background-color: transparent; /* Remove background color from the entire tabs container */
 }
 
-.faq-items-box{
-  gap: 10px;
-  
-  width: 1140px;
-  align-items: center;
-}
-.faq-container{
-  justify-content: center;
-  
-  
+input[type="radio"] {
+  display: none !important;
 }
 
-.faq-items-container h1{
-  color:#F2A900;
-  
-} 
-.faq-items-container p{
-  color:rgb(41, 38, 38);
-  
-}
-.faq-items-container h2{
-  color: white;
-  padding: 20px 0;
+.tab-labels {
+  display: flex;
   font-weight: bold;
-  font-size: 16px;
-  
-}
-.one {
-  border: #2a2a2a18 solid 0.1px;
-  border-top: 0.0001px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  width: 720px;
-  height: auto;    
-  display: flex;
-  gap: 35px;
-  margin: 10px;
-  padding: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+  background: transparent; /* Remove background */
+  position: relative;
+  z-index: 2; /* Ensure tabs are above content */
+  margin-left: 10px; /* Increased offset to allow for more tab overlapping */
 }
 
-.one:hover {
-  transform: scale(1.05); /* Grow the element by 5% */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
-  border-top:#330072 solid 4px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.two {
-  border: #2a2a2a18 solid 0.1px;
-  border-top: 0.0001px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  width: 720px;
-  display: flex;
-  gap: 35px;
-  margin: 10px;
-  padding: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
-}
-
-.two:hover {
-  transform: scale(1.05); /* Grow the element by 5% */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
-  border-top:#330072 solid 4px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.three {
-  border: #2a2a2a18 solid 0.1px;
-  border-top: 0.0001px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  width: 720px;
-  display: flex;
-  gap: 35px;
-  margin: 10px;
-  padding: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
-}
-
-.three:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
-  border-top:#330072 solid 4px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.two:hover {
-  transform: scale(1.05); /* Grow the element by 5% */
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); /* Increase box shadow */
-  border-top:#330072 solid 4px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.four {
-  border: #2a2a2a18 solid 0.1px;
-  border-top: 0.0001px;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  width: px;
-  display: flex;
-  gap: 35px;
-  margin: 10px;
-  padding: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
-}
-
-.four:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5); 
-  border-top:#330072 solid 4px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Previous css from textbook101*/
-.faq-container {
-  width: 100%;
-  max-width: 800px; 
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-
-}
-
-
-.faq-item {
-
-  
-  overflow: hidden;
-  width: 1140px;
-
-}
-
-
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  font-size: 15px;
-  padding-left: 30px;
-  color:#2a2a2a;
-  background-color:  white;
-  outline: none;
+.tab-labels label {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  color: #F2A900;
   cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px 10px 0 0; /* Only round the top corners */
+  margin-bottom: 0;
+  border-bottom: none;
+  margin-left: -10px; /* Increased overlapping effect */
+  position: relative; /* Needed for z-index to work */
+  z-index: 1; /* Default z-index for inactive tabs */
+}
+
+.tab-labels label:hover {
+  background: #1F1646;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Active tab styling */
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"],
+#tab3:checked ~ .tab-labels label[for="tab3"] {
+  background: #772583;
+  border-top: 2px solid #F2A900;
+  font-weight: bold;
+  border-bottom: none;
+  z-index: 3; /* Higher z-index to appear above other tabs */
+}
+
+/* Inactive tab styling */
+#tab1:not(:checked) ~ .tab-labels label[for="tab1"],
+#tab2:not(:checked) ~ .tab-labels label[for="tab2"],
+#tab3:not(:checked) ~ .tab-labels label[for="tab3"] {
+  background: #330072;
+  border-top: none;
+  font-weight: bold;
+}
+
+.contents {
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  margin-top: -1px; /* Eliminate any gap between tabs and content */
+  position: relative;
+  z-index: 2; /* Above inactive tabs but below active tab */
+}
+
+#tab1:checked ~ .contents #content1,
+#tab2:checked ~ .contents #content2,
+#tab3:checked ~ .contents #content3 {
+  display: block;
+}
+.quick-contact {
+  background-color: #F2A900;
+  border-radius: 0;
+  padding: 40px 20px;
+}
+
+.quick-contact a {
+  color: #330072;
+  font-weight: bold;
+}
+
+.quick-contact h3 {
+  color: #330072;
+}
+
+.quick-contact .email {
+  color: #330072;
+  text-decoration: underline;
+}
+
+.quick-contact .email:hover {
+  color: #1F1646;
+}
+
+.staff-member p {
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  color: #151515;
+}
+/* course materials staff */ 
+/* Streamlined Quick Contact Section */
+.quick-contact1S {
+  padding: 50px 30px !important;
+  display: block;
+  text-align: center;
+  
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: 0 auto;
+
+}
+
+.contact-header {
+  margin-bottom: 30px;
+}
+
+.contact-header h3 {
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  font-size: 16px;
+}
+
+/* Staff info in rows */
+.staff-info {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.staff-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 0.1px solid;
-  border-radius: 1px;
-  border-color:#acacac;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
-  
- 
-  
-}
-.faq-question:hover {
-  color:#F2A900;
-  transition: 0.8s;
-
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(242, 169, 0, 0.2);
+  text-align: left;
 }
 
-.faq-question[aria-expanded="true"]{
-  color: #EBA900;
-  background-color: #330072;
-  font-weight: bold;
-  margin-top: 5px;
-  border-left:#EBA900 solid 5px;
+.staff-row:last-child {
   border-bottom: none;
-  border-right: none;
-  border-top: none;
-  
 }
-.faq-question[aria-expanded="true"]:hover{
- 
-  color:#EBA900
+
+.staff-details {
+  flex: 2;
+}
+
+.staff-contact {
+  flex: 1;
+  text-align: right;
+}
+
+.staff-details h4 {
+  color: #F2A900 !important;
+  font-size: 18px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.staff-details p, .staff-contact p {
+  color: white !important;
+  margin: 0;
+  font-size: 14px;
+}
+
+.staff-contact .email {
+  color: #F2A900;
+  text-decoration: none;
+}
+
+.staff-contact .email:hover {
+  text-decoration: underline;
+}
+
+.contact-footer {
+  margin-top: 20px;
+}
+
+.contact-footer p {
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .staff-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
   
-  
+  .staff-contact {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+.tabs{
+  margin-bottom: 80px;
+}
+.custom-full-bleed {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  overflow: visible;
+  padding-bottom: 0px !important; 
 }

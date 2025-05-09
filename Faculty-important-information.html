@@ -14,12 +14,14 @@
 
 	<link rel="stylesheet" href="./Faculty Information_files/shopping_2.css">
     <link rel="stylesheet" href="course_materials.css">
-	<link rel="stylesheet" href="faculty-information.css">
+	
 	<script src="jquery-3.7.1.min.js"></script>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="faculty-information.css">
+	<link rel="icon" type="image/svg+xml" href="images/circle-solid.svg">
+
 	
 
     
@@ -37,7 +39,7 @@
 	<meta name="description"
 		content="The Laurier Bookstore is your official source for all things Wilfrid Laurier University. Shop for course materials and textbooks, clothing, giftware, school supplies and more">
 	<script src="./Faculty Information_files/nlRUM.js"></script>
-	<link rel="stylesheet" href="./Faculty Information_files/css" media="all">
+	<link rel="stylesheet" href="faculty-information.css" media="all">
 	<link rel="stylesheet" href="shopping_2.css">
 	<link rel="stylesheet" href="textbook2.css">
 	<link rel="stylesheet"
@@ -1337,6 +1339,7 @@
 									<a href="#courses" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">FACULTY GUIDE</a>
 									<a href="#students" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">DEADLINES</a>
 									<a href="#contact" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">PUBLISHERS</a>
+									<a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">STAFF</a>
 									<a href="#dta" class="button-primary py-3 px-4 rounded-full text-center text-sm font-bold">CONTACT</a>
 								  </div>
 								</div>
@@ -1355,17 +1358,17 @@
 								  
 								  <div class="deadline-alert">
 									<p class="text-sm font-medium text-normal">
+										<i class="fa-solid fa-circle" style="color: #f2a900; font-size: 0.6rem; margin-right: 8px;"></i>
 									  
-									  <i class="fa-solid fa-arrow-right  mr-1"></i>
 									  
 									  Course material adoption procedures. 
 									</p>
 									<p class="text-sm font-medium text-normal">
-										<i class="fas fa-info-circle mr-1"></i>
+										<i class="fa-solid fa-circle" style="color: #f2a900; font-size: 0.6rem; margin-right: 8px;"></i>
 										Detailed instructions, and support resources. 
 									</p>
 									<p class="text-sm font-medium text-normal">
-										<i class="fas fa-info-circle mr-1"></i>
+										<i class="fa-solid fa-circle" style="color: #f2a900; font-size: 0.6rem; margin-right: 8px;"></i>
 										Contact information and deadlines. 
 									</p>
 								
@@ -1441,43 +1444,140 @@
 							  </div>
 							  <div id="content2" class="tab-content">
 								<div class="section pub-rep">
-									<h2 class="section-header">Publisher Representatives</h2>
-									<div class="section-content">
+									<h2 class="section-header pub-rep">Publisher Representatives</h2>
+									<div class="section-content table-div-black">
 									  <p>Contact these representatives directly for inquiries about textbooks and course materials from their publishers.</p>
-									  <div class="publisher-grid">
-										
-										<div class="publisher-card">
-										  <h4>Sarah Newman</h4>
-										  <p><strong>Cengage</strong></p>
-										  <p>Email: sarah.newman@cengage.com</p>
-										</div>
-										<div class="publisher-card">
-										  <h4>Mary Costello</h4>
-										  <p><strong>Cengage</strong></p>
-										  <p>Email: mary.costello@cengage.com</p>
-										</div>
-										<div class="publisher-card">
-										  <h4>Kathleen Da Cunha Fernandes</h4>
-										  <p><strong>CSPI</strong></p>
-										  <p>Email: kathleendacunhafernandes@canadianscholars.ca</p>
-										
-										</div>
-										<div class="publisher-card">
-										  <h4>David Patel</h4>
-										  <p><strong>Oxford University Press</strong></p>
-										  <p>Email: d.patel@oup.ca</p>
-										  <p>Phone: 519-555-0126</p>
-										</div>
-									  </div>
+										  <table>
+										<thead>
+										  <tr>
+											<th>PUBLISHER</th>
+											<th>SALES REPRESENTATIVE</th>
+											<th>CONTACT</th>
+											
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td rowspan='2'class="term-cell" data-label="Term">Cengage</td>
+											<td data-label="Opens">Sarah Newman</td>
+											<td class="email" data-label="Closes">sarah.newman@cengage.com</td>
+										  </tr>
+										  <tr>
+											<td data-label="Opens">Mary Costello</td>
+											<td class="email" data-label="Closes">mary.costello@cengage.com</td>
+										  </tr>
+										  <tr>
+											<td rowspan='1' class="term-cell" data-label="Term">CSPI</td>
+
+											<td data-label="Opens">Kathleen Da Cunha Fernandes</td>
+											<td class="email" data-label="Closes">Kathleendacunhafernandes@canadianscholars.ca</td>
+											
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Elsevier Canada</td>
+											<td data-label="Opens">Kori Kostka Lichtfuss</td>
+											<td class="email" data-label="Closes">k.kostkalichtfuss@elsevier.com</td>
+											
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Harper Collins</td>
+											<td data-label="Opens">Sarah Gregory</td>
+											<td class="email" data-label="Closes">sarah.gregory@harpercollins.com</td>
+											
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">John Wiley & Sons</td>
+											<td data-label="Opens">Katherine D'Angelo</Data></td>
+											<td class="email" data-label="Closes">kdangelo@wiley.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Logic Canada</td>
+											<td data-label="Opens">Tharsa Chandran</td>
+											<td class="email" data-label="Closes">tharsac@lb.ca</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">MacMillan</td>
+											<td data-label="Opens">Hannah Davis</td>
+											<td class="email" data-label="Closes">hannah.davis@macmillian.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">McGraw Hill Ryerson</td>
+											<td data-label="Opens">Herman Westermann</td>
+											<td class="email" data-label="Closes">herman.westermann@mheducation.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Nelson</td>
+											<td data-label="Opens">General</td>
+											<td class="email" data-label="Closes">partners@nelson.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" rowspan='2' data-label="Term">Oxford Universiy Press</td>
+											<td data-label="Opens">Jim Baron - Languages</td>
+											<td class="email" data-label="Closes">jim.baron@oup.com</td>
+										  </tr>
+										  <tr>
+											<td data-label="Opens">Jay Mellors</td>
+											<td class="email" data-label="Closes">jay.mellors@oup.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" rowspan='5' data-label="Term">Pearon Education</td>
+											<td data-label="Opens">Kelly Archibald</td>
+											<td class="email" data-label="Closes">kelly.archibald@pearson.com</td>
+										  </tr>
+										  <tr>
+											
+											<td data-label="Opens">Stephen Buffey</td>
+											<td class="email" data-label="Closes">stephen.buffy@pearson.com</td>
+										  </tr>
+										  <tr>
+											<td data-label="Opens">Andrea Lehocki</td>
+											<td class="email" data-label="Closes">andrea.lehocki@pearson.com</td>
+										  </tr>
+										  <tr>
+											<td data-label="Opens"> Biology Courses - Kristen Grebenc</td>
+											<td class="email" data-label="Closes">kirtsen.grebenc@pearson.com</td>
+										  </tr>
+										  <tr>
+											<td data-label="Opens">English Courses - Andrew Renahan</td>
+											<td class="email" data-label="Closes">andrew.renahan@pearsoned.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Sage Publishing</td>
+											<td data-label="Opens">Aislinn Swanton</td>
+											<td class="email" data-label="Closes">aislinn.swanton@sagepub.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">Top Hat Monocle</td>
+											<td data-label="Opens">Sunil Joshi</td>
+											<td class="email" data-label="Closes">sunil.joshi@tophatmonocle.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">University of Toronto Press</td>
+											<td data-label="Opens">Tim McCleary</td>
+											<td class="email" data-label="Closes">tmccleary@utorontopress.com</td>
+										  </tr>
+										  <tr>
+											<td class="term-cell" data-label="Term">W.W Norton & Company</td>
+											<td data-label="Opens">Dylan Davie</td>
+											<td class="email" data-label="Closes">ddavie@wwnorton.com</td>
+										  </tr>
+										</tbody>
+
+									  </table>
+									  <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact <U>the bookstore</U> for special return requirements.</p>
 									</div>
 								  </div>
+									  
+									
 							  </div>
 							  <div id="content3" class="tab-content">
 								<!-- Return Schedule Section -->
 								<div class="section ret-sched">
 									<h2 class="section-header">Return Schedule</h2>
+									
 									<div class="section-content table-div-black">
 									  <p>Book returns must be processed within these windows. Returns are subject to publisher policies and conditions.</p>
+									  <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact <U>the bookstore</U> for special return requirements.</p>
 									  <table>
 										<thead>
 										  <tr>
@@ -1514,7 +1614,7 @@
 										  </tr>
 										</tbody>
 									  </table>
-									  <p class="info-box"><strong>Note:</strong> Some restrictions may apply. Please contact <U>the bookstore</U> for special return requirements.</p>
+									  
 									</div>
 								  </div>
 								  
@@ -1523,19 +1623,62 @@
 							
 						  </div>
 										
+						  <section class="quick-contact1S">
+							<div class="contact-container">
+							  <!-- Header with brief description -->
+							  <div class="contact-header">
+								<h3>Course Materials Staff</h3>
+								<p>Our team is here to help with all your course material needs at the Waterloo & Brantford campuses</p>
+							  </div>
+							  
+							  <!-- Staff contact info in a more compact format -->
+							  <div class="staff-info">
+								<div class="staff-row">
+								  <div class="staff-details">
+									<h4>Mary Andraza</h4>
+									<p>Manager, Retail Purchasing</p>
+								  </div>
+								  <div class="staff-contact">
+									<p>548-889-4586</p>
+									<p><a href="mailto:mandraza@wlu.ca" class="email">mandraza@wlu.ca</a></p>
+								  </div>
+								</div>
+								
+								<div class="staff-row">
+								  <div class="staff-details">
+									<h4>Paul Cosentino</h4>
+									<p>Course Materials Digital Resources Specialist</p>
+								  </div>
+								  <div class="staff-contact">
+									<p>548-889-4614</p>
+									<p><a href="mailto:pcosentino@wlu.ca" class="email">pcosentino@wlu.ca</a></p>
+								  </div>
+								</div>
+								
+								<div class="staff-row">
+								  <div class="staff-details">
+									<h4>Kimberley Pinkney</h4>
+									<p>Course Materials Print Resources Specialist</p>
+								  </div>
+								  <div class="staff-contact">
+									<p>548-889-4581</p>
+									<p><a href="mailto:kpinkney@wlu.ca" class="email">kpinkney@wlu.ca</a></p>
+								  </div>
+								</div>
+							  </div>
+							  
+							  <!-- Bottom section with button -->
+							  <div class="contact-footer">
+								<p>Need to visit us in person? Check our campus locations and hours.</p>
+								<a href="#locations" class="button-secondary py-3 px-8 rounded-full text-center inline-block secondary">FIND US ON CAMPUS </span></a>
+							  </div>
+							</div>
+						  </section>
+						
+						 
+  
 						  
-						  
-                                            
-									</section>
-									<div class="quick-contact fade-in" style="animation-delay: 0.6s">
-										<div class="left">
-											<h3 class="text-xl font-bold text-indigo-900 mb-4">Still have questions?</h3>
-											<p class="text-gray-700 mb-6">Contact us or come see us on campus! Our staff is ready to help.</p> </div>
-										<div class="right">
-											
-										</div>
-										<a href="#faq" class="button-secondary py-3 px-8 rounded-full text-center inline-block secondary">FIND US</a>
-									</div>
+
 									<div data-view="CCT-View" data-cms-cct-instanceid="CMS_HTML-24"
 										class="cms-content cms-content-CMS_HTML cms-content-selector-CMS_HTML-24">
 										<div id="cms"><!-- TEMPLATE STARTS: sc_cct_html-->
