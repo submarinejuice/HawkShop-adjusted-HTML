@@ -611,3 +611,270 @@ input[type="radio"] {
   overflow: visible;
   padding-bottom: 0px !important; 
 }
+.bullet-point{
+  background-color: white;
+  border-radius: 10px;
+  width: 5px;
+  height: 5px;
+
+}
+.deadline-alert ul{
+  list-style-type: disc;
+  padding-left: 20px;
+  
+}
+
+.deadline-alert ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.deadline-alert li {
+  position: relative;
+  padding-left: 20px;
+ 
+}
+
+.deadline-alert li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff; /* your brand yellow maybe */
+  border-radius: 50%;
+}
+
+@media (max-width: 700px){
+  
+  .important{
+    text-align: center;
+  }
+  .waveimg img{
+    height: 1700px;
+  }
+}
+
+/* Mobile-Only Tab Fixes
+   This CSS only targets mobile screens and preserves desktop styling exactly as is */
+
+/* Only apply these changes on screens 768px and below */
+@media (max-width: 768px) {
+  /* Container adjustments */
+  .tabs {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto 40px auto;
+  }
+  
+  /* Fix tab labels for mobile */
+  .tab-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-left: 0;
+    padding: 10px;
+    background: transparent;
+  }
+  
+  .tab-labels label {
+    border-radius: 5px;
+    margin-left: 0;
+    z-index: 1;
+    flex: none; /* Remove flex grow to prevent stretching */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  /* Active tab styling for mobile - clearly differentiate */
+  #tab1:checked ~ .tab-labels label[for="tab1"],
+  #tab2:checked ~ .tab-labels label[for="tab2"],
+  #tab3:checked ~ .tab-labels label[for="tab3"] {
+    background: #772583;
+    border-top: none;
+    border-left: 5px solid #F2A900;
+    padding-left: 10px;
+  }
+  
+  /* Make inactive tabs visibly different */
+  #tab1:not(:checked) ~ .tab-labels label[for="tab1"],
+  #tab2:not(:checked) ~ .tab-labels label[for="tab2"],
+  #tab3:not(:checked) ~ .tab-labels label[for="tab3"] {
+    background: #330072;
+    opacity: 0.8;
+  }
+  
+  /* Tab content container */
+  .contents {
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure no content leaks outside container */
+  }
+  
+  /* Ensure tab content is properly shown/hidden */
+  .tab-content {
+    display: none;
+    padding: 15px 10px;
+    overflow: hidden;
+  }
+  
+  /* Critical: Ensure the right content shows for each tab */
+  #tab1:checked ~ .contents #content1,
+  #tab2:checked ~ .contents #content2,
+  #tab3:checked ~ .contents #content3 {
+    display: block;
+  }
+  
+  /* Make sure the other content is really hidden */
+  #tab1:checked ~ .contents #content2,
+  #tab1:checked ~ .contents #content3,
+  #tab2:checked ~ .contents #content1,
+  #tab2:checked ~ .contents #content3,
+  #tab3:checked ~ .contents #content1,
+  #tab3:checked ~ .contents #content2 {
+    display: none !important; /* Force hiding with !important */
+  }
+  
+  /* Table display improvements */
+  .table-div-black {
+    padding: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+  }
+  
+  /* Adjust header styles */
+  .section-header {
+    font-size: 24px;
+    padding: 15px 10px 5px 10px;
+    margin: 0;
+  }
+  
+  /* Table styles for ALL tabs on mobile */
+  .table-div-black table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Default table cell styles for mobile */
+  .table-div-black td, .table-div-black th {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  /* Table 1 (Adoption Deadlines) - Simpler table */
+  #content1 .table-div-black table td {
+    display: block;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  #content1 .table-div-black table td:last-child {
+    border-bottom: none;
+  }
+  
+  #content1 .table-div-black table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  #content1 .table-div-black table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  #content1 .table-div-black table thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  /* Table 3 (Return Schedule) - More columns */
+  #content3 .table-div-black table td {
+    display: block;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  
+  #content3 .table-div-black table td:last-child {
+    border-bottom: none;
+  }
+  
+  #content3 .table-div-black table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  #content3 .table-div-black table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  #content3 .table-div-black table thead {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  /* Better button styling for mobile */
+  .button-secondary {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 15px auto;
+    text-align: center;
+  }
+  
+  /* Better small screen button handling */
+  .button-secondary {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  /* Header size reduction */
+  .section-header {
+    font-size: 20px;
+  }
+  
+  /* Smaller tab text */
+  .tab-labels label {
+    font-size: 13px;
+    padding: 10px;
+  }
+  
+  /* Even more compact tables for very small screens */
+  .table-div-black td, 
+  .table-div-black th {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  /* Allow tables to scroll horizontally if needed */
+  .table-div-black {
+    overflow-x: auto;
+  }
+}
