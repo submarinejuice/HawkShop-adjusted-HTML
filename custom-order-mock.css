@@ -322,15 +322,15 @@ s
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    max-width: 372px;
-    height: 500px; /* Ensure all boxes have the same height */
+    max-width: 300px;
+    height: 428px; /* Ensure all boxes have the same height */
     padding-bottom: 20px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .box img {
         width: 100%; /* Ensures all images take the full width of the box */
-        height: 250px; /* Set a fixed height for consistency */
+        height: 180px; /* Set a fixed height for consistency */
         object-fit: cover; /* Ensures the image fills the space without distortion */
         display: block; /* Removes extra spacing caused by inline elements */
     
@@ -346,7 +346,7 @@ s
     text-align: center;
     font-family: 'lato';
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -357,7 +357,7 @@ s
 
 .box p {
     color: #180e24;
-    font-size: 18px;
+    font-size: 15px;
 
     flex-grow: 1; /* Ensures text section expands evenly */
     display: flex;
@@ -366,6 +366,7 @@ s
 }
 
 .button {
+    font-size: 15px;
     padding: 10px;
     background-color: white;
     border: 1px solid #330072;
@@ -409,10 +410,11 @@ s
 .box-container {
     position: absolute;  
     top: 600px; 
-    left: 50%;
+    left: 57%;
     transform: translateX(-50%); 
     width: 100%;
     z-index: 2; 
+    margin: 0 auto;
 }
 
 .wave-two{
@@ -1070,3 +1072,18 @@ s
   
 }
 
+ .waveimg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        z-index: -1;
+    }
+    
+    .waveimg img {
+        width: 100%;
+        height: 100%;
+        object-fit:fill;
+        
+    }

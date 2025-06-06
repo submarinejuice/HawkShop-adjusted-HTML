@@ -1306,7 +1306,7 @@
 								
 				<div id="main-container" style="min-height: 505px;">
 					<div class="waveimg">
-						<img src="images/Untitled design.png">
+						<img src="images\wave-background-purple.png">
 					</div>
 					<div class="shopping-layout-breadcrumb">
 						
@@ -1340,6 +1340,17 @@
 										
                                         <div class="container-main">
                                             <aside class="right-box">
+												<div class="product-options">
+													<label for="clothing-options">Clothing Options:</label>
+													<select id="clothing-options">
+													<option value="default">Select an option</option>
+													<option value="t-shirts">Puff Print Hoodie</option>
+													<option value="pants">Women's fit tee</option>
+													<option value="shirts">Embroidery Longsleeve</option>
+													<option value="jackets">Short Sleeve Tee</option>
+													<!-- Add more options as needed -->
+													</select>
+												</div>
                                                 
                                                 <section class="color-selection">
                                                     <h2>Choose a Color</h2>
@@ -1370,8 +1381,11 @@
                                                 <nav class="view-selection">
                                                     <button class="view-option" data-view="front">Front</button>
                                                     <button class="view-option" data-view="back">Back</button>
+													<button class="view-option" data-view="back">Chest</button>
+													<button class="view-option" data-view="back">Arm</button>
                                           
                                                 </nav>
+												
                                                 <div id="canvas-container">
 													<canvas id="canvas" width="500" height="600"></canvas>
 													<div id="dropzone" class="dropzone">
