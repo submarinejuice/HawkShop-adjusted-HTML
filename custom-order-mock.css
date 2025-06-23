@@ -421,7 +421,7 @@ s
    
     z-index: 1; 
     position: absolute;  
-    top: 550px; 
+    top: 600px; 
     left: 50%;
     transform: translateX(-50%); 
     width: 100%;
@@ -1087,3 +1087,14 @@ s
         object-fit:fill;
         
     }
+    .contact-header{
+      background-color: rgba(255, 255, 255, 0.835);
+      border-radius: 10px;
+      padding: 30px;
+    }
+    .contact-header p{
+      color: #180e24;
+    }
+.contact-section{
+  background-color: white;
+}

@@ -444,10 +444,9 @@
  
   /* ========== FAQ CONTAINER (OVERLAPPING THE BACKGROUND) ========== */
   .faq-items-container {
-    position: relative;
+    position: absolute;
    
-    margin: -50px auto 0 auto;  /* Negative top margin pulls the FAQ container upward into the background */
-    padding: 40px;
+   
     width: 90%;
     max-width: 1140px;
 
@@ -495,8 +494,8 @@
     background-size: cover;
     background-position: center;
     /* Set a height (or padding) that gives enough space for the background */
-    padding-bottom: 800px;  /* adjust as needed */
-    margin-bottom: 900px;
+  
+    
   }
   
   /* Header content (text, links, icons) – should appear on top */
@@ -512,8 +511,8 @@
     position: relative;
     /* Adjust this top value so the FAQ appears where you’d like it within the header area */
     top: 60%;  
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
+ 
     z-index: 1; 
     width: 90%;
     max-width: 1140px;
