@@ -1,0 +1,230 @@
+*{font: 'lato';}
+.shopping-layout{
+  background-color: #330072;
+}
+.waterloo-card{
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+  background-color: white;
+}
+.brantford-card{
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+  background-color: white;
+}
+.information-text{
+  padding: 30px;
+}
+.left-side-map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; /* Allow it to take the full available width */
+  height: auto;
+  padding: 0;  /* Remove any padding */
+  margin: 0;   /* Remove any margin */
+}
+.iframe {
+  padding: 0;  /* Remove padding from the iframe container if any */
+  margin: 0;
+  width: 100%;
+}
+
+.location-hours-title h1{
+  color: #F2A900;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
+}
+.waterloo-card h1, .brantford-card h1{
+  color:#330072;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px 0;
+  text-align: center;
+ 
+}
+.information-text h2{
+
+  color: black;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+
+
+.table-header {
+  background-color: #e0e0e0; /* light grey background */
+}
+.table-div th {
+  color: #000000a9;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+}
+.table-div table thead th:first-child {
+  text-align: left;
+}
+
+.table-div table thead th:last-child {
+  text-align: right;
+}
+.table-div2 th {
+  color: #3a0055e5;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+}
+.table-div2 td{
+  color: #3a0055e5;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px;
+  justify-content: space-around;
+
+}
+.table-div2  td {
+  border-bottom: solid 1px #0000007e;
+  padding: 15px; 
+  font-size: 16px;
+  color:rgb(0, 0, 0)
+
+}
+.waterloo-card{}
+
+.table-div {
+  padding: 0px;
+  max-width: 601px;
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  
+  border-collapse: collapse;
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+
+th {
+  color: #330072;
+  font-size: 18px; 
+  font-weight: bold; 
+  padding: 15px; 
+}
+
+td {
+  border-bottom: solid 1px #000000ad;
+  padding: 15px; 
+  font-size: 16px;
+  color: #130129;
+}
+
+tr {
+  height: 40px; 
+}
+
+tr:first-child th {
+  border-top: none;
+}
+
+tr:last-child td {
+  border-bottom: none; 
+}
+td:first-child{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+td:last-child {
+  text-align: right;
+}
+/* Make the container fill its space with no padding or margin */
+.iframe {
+  position: relative; /* Establishes a positioning context */
+  width: 100%;
+  height: 100%; /* Or a fixed height if needed, e.g., 450px */
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Hide any overflow if necessary */
+}
+
+/* Position the iframe absolutely within its container */
+.iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none; /* Removes any default borders */
+  margin: 0;
+  padding: 0;
+}
+
+.contact-info{
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+.email{
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px #330072 solid;
+  color: #330072;
+}
+.phone{
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px #330072 solid;
+}
+.ig{ background-color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px #330072 solid;
+  color: black;}
+  /* Make the container fill its space with no padding or margin */
+.iframe-2 {
+    position: relative; /* Establishes a positioning context */
+    width: 100%;
+    height: 100%; /* Or a fixed height if needed, e.g., 450px */
+    padding: 0;
+    margin: 0;
+    overflow: hidden; /* Hide any overflow if necessary */
+  }
+  
+  /* Position the iframe absolutely within its container */
+.iframe-2 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes any default borders */
+    margin: 0;
+    padding: 0;
+  }
+  .information-card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-info a {
+    color: #330072;
+    font-weight: bold;
+  }
+.contact-info :hover{
+  background-color: #330072;
+  color: white;
+}

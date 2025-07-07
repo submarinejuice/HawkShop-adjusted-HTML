@@ -1,0 +1,2 @@
+fix up coloring, but especiallly on mockup generator make sure to change button colors, lets move away from the purple cuz ive lowkey been abusing it 
+- consider adding extra layers?

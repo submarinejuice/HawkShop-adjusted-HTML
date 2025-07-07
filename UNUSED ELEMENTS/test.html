@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--type shii og  css i had for ts 
+* {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main h1{
+    color: #330678;
+    text-align: center;
+    font-size: 60px;
+  
+
+}
+.main{
+   
+    
+}
+.function-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: center;
+
+
+
+}
+#dropzone{
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+#canvas-container {
+    position: relative;
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-image: url('images/61ogc05nK3L._AC_UY1000_.jpg');
+    object-fit: cover;
+    width: 700px;
+    height: 800px;
+    margin: 0 auto;
+    
+    
+  }
+
+
+#canvas-container {
+    
+    border: 1px solid #ccc;
+    width: 500px;  /* Set your desired width */
+    height: 600px; /* Set your desired height */
+  }
+  
+  /* Ensure the canvas fills the container */
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Drop zone overlay styling */
+  #dropzone {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; /* Or whatever width you want */
+    height: 50%; /* Or whatever height you want */
+    text-align: center;
+    border-radius: 20px;
+    background: #ffb7009a;
+    border: 2px solid #ffb700 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    z-index: 10;
+    padding: 30px;
+    transition: background-color 0.3s;
+}
+  #laurier-purple{
+    background-color:#330678;
+    width: 25px;
+    height: 25px;
+    border: 1px #330678 solid;
+
+  }
+  #white{
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border: rgb(134, 134, 134) 1px solid;
+  }
+  .container{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    margin: 0 auto;
+    width: AUTO;
+    height: auto;
+    border: 0.5px rgba(0, 0, 0, 0.404) solid;
+    padding: 30px;
+    justify-content: space-between;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+  .colors{
+    flex-direction: row;
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+  }
+  .function-container{
+    display: none;
+  }
+  button{
+    background-color: white;
+    border: #330678 1px solid;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  #submit{
+    position: relative;
+    margin-top: auto;
+
+  }
+  .right-box{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .left-box button {
+    background-color: #ffffff86;
+    background-image: none;
+    border: #330678 1px solid;
+    border-radius: 15px;
+    color: rgba(0, 0, 0, 0.815);
+    margin: 10px 0;
+    padding: 10px 70px;
+    transition:  0.3s ease-in-out;
+    justify-content: space-evenly;
+    justify-items: center;
+    text-align: center;
+    
+
+}
+
+.left-box button:hover {
+   background-color: #330678;
+    color: white;
+}
+  #submit:hover{
+    background-color: #330678;
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  .sizes button:hover{
+    background-color: #330678;
+    color: white;
+    transition: 0.3s ease-in-out;
+
+  }
+  .sizes h2{
+    color: rgb(66, 66, 66);
+    padding: 20px 0px;
+  }
+  .canvas-container{
+    padding: 30px;
+    
+  }
+#goose-grey{
+  background-color:#b3b3b3;
+    width: 25px;
+    height: 25px;
+    border: 1px #68666b solid;
+}
+#golden-hawk-gold{
+  background-color:#ffb700;
+    width: 25px;
+    height: 25px;
+    border: 1px #9c7719 solid;
+
+}
+-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+</head>
+<body>
+    <button data-view="front">Front</button>
+    <button data-view="back">Back</button>
+
+    <button data-color="white">White</button>
+    <button data-color="laurier-purple">Purple</button>
+
+    <canvas id="canvas" width="500" height="600"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = new fabric.Canvas('canvas');
+            canvas.setWidth(500);
+            canvas.setHeight(600);
+
+            let currentView = 'front';
+
+            function changeShirtView(view) {
+                currentView = view;
+                changeShirtColor(document.querySelector('[data-color].selected')?.dataset.color || 'laurier-purple');
+            }
+
+            function changeShirtColor(color) {
+                let imgSrc;
+                switch (currentView) {
+                    case 'front':
+                        switch (color) {
+                            case 'white':
+                                imgSrc = 'images/white-shirt-front.avif';
+                                break;
+                            case 'laurier-purple':
+                                imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                                break;
+                            default:
+                                imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                        }
+                        break;
+                    case 'back':
+                        switch (color) {
+                            case 'white':
+                                imgSrc = 'images/white-shirt-back.webp';
+                                break;
+                            case 'laurier-purple':
+                                imgSrc = 'images/front-purple-shirt.jpg';
+                                break;
+                            default:
+                                imgSrc = 'images/front-purple-shirt.jpg';
+                        }
+                        break;
+                    default:
+                        imgSrc = 'images/61htRzcrRsS._AC_SX679_.jpg';
+                }
+                fabric.Image.fromURL(imgSrc, function (bgImg) {
+                    canvas.setBackgroundImage(bgImg, canvas.renderAll.bind(canvas), {
+                        originX: 'left',
+                        originY: 'top',
+                        scaleX: canvas.width / bgImg.width,
+                        scaleY: canvas.height / bgImg.height,
+                    });
+                }, {
+                    crossOrigin: 'Anonymous',
+                    onerror: function(message) {
+                        console.error('Error loading image:', message);
+                    }
+                });
+            }
+
+            document.querySelectorAll('[data-view]').forEach(button => {
+                button.addEventListener('click', () => {
+                    changeShirtView(button.dataset.view);
+                });
+            });
+
+            document.querySelectorAll('[data-color]').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('[data-color]').forEach(btn => btn.classList.remove('selected'));
+                    button.classList.add('selected');
+                    changeShirtColor(button.dataset.color);
+                });
+            });
+
+            changeShirtColor('laurier-purple'); // Initial load
+        });
+    </script>
+</body>
+</html>

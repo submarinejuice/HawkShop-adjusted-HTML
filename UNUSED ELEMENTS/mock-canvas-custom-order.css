@@ -1,0 +1,166 @@
+.custom-mockup-container{
+    display: flex;
+    flex-direction: row;
+    width: 1600px;
+    margin: 70px;
+    gap:20px;
+}
+.mockup-left-box{
+    width: 600px;
+    padding: 30px;
+    border: solid grey 1px;
+    
+}
+.item-selection h1{
+    font-size: 45px;
+    font-weight: bold;
+
+}
+.technique-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+    
+    
+  
+ 
+}
+.technique-buttons button{
+    font-size: 25px;
+}
+.technique-buttons .embroidery, .technique-buttons .printing{
+    padding: 10px;
+}
+.technique-buttons .embroidery{
+    
+}
+
+.color-selector{
+    display: flex;
+    flex-direction: column;
+}
+.color-selection{
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px;
+
+}
+.color-selection button{
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid grey;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.579);
+  
+}
+.color-selection .black{
+    background-color: black;
+}
+.color-selection .white{
+    background-color: antiquewhite;
+}
+.color-selection .grey{
+    background-color: grey;
+}
+.color-selection .purple{
+
+    background-color:#330072; 
+}
+
+#customizer-container {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.product-side-images button{
+    font-size: 15px;
+    padding: 20px;
+    background-color: #330072;
+    color:white;
+    border-radius: 30px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.402);
+}
+.product-side-images button:hover{
+    background-color: #33007292;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+
+}
+.product-side-images{
+    margin: 20px 0;
+}
+.canvas img{
+    object-fit: cover;
+}
+#customizer-container {
+    text-align: center;
+    margin: 20px;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.product-side-images button {
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: #330072;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+    margin: 5px;
+}
+
+.product-side-images button:hover {
+    background-color: #33007292;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.product-side-images {
+    margin: 20px 0;
+}
+.technique-buttons button{
+   
+    background-color:#EBE0F5;
+    color:#330072;
+    border: #33007251 1px solid;
+    
+    margin: 10px;
+}
+.technique-buttons button:hover{
+    background-color: #F2A900;
+}
+.upload-file{
+    position: relative;
+    top: -90px;
+    right: -490px;
+    padding: 10px;
+    background-color: #BABC16;
+    border-radius: 150px;
+
+}
+.background{
+    background-color: #fdffa4;
+    border-radius: 250px;
+    padding: 70px;
+}
+.upload-file label{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    color:#330072;
+
+}
+.upload-file input{
+    border: none;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+
+
+}

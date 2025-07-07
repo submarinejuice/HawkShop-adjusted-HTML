@@ -1,0 +1,8 @@
+--primary: #330072;
+    --accent: #FDD757;
+    --light-accent: #FFF1C6;
+    --text-light: #F5F5F5;
+    --text-dark: #333333;
+    --text-normal: white;
+    --text-yellow: #F2A900;
+  }

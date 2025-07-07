@@ -1,0 +1,27 @@
+.custom-full-bleed h1{
+    color: #330a52;
+    font-weight: bold;
+    text-align: center;
+}
+.custom-full-bleed p{
+    color: black;
+    font-size: 15px;
+    
+}
+.waveimg {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: 0;
+
+}
+
+.waveimg img {
+    width: 100%;
+    height: 1100px;
+    object-fit:fill;
+    
+}
+
