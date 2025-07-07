@@ -3259,111 +3259,182 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 
 	</script>
-	
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.method-wrapper');
-  const cards = Array.from(wrapper.querySelectorAll('.method-card'));
-  const prevMethod = document.querySelector('.method-nav.prev');
-  const nextMethod = document.querySelector('.method-nav.next');
+  const prevBtn = document.querySelector('.method-nav.prev');
+  const nextBtn = document.querySelector('.method-nav.next');
+  
+  if (!wrapper || !prevBtn || !nextBtn) return;
 
-  // Get card width (fixed, no margin)
-  const cardWidth = 300; // must match CSS .print-box/.method-card width
-  const visibleCount = Math.floor(wrapper.parentElement.offsetWidth / cardWidth) || 1;
+  const originalCards = Array.from(wrapper.querySelectorAll('.method-card'));
+  const cardWidth = 315; // 300px card + 15px gap
+  
+  let currentIndex = 0;
+  let isAnimating = false;
 
-  // Remove any previous clones (if reloaded)
-  while (wrapper.children.length > cards.length) {
-	wrapper.removeChild(wrapper.lastChild);
+  // Create infinite loop by cloning cards
+  function setupInfiniteLoop() {
+    // Clear existing content
+    wrapper.innerHTML = '';
+    
+    // Create 3 sets of cards for seamless infinite scroll
+    const allCards = [...originalCards, ...originalCards, ...originalCards];
+    
+    allCards.forEach(card => {
+      wrapper.appendChild(card.cloneNode(true));
+    });
+    
+    // Start at the middle set
+    currentIndex = originalCards.length;
+    updatePosition(false);
   }
 
-  // Clone last N to the front, first N to the end
-  for (let i = 0; i < visibleCount; i++) {
-	const firstClone = cards[i].cloneNode(true);
-	const lastClone = cards[cards.length - 1 - i].cloneNode(true);
-	wrapper.appendChild(firstClone);
-	wrapper.insertBefore(lastClone, wrapper.firstChild);
+  function updatePosition(animate = true) {
+    wrapper.style.transition = animate ? 'transform 0.5s ease' : 'none';
+    wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
   }
 
-  let allCards = wrapper.querySelectorAll('.method-card');
-  let currentIndex = visibleCount; // Start at the first real card
-
-  // Set initial position
-  wrapper.style.transition = 'none';
-  wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-
-  function updateCarousel(animate = true) {
-	wrapper.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,1.3,.6,1)' : 'none';
-	wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  function goNext() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    currentIndex++;
+    updatePosition(true);
+    
+    // Reset position when we reach the end of second set
+    if (currentIndex >= originalCards.length * 2) {
+      setTimeout(() => {
+        currentIndex = originalCards.length;
+        updatePosition(false);
+        isAnimating = false;
+      }, 500);
+    } else {
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
+    }
   }
 
-  function goToNext() {
-	currentIndex++;
-	updateCarousel(true);
-	if (currentIndex === allCards.length - visibleCount) {
-	  setTimeout(() => {
-		wrapper.style.transition = 'none';
-		currentIndex = visibleCount;
-		wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-	  }, 500);
-	}
+  function goPrev() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    currentIndex--;
+    updatePosition(true);
+    
+    // Reset position when we reach the beginning of first set
+    if (currentIndex < 0) {
+      setTimeout(() => {
+        currentIndex = originalCards.length - 1;
+        updatePosition(false);
+        isAnimating = false;
+      }, 500);
+    } else {
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
+    }
   }
 
-  function goToPrev() {
-	currentIndex--;
-	updateCarousel(true);
-	if (currentIndex === 0) {
-	  setTimeout(() => {
-		wrapper.style.transition = 'none';
-		currentIndex = allCards.length - 2 * visibleCount;
-		wrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-	  }, 500);
-	}
+  // Button event listeners
+  nextBtn.addEventListener('click', goNext);
+  prevBtn.addEventListener('click', goPrev);
+
+  // Drag/Touch functionality
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
+
+  function getPositionX(event) {
+    return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
   }
 
-  nextMethod.addEventListener('click', goToNext);
-  prevMethod.addEventListener('click', goToPrev);
-
-  // --- Drag/Swipe Support ---
-  let startX = 0, isDragging = false, moved = false;
-
-  function onDragStart(e) {
-	isDragging = true;
-	moved = false;
-	startX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
-	wrapper.style.cursor = 'grabbing';
+  function setSliderPosition() {
+    wrapper.style.transform = `translateX(${currentTranslate}px)`;
   }
 
-  function onDragMove(e) {
-	if (!isDragging) return;
-	const x = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
-	const dx = x - startX;
-	if (Math.abs(dx) > 30) moved = true;
-	wrapper.style.transition = 'none';
-	wrapper.style.transform = `translateX(${-(currentIndex * cardWidth) + dx}px)`;
+  function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
   }
 
-  function onDragEnd(e) {
-	if (!isDragging) return;
-	isDragging = false;
-	wrapper.style.cursor = '';
-	const x = e.type.startsWith('touch') ? (e.changedTouches[0] || e.touches[0]).clientX : e.clientX;
-	const dx = x - startX;
-	if (dx > 50) {
-	  goToPrev();
-	} else if (dx < -50) {
-	  goToNext();
-	} else {
-	  updateCarousel(true);
-	}
+  function dragStart(event) {
+    if (isAnimating) return;
+    
+    isDragging = true;
+    startX = getPositionX(event);
+    prevTranslate = -currentIndex * cardWidth;
+    currentTranslate = prevTranslate;
+    
+    wrapper.style.transition = 'none';
+    wrapper.style.cursor = 'grabbing';
+    
+    animationID = requestAnimationFrame(animation);
   }
 
-  wrapper.addEventListener('mousedown', onDragStart);
-  wrapper.addEventListener('touchstart', onDragStart, {passive: true});
-  window.addEventListener('mousemove', onDragMove);
-  window.addEventListener('touchmove', onDragMove, {passive: false});
-  window.addEventListener('mouseup', onDragEnd);
-  window.addEventListener('touchend', onDragEnd);
+  function dragMove(event) {
+    if (!isDragging) return;
+    
+    const currentPosition = getPositionX(event);
+    const diff = currentPosition - startX;
+    currentTranslate = prevTranslate + diff;
+  }
 
+  function dragEnd() {
+    if (!isDragging) return;
+    
+    isDragging = false;
+    wrapper.style.cursor = 'grab';
+    cancelAnimationFrame(animationID);
+    
+    const movedBy = currentTranslate - prevTranslate;
+    
+    // Determine direction and threshold
+    if (movedBy < -100) {
+      goNext();
+    } else if (movedBy > 100) {
+      goPrev();
+    } else {
+      // Snap back to current position
+      updatePosition(true);
+    }
+  }
+
+  // Mouse events
+  wrapper.addEventListener('mousedown', dragStart);
+  wrapper.addEventListener('mousemove', dragMove);
+  wrapper.addEventListener('mouseup', dragEnd);
+  wrapper.addEventListener('mouseleave', dragEnd);
+
+  // Touch events
+  wrapper.addEventListener('touchstart', dragStart, { passive: true });
+  wrapper.addEventListener('touchmove', dragMove, { passive: false });
+  wrapper.addEventListener('touchend', dragEnd);
+
+  // Prevent context menu and image dragging
+  wrapper.addEventListener('contextmenu', e => e.preventDefault());
+  wrapper.addEventListener('dragstart', e => e.preventDefault());
+
+  // Prevent text selection while dragging
+  wrapper.addEventListener('selectstart', e => {
+    if (isDragging) e.preventDefault();
+  });
+
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (!isDragging && !isAnimating) {
+      updatePosition(false);
+    }
+  });
+
+  // Initialize the carousel
+  setupInfiniteLoop();
+  
+  // Set cursor style
+  wrapper.style.cursor = 'grab';
 });
 </script>
 		
