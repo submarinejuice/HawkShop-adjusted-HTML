@@ -23,13 +23,7 @@
         top: 100%;
     }
     
-    .header-menu-level1 li:hover > .header-menu-level-container {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-        height: auto;
-    }
-    
+   
     .header-menu-level-container.show {
         display: block; 
     }

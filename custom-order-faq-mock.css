@@ -109,7 +109,7 @@
 }
 
 .faq-items-container h1{
-    color:#F2A900;
+    color:#330072;
     
 } 
 .faq-items-container p{
@@ -276,7 +276,7 @@
 /* new */
 .header-top{
     
-    padding: 40px;
+ 
 }
 .header-top h1, .header-top h2{
     
@@ -289,7 +289,7 @@
     font-weight: bold;
     color: #EBA900;
     font-size: 55px;
-    padding: 20px;
+
 }
 .header-top h2{
     color: white ;
@@ -448,7 +448,7 @@
    
    
     width: 90%;
-    max-width: 1140px;
+
 
     border-radius: 5px;
     z-index: 2;  /* Ensure it sits above the background image */
@@ -515,7 +515,7 @@
  
     z-index: 1; 
     width: 90%;
-    max-width: 1140px;
+
     padding: 30px;
    
   
@@ -541,9 +541,7 @@
       padding: 15px;
     }
   }
-  #price, #orders{
-    color :#F2A900 ;
-  }
+
 
   .header-desc a{
     background-color: transparent;
@@ -652,4 +650,223 @@
     position: relative;
     z-index: 2;
     padding-bottom: 50px;
+}
+/* 1. Add breathing room between questions */
+.faq-item {
+    margin-bottom: 10px; /* Space between question boxes */
+}
+
+/* 2. Slightly thicker borders and rounded corners */
+.faq-question {
+    border-radius: 8px; /* Just slightly rounded */
+    border: 1.5px solid #ddd; /* Slightly thicker border */
+    margin-bottom: 2px; /* Tiny gap before answer */
+}
+
+/* 3. Make arrows more visible */
+.arrow {
+    padding: 4px; /* Slightly bigger arrow */
+    border-width: 0 2.5px 2.5px 0; /* Thicker arrow lines */
+}
+
+
+/* 5. Subtle question hover state */
+.faq-question:hover {
+    border-color: #bbb; /* Slightly darker border on hover */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Tiny shadow lift */
+}
+.faq-items-container {
+
+}
+.faq-items-container h2{
+  color: #330072;
+}
+/* ADD THESE STYLES TO YOUR EXISTING CSS */
+
+/* Nike-style FAQ container */
+.help-section {
+  
+    padding: 80px 0;
+    margin-top: 50px;
+    border-radius: 30px;
+}
+
+.help-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.help-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--primary);
+}
+
+.search-input::placeholder {
+    color: #757575;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575;
+    font-size: 18px;
+}
+
+.quick-assists-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.quick-assists-subtitle {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 50px;
+}
+
+/* Nike-style FAQ Grid */
+.faq-nike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px 40px;
+    margin-top: 50px;
+}
+
+.faq-nike-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.nike-category-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Update your existing faq-question to work with Nike style */
+.faq-nike-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 0;
+    font-size: 15px;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.faq-nike-question:hover {
+    color: var(--primary);
+}
+
+.nike-question-text {
+    flex: 1;
+}
+
+.nike-dropdown-arrow {
+    font-size: 12px;
+    color: #757575;
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-top: 2px;
+}
+
+.faq-nike-question[aria-expanded="true"] .nike-dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+
+.faq-nike-question[aria-expanded="true"] {
+    color: var(--primary);
+}
+
+/* Nike-style answer */
+.faq-nike-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.faq-nike-answer.open {
+    max-height: 200px;
+    padding: 15px;
+}
+
+.faq-nike-answer p {
+    font-size: 14px;
+    color: #757575;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.faq-nike-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-nike-answer a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.faq-nike-answer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .help-title {
+        font-size: 2.5rem;
+    }
+    
+    .faq-nike-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .help-container {
+        padding: 0 15px;
+    }
 }
